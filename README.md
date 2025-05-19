@@ -1,6 +1,17 @@
-# CodeIgniter 4 Template
 
-A simple, ready-to-use template to get started with CodeIgniter 4 for rapid web development. This template comes with pre-configured essential features such as database setup, user authentication, and basic file structure.
+# Bus Reservation System – Capstone Project
+
+This is a **Bus Reservation System** built using the [CodeIgniter 4](https://codeigniter.com/) PHP framework. It is developed as a capstone project for **Eastern Samar State University - Can-Avid Campus** in collaboration with our client, **Eastern Goldtrans Tours**. The system is based on a ready-to-use CodeIgniter 4 template with essential pre-configured features like database setup, user authentication, and a clean project structure — ideal for rapid web development.
+
+## Project Features
+
+- Secure user authentication (with bcrypt hashing)
+- Admin panel for managing trips, bookings, and users
+- Route and schedule management
+- Real-time seat reservation
+- Trip history and reporting
+- UUID-based primary keys for improved data handling
+- Mobile-friendly UI with responsive components
 
 ## Requirements
 
@@ -11,79 +22,89 @@ A simple, ready-to-use template to get started with CodeIgniter 4 for rapid web 
 
 ## Installation Instructions
 
-Follow these steps to get the template running on your local machine:
+Follow the steps below to set up and run the project locally:
 
 ### Step 1: Clone the Repository
 
-Clone the repository to your local machine using Git:
-
 ```bash
 git clone https://github.com/markchitoanteja/Codeigniter-4-Template.git
+cd Codeigniter-4-Template
 ```
 
-### Step 2: Set Up the Project
+> *(Optional: You may rename the folder to `bus-reservation-system`)*
 
-Navigate to the project directory and install the dependencies using Composer:
+### Step 2: Install Dependencies
 
 ```bash
-cd Codeigniter-4-Template
 composer install
 ```
 
 ### Step 3: Set Up the Database
 
-1. Create a new database in MySQL or MariaDB. You can name the database whatever you prefer.
-
-2. Configure the database connection by editing the `app/Config/Database.php` file. Update the following settings:
+1. Create a new database in MySQL/MariaDB (e.g., `bus_reservation`).
+2. Open `app/Config/Database.php` and configure your connection:
 
 ```php
 public $default = [
     'DSN'      => '',
-    'hostname' => 'localhost',   // Database hostname
-    'username' => 'your-db-username', // Database username
-    'password' => 'your-db-password', // Database password
-    'database' => 'your-db-name', // Database name
-    'DBDriver' => 'MySQLi', // Database driver
+    'hostname' => 'localhost',
+    'username' => 'your-db-username',
+    'password' => 'your-db-password',
+    'database' => 'bus_reservation',
+    'DBDriver' => 'MySQLi',
     ...
 ];
 ```
 
-### Step 4: Set Timezone (Optional)
+### Step 4: Set the Timezone (Optional)
 
-You can set the timezone for your application by editing the `app/Config/App.php` file. Update the `$appTimezone` property:
+Open `app/Config/App.php` and set your local timezone:
 
 ```php
-public $appTimezone = 'Asia/Manila'; // Set to your desired timezone
+public $appTimezone = 'Asia/Manila';
 ```
 
 ### Step 5: Run the Application
 
-Make sure your server (e.g., Apache or Nginx) is running, and visit the following URL in your browser:
+Start your local server (e.g., Apache/Nginx) and navigate to:
 
 ```
 http://localhost/Codeigniter-4-Template
 ```
 
-The application should load, and if you've configured the database correctly, it will automatically create the required tables (if they do not already exist) and insert initial data.
+If the database is configured correctly, required tables will be created automatically, along with an initial admin account.
 
-### Step 6: Initial Data
+### Step 6: Default Admin Account
 
-If the `users` table is empty, the application will automatically add a default "Administrator" user with the following credentials:
+To access the admin panel, use the default credentials:
 
 - **Username**: `admin`
-- **Password**: `admin123` (bcrypt encrypted)
+- **Password**: `admin123`
 
-This user can be used for logging into the system.
+> **Important**: Change the default password after first login for security.
+
+---
+
+## Project Structure Highlights
+
+- `app/Models` – Database interaction logic
+- `app/Controllers` – Application control flow
+- `app/Views` – UI templates (using CodeIgniter 4’s View rendering)
+- `app/Filters/Auth.php` – Route access control via middleware
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project uses the **MIT License** – see the [LICENSE](LICENSE) file for more information.
 
-## Contributing
+## Contributions
 
-Feel free to fork this repository, create an issue, or submit a pull request. Any contributions are welcome!
+This project welcomes contributions! Whether it's feature suggestions, bug reports, or pull requests, feel free to fork and collaborate.
 
 ## Acknowledgements
 
-- [CodeIgniter 4](https://codeigniter.com/) for the powerful PHP framework
-- [Ramsey UUID](https://ramsey.github.io/uuid/) for UUID generation
+- **Eastern Samar State University – Can-Avid** for guiding this capstone project  
+- **Eastern Goldtrans Tours** as our project client  
+- [CodeIgniter 4](https://codeigniter.com/) for the development framework  
+- [Ramsey UUID](https://ramsey.github.io/uuid/) for UUID-based IDs
