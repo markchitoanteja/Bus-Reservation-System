@@ -27,7 +27,7 @@ Follow the steps below to set up and run the project locally:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/markchitoanteja/Codeigniter-4-Template.git
+git clone https://github.com/markchitoanteja/Bus-Reservation-System
 cd Codeigniter-4-Template
 ```
 
