@@ -526,12 +526,13 @@ $(document).ready(function () {
 
     $("#logoutBtn").click(function () {
         Swal.fire({
-            title: 'Are you sure?',
+            title: "Are you sure?",
             text: "You will be logged out.",
-            icon: 'warning',
+            icon: "warning",
             showCancelButton: true,
-            confirmButtonText: 'Yes, log out',
-            cancelButtonText: 'No, cancel'
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, log out!",
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
