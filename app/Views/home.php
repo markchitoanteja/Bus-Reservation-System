@@ -27,7 +27,9 @@
     <meta name="twitter:site" content="@EGoldtrans" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="public/dist/css/style.css?v=1.1.6" />
 </head>
 
@@ -46,7 +48,35 @@
                     <li class="nav-item"><a class="nav-link text-light" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#booking">Book</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="javascript:void(0)" id="accountBtn">Account</a></li>
+                    <li class="nav-item dropdown">
+                        <?php if (session()->get("user")) : ?>
+                            <a class="nav-link dropdown-toggle text-light" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="d-none d-md-inline">
+                                    <?= session()->get("user")["name"] ?>
+                                </span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountBtn">
+                                <li>
+                                    <a class="dropdown-item" href="/profile/edit">
+                                        <i class="fa fa-user-edit me-2"></i> Edit Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="javascript:void(0)" id="logoutBtn">
+                                        <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        <?php else: ?>
+                            <a class="nav-link text-light" href="javascript:void(0)" id="accountBtn">
+                                Account
+                            </a>
+                        <?php endif ?>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -168,7 +198,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="date" class="form-label">Travel Date</label>
-                        <input type="date" class="form-control" id="date" required>
+                        <input type="date" id="date" min="<?= date('Y-m-d', strtotime('+1 day')); ?>" class="form-control" required>
                     </div>
                     <div class="col-md-6">
                         <label for="passenger" class="form-label">No. of Passengers</label>
@@ -218,41 +248,98 @@
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id="loginForm" novalidate>
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Admin/User Login</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="loginFormDiv">
+                        <form id="loginForm" novalidate>
+                            <div class="alert alert-danger text-center d-none" id="loginErrorAlert" role="alert">
+                                Invalid email or password. Please try again.
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginRole" class="form-label">Login as</label>
+                                <select id="loginRole" class="form-select" required>
+                                    <option value="user" selected>Passenger</option>
+                                    <option value="admin">Administrator</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="loginEmail" required>
+                                <div class="invalid-feedback">Please enter a valid email.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                                <div class="invalid-feedback">Password is required.</div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="loginRole" class="form-label">Login as</label>
-                            <select id="loginRole" class="form-select" required>
-                                <option value="user" selected>User</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
-                            <div class="invalid-feedback">Please enter a valid email.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
-                            <div class="invalid-feedback">Password is required.</div>
-                        </div>
+                    <div class="d-none" id="signUpFormDiv">
+                        <form id="signUpForm" novalidate>
+                            <div class="alert alert-danger text-center d-none" id="signUpErrorAlert" role="alert">
+                                Failed to create user. Please try again.
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="registerName" required>
+                                <div class="invalid-feedback">Please enter a valid name.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="registerEmail" required>
+                                <div class="invalid-feedback">Please enter a valid email.</div>
+                                <div class="invalid-feedback d-none" id="emailExistsFeedback">Email is already in use.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="registerPassword" required>
+                                <div class="invalid-feedback">Password is required.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="registerConfirmPassword" required>
+                                <div class="invalid-feedback" id="confirmPasswordRequired">Confirm Password is required.</div>
+                                <div class="invalid-feedback d-none" id="confirmPasswordMismatch">Passwords do not match.</div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary w-100" id="loginSubmitBtn" form="loginForm">
+                        <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="loginLoadingSpinner"></span>
+                        Login
+                    </button>
+
+                    <button type="submit" class="btn btn-primary w-100 d-none" id="signUpSubmitBtn" form="signUpForm">
+                        <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="signUpLoadingSpinner"></span>
+                        Sign Up
+                    </button>
+
+                    <div class="w-100 text-center mt-2" id="passengerSignupPrompt">
+                        <small>Don't have an account? <a href="javascript:void(0)" id="createAccountLink">Create one</a></small>
                     </div>
-                </form>
+
+                    <div class="w-100 text-center mt-2 d-none" id="passengerLoginPrompt">
+                        <small>Already have an account? <a href="javascript:void(0)" id="loginLink">Login</a></small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <script>
+        const notification = <?php echo json_encode(session()->getFlashdata()); ?>;
+        const user = <?php echo json_encode(session()->get("user")); ?>;
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="public/dist/js/script.js?v=1.1.5"></script>
+    <script src="public/dist/js/script.js?v=1.2.4"></script>
 </body>
 
 </html>

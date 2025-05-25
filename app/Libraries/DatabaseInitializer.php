@@ -9,7 +9,6 @@ class DatabaseInitializer
 {
     private static function create_users_table($db, $forge)
     {
-        // Check if 'users' table exists
         if (!$db->tableExists('users')) {
             $fields = [
                 'id' => [
@@ -20,7 +19,7 @@ class DatabaseInitializer
                 ],
                 'uuid' => [
                     'type'       => 'CHAR',
-                    'constraint' => '36', // UUID length
+                    'constraint' => '36',
                     'unique'     => true,
                 ],
                 'name' => [
@@ -34,12 +33,17 @@ class DatabaseInitializer
                 ],
                 'password' => [
                     'type'       => 'VARCHAR',
-                    'constraint' => '255', // bcrypt hashes will fit in this size
+                    'constraint' => '255',
                 ],
                 'image' => [
                     'type'       => 'VARCHAR',
-                    'constraint' => '255', // Path or URL to image
+                    'constraint' => '255',
                     'null'       => true,
+                ],
+                'user_type' => [
+                    'type'       => 'ENUM',
+                    'constraint' => ['admin', 'user'],
+                    'default'    => 'user',
                 ],
                 'created_at' => [
                     'type' => 'DATETIME',
@@ -51,7 +55,6 @@ class DatabaseInitializer
                 ],
             ];
 
-            // Add fields and set primary key
             $forge->addField($fields);
             $forge->addKey('id', true);
             $forge->createTable('users', true);
@@ -60,23 +63,21 @@ class DatabaseInitializer
 
     private static function insert_initial_data($db)
     {
-        // Check if the 'users' table is empty
         $builder = $db->table('users');
         $count = $builder->countAllResults();
 
         if ($count === 0) {
-            // Prepare data for the Administrator user
             $data = [
                 'uuid' => generate_uuid(),
                 'name' => 'Administrator',
                 'email' => 'admin@example.com',
-                'password' => password_hash('admin123', PASSWORD_BCRYPT), // bcrypt hashed password
+                'password' => password_hash('admin123', PASSWORD_BCRYPT),
                 'image' => 'default-user-image.webp',
+                'user_type' => 'admin',
                 'created_at' => Time::now(),
                 'updated_at' => Time::now(),
             ];
 
-            // Insert initial data
             $builder->insert($data);
         }
     }
@@ -86,10 +87,7 @@ class DatabaseInitializer
         $db = Database::connect();
         $forge = \Config\Database::forge();
 
-        // Create table if it doesn't exist
         self::create_users_table($db, $forge);
-
-        // Insert initial data if the table is empty
         self::insert_initial_data($db);
     }
 }
