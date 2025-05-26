@@ -91,6 +91,53 @@ class Auth extends BaseController
         ]);
     }
 
+    public function update_profile()
+    {
+        $id = $this->request->getPost('id');
+        $name = $this->request->getPost('name');
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $User_Model = new User_Model();
+        $existingUser = $User_Model->where('email', $email)->where('id !=', $id)->first();
+
+        $success = false;
+        $error_type = null;
+
+        if ($existingUser) {
+            $error_type = 'email_exists';
+        } else {
+            $updateData = [
+                'name' => $name,
+                'email' => $email,
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+
+            if (!empty($password)) {
+                $updateData['password'] = password_hash($password, PASSWORD_BCRYPT);
+            }
+
+            if ($User_Model->update($id, $updateData)) {
+                $success = true;
+
+                $updatedUser = $User_Model->find($id);
+                session()->set('user', $updatedUser);
+
+                session()->setFlashdata([
+                    'type' => 'success',
+                    'message' => 'Profile updated successfully!',
+                ]);
+            } else {
+                $error_type = 'db_error';
+            }
+        }
+
+        return $this->response->setJSON([
+            'success' => $success,
+            'error_type' => $error_type,
+        ]);
+    }
+
     public function logout()
     {
         session()->remove("user");

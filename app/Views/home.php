@@ -50,7 +50,7 @@
                     <li class="nav-item"><a class="nav-link text-light" href="#booking">Book</a></li>
                     <li class="nav-item dropdown">
                         <?php if (session()->get("user")) : ?>
-                            <a class="nav-link dropdown-toggle text-light" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link text-light" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="d-none d-md-inline">
                                     <?= session()->get("user")["name"] ?>
                                 </span>
@@ -58,7 +58,7 @@
 
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountBtn">
                                 <li>
-                                    <a class="dropdown-item" href="/profile/edit">
+                                    <a class="dropdown-item" href="javascript:void(0)" id="editProfileBtn">
                                         <i class="fa fa-user-edit me-2"></i> Edit Profile
                                     </a>
                                 </li>
@@ -331,6 +331,69 @@
         </div>
     </div>
 
+    <?php if (session()->get("user")) : ?>
+        <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateProfileModalLabel">Edit your Profile</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="updateProfileForm" novalidate>
+                            <!-- Error Alert -->
+                            <div class="alert alert-danger text-center d-none" id="updateProfileErrorAlert" role="alert">
+                                Failed to update profile. Please try again.
+                            </div>
+
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label for="updateName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="updateName" required>
+                                <div class="invalid-feedback">Please enter a valid name.</div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="updateEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="updateEmail" required>
+                                <div class="invalid-feedback">Please enter a valid email.</div>
+                                <div class="invalid-feedback d-none" id="emailExistsFeedback">Email already exists.</div>
+                            </div>
+
+                            <!-- Password (Optional) -->
+                            <div class="mb-3">
+                                <label for="updatePassword" class="form-label">New Password</label>
+                                <input type="password" class="form-control" id="updatePassword">
+                                <small class="form-text text-muted">Leave blank to keep your current password.</small>
+                                <div class="invalid-feedback">Password is invalid.</div>
+                            </div>
+
+                            <!-- Confirm Password (Required only if Password is filled) -->
+                            <div class="mb-3">
+                                <label for="updateConfirmPassword" class="form-label">Confirm New Password</label>
+                                <input type="password" class="form-control" id="updateConfirmPassword">
+                                <div class="invalid-feedback" id="confirmPasswordRequired">Confirm password is required when changing your password.</div>
+                                <div class="invalid-feedback d-none" id="confirmPasswordMismatch">Passwords do not match.</div>
+                            </div>
+
+                            <!-- Hidden User ID -->
+                            <input type="hidden" id="updateUserId" value="<?= session()->get('user')['id'] ?>" />
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary w-100" id="updateProfileSubmitBtn" form="updateProfileForm">
+                            <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="updateProfileLoadingSpinner"></span>
+                            Update
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <script>
         const notification = <?php echo json_encode(session()->getFlashdata()); ?>;
         const user = <?php echo json_encode(session()->get("user")); ?>;
@@ -339,7 +402,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="public/dist/js/script.js?v=1.2.5"></script>
+    <script src="public/dist/js/script.js?v=1.3.2"></script>
 </body>
 
 </html>
