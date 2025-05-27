@@ -7,37 +7,18 @@
 
     <title>Eastern Goldtrans Tours Inc.</title>
 
-    <meta name="description" content="Eastern Goldtrans Tours Inc. offers reliable and comfortable transport services for tours, business trips, and group travel." />
-    <meta name="keywords" content="Eastern Goldtrans, transport services, tours, van rental, travel, Philippines" />
-    <meta name="author" content="Eastern Goldtrans Tours Inc." />
-
-    <link rel="canonical" href="https://bus-reservation-system.essuc.online/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Eastern Goldtrans Tours Inc." />
-    <meta property="og:description" content="Comfortable and reliable transportation for your tour and travel needs." />
-    <meta property="og:image" content="https://bus-reservation-system.essuc.online/public/dist/img/logo.png" />
-    <meta property="og:url" content="https://bus-reservation-system.essuc.online/" />
-    <meta property="og:site_name" content="Eastern Goldtrans Tours Inc." />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Eastern Goldtrans Tours Inc." />
-    <meta name="twitter:description" content="Book your next trip with Eastern Goldtrans - Safe, reliable, and affordable transport." />
-    <meta name="twitter:image" content="https://bus-reservation-system.essuc.online/public/dist/img/logo.png" />
-    <meta name="twitter:site" content="@EGoldtrans" />
-
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="public/dist/css/style.css?v=1.1.6" />
+    <link rel="stylesheet" href="public/dist/home/css/style.css?v=1.1.6" />
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center text-light fw-bold" href="#">
-                <img src="public/dist/img/logo.png" alt="Logo" loading="lazy" width="40" class="me-2" /> Eastern Goldtrans Tours
+                <img src="public/dist/home/img/logo.png" alt="Logo" loading="lazy" width="40" class="me-2" /> Eastern Goldtrans Tours
             </a>
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -60,6 +41,11 @@
                                 <li>
                                     <a class="dropdown-item" href="javascript:void(0)" id="editProfileBtn">
                                         <i class="fa fa-user-edit me-2"></i> Edit Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="my_bookings">
+                                        <i class="fas fa-ticket-alt me-2"></i> My Bookings
                                     </a>
                                 </li>
                                 <li>
@@ -139,31 +125,31 @@
                     <div class="row g-4 justify-content-center">
                         <div class="col-sm-6 col-md-4">
                             <div class="promo-card shadow rounded overflow-hidden">
-                                <img src="public/dist/img/promo1.jpg" loading="lazy" alt="Celebrating 50,000 Followers" class="img-fluid card-img" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="public/dist/img/promo1.jpg" data-alt="Celebrating 50,000 Followers" />
+                                <img src="public/dist/home/img/promo1.jpg" loading="lazy" alt="Celebrating 50,000 Followers" class="img-fluid card-img" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="public/dist/home/img/promo1.jpg" data-alt="Celebrating 50,000 Followers" />
                                 <div class="promo-content p-3 text-start">
                                     <h5 class="card-title mb-2">Celebrating 50,000 Followers!</h5>
                                     <p class="card-text">Thank you for helping us reach this amazing milestone on Facebook!</p>
-                                    <button class="btn btn-link read-more-btn p-0" data-bs-toggle="modal" data-bs-target="#promoModal" data-title="Celebrating 50,000 Followers!" data-content="Thank you for helping us reach this amazing milestone on Facebook! We appreciate every like, share, and comment. Stay tuned for exclusive giveaways and more exciting updates." data-image="public/dist/img/promo1.jpg">Read More</button>
+                                    <button class="btn btn-link read-more-btn p-0" data-bs-toggle="modal" data-bs-target="#promoModal" data-title="Celebrating 50,000 Followers!" data-content="Thank you for helping us reach this amazing milestone on Facebook! We appreciate every like, share, and comment. Stay tuned for exclusive giveaways and more exciting updates." data-image="public/dist/home/img/promo1.jpg">Read More</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="promo-card shadow rounded overflow-hidden">
-                                <img src="public/dist/img/promo2.jpg" alt="Long Weekend Booking" class="img-fluid card-img" loading="lazy" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="public/dist/img/promo2.jpg" data-alt="Long Weekend Booking" />
+                                <img src="public/dist/home/img/promo2.jpg" alt="Long Weekend Booking" class="img-fluid card-img" loading="lazy" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="public/dist/home/img/promo2.jpg" data-alt="Long Weekend Booking" />
                                 <div class="promo-content p-3 text-start">
                                     <h5 class="card-title mb-2">Pa Book Ka Na!</h5>
                                     <p class="card-text">Prepare for the upcoming long weekend this October. Secure your seat now!</p>
-                                    <button class="btn btn-link read-more-btn p-0" data-bs-toggle="modal" data-bs-target="#promoModal" data-title="Pa Book Ka Na!" data-content="Get ready for the long weekend this October! Our trips fill up fast during holidays, so be sure to reserve your seat early to avoid the rush. Book now and travel stress-free!" data-image="public/dist/img/promo2.jpg">Read More</button>
+                                    <button class="btn btn-link read-more-btn p-0" data-bs-toggle="modal" data-bs-target="#promoModal" data-title="Pa Book Ka Na!" data-content="Get ready for the long weekend this October! Our trips fill up fast during holidays, so be sure to reserve your seat early to avoid the rush. Book now and travel stress-free!" data-image="public/dist/home/img/promo2.jpg">Read More</button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <div class="promo-card shadow rounded overflow-hidden">
-                                <img src="public/dist/img/promo3.jpg" alt="New Terminal Coming Soon" loading="lazy" class="img-fluid card-img" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="public/dist/img/promo3.jpg" data-alt="New Terminal Coming Soon" />
+                                <img src="public/dist/home/img/promo3.jpg" alt="New Terminal Coming Soon" loading="lazy" class="img-fluid card-img" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="public/dist/home/img/promo3.jpg" data-alt="New Terminal Coming Soon" />
                                 <div class="promo-content p-3 text-start">
                                     <h5 class="card-title mb-2">Coming Soon: New Terminal</h5>
                                     <p class="card-text">Announcing new features and a better terminal experience for you.</p>
-                                    <button class="btn btn-link read-more-btn p-0" data-bs-toggle="modal" data-bs-target="#promoModal" data-title="Coming Soon: New Terminal" data-content="We're building a more convenient and comfortable terminal for our passengers. Expect modern amenities, faster service, and a better overall experience — all launching soon!" data-image="public/dist/img/promo3.jpg">Read More</button>
+                                    <button class="btn btn-link read-more-btn p-0" data-bs-toggle="modal" data-bs-target="#promoModal" data-title="Coming Soon: New Terminal" data-content="We're building a more convenient and comfortable terminal for our passengers. Expect modern amenities, faster service, and a better overall experience — all launching soon!" data-image="public/dist/home/img/promo3.jpg">Read More</button>
                                 </div>
                             </div>
                         </div>
@@ -180,25 +166,30 @@
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="from" class="form-label">From</label>
-                        <input list="places" class="form-control" id="from" placeholder="Origin City" required>
-                        <datalist id="places">
-                            <option value="Tacloban City">
-                            <option value="Ormoc City">
-                            <option value="Calbayog">
-                            <option value="Catbalogan">
-                            <option value="Maasin City">
-                            <option value="Borongan">
-                            <option value="Samar">
-                            <option value="Baybay">
-                        </datalist>
+                        <input list="all-locations" class="form-control" id="from" placeholder="Select origin" required>
                     </div>
                     <div class="col-md-6">
                         <label for="to" class="form-label">To</label>
-                        <input list="places" class="form-control" id="to" placeholder="Destination City" required>
+                        <input list="all-locations" class="form-control" id="to" placeholder="Select destination" required>
                     </div>
+                    <datalist id="all-locations">
+                        <!-- Manila Terminals -->
+                        <option value="Sampaloc, Manila">
+                        <option value="PITX, Manila">
+                        <option value="Pasay, Manila">
+                        <option value="Cubao, Quezon City">
+
+                            <!-- Eastern Samar Towns -->
+                        <option value="Oras">
+                        <option value="Dolores">
+                        <option value="Taft">
+                        <option value="Sulat">
+                        <option value="San Julian">
+                        <option value="Borongan">
+                    </datalist>
                     <div class="col-md-6">
                         <label for="date" class="form-label">Travel Date</label>
-                        <input type="date" id="date" min="<?= date('Y-m-d', strtotime('+1 day')); ?>" class="form-control" required>
+                        <input type="date" id="date" class="form-control" min="" required>
                     </div>
                     <div class="col-md-6">
                         <label for="passenger" class="form-label">No. of Passengers</label>
@@ -215,7 +206,6 @@
     <footer class="text-center py-4 bg-dark text-light">
         <div class="container">
             <p class="mb-1">&copy; 2025 Eastern Goldtrans Tours Inc. All rights reserved.</p>
-            <p class="small">Capstone Project by Desiree Recentes</p>
         </div>
     </footer>
 
@@ -402,7 +392,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="public/dist/js/script.js?v=1.3.2"></script>
+    <script src="public/dist/home/js/script.js?v=1.3.4"></script>
 </body>
 
 </html>
