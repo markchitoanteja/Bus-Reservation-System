@@ -118,7 +118,9 @@
             <div class="row g-4">
                 <div class="col-lg-12 mx-auto">
                     <div class="video-wrapper shadow rounded mb-4">
-                        <video src="public/dist/videos/intro-video.mp4" autoplay muted loop playsinline controls class="w-100 rounded">Sorry, your browser does not support embedded videos.</video>
+                        <div class="ratio ratio-16x9 rounded">
+                            <iframe src="https://www.youtube.com/embed/BBXwadCYC08" title="Welcome to Eastern Goldtrans Tours Inc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="w-100 rounded"></iframe>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-12 mx-auto">
@@ -161,7 +163,10 @@
 
     <section id="booking" class="py-5 bg-light">
         <div class="container form-section">
-            <h2 class="section-title text-center mb-4">Book a Ticket</h2>
+            <div class="text-center mb-4">
+                <h2 class="section-title mb-0">Book a Ticket</h2>
+                <small class="text-muted">Note: this is still not connected to the database.</small>
+            </div>
             <form class="needs-validation" novalidate>
                 <div class="row g-3">
                     <div class="col-md-6">
