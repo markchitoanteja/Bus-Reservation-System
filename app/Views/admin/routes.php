@@ -4,19 +4,19 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Bookings</h1>
+                    <h1 class="m-0">Routes</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Bookings</li>
+                        <li class="breadcrumb-item active">Routes</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bookings Content -->
+    <!-- Routes Content -->
     <section class="content">
         <div class="container-fluid">
             <div class="text-secondary">

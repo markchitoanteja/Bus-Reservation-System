@@ -128,21 +128,21 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="passengers.html" class="nav-link">
+                            <a href="passengers" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Passengers</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="routes.html" class="nav-link">
+                            <a href="routes" class="nav-link">
                                 <i class="nav-icon fas fa-route"></i>
                                 <p>Routes</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="buses.html" class="nav-link">
+                            <a href="buses" class="nav-link">
                                 <i class="nav-icon fas fa-bus"></i>
                                 <p>Buses</p>
                             </a>
@@ -151,7 +151,7 @@
                         <li class="nav-header">SYSTEM</li>
 
                         <li class="nav-item">
-                            <a href="settings.html" class="nav-link">
+                            <a href="settings" class="nav-link">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>Settings</p>
                             </a>
