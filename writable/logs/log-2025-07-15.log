@@ -1,0 +1,240 @@
+CRITICAL - 2025-07-15 16:42:08 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:22 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:23 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:34 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:35 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:56 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:56 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:57 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:58 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:58 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:59 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:42:59 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:43:00 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:43:01 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:43:02 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:43:03 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:43:03 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:43:04 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:43:05 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:47:32 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:48:12 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 16:58:48 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 17:01:46 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 17:09:38 --> Error: Class "Ramsey\Uuid\Guid\Guid" not found
+[Method: POST, Route: signup]
+in SYSTEMPATH\Helpers\text_helper.php on line 774.
+ 1 APPPATH\Controllers\Auth.php(65): generate_uuid()
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Auth->signup()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

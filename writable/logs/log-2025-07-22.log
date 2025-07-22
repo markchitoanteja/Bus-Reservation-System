@@ -1,0 +1,54 @@
+CRITICAL - 2025-07-22 15:17:47 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Admin.php on line 39
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Common.php on line 1161.
+ 1 APPPATH\Controllers\Admin.php(39): view('admin/main/header', 'admin/dashboard', 'admin/main/footer')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-22 15:18:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/main/layout.php"
+[Method: GET, Route: admin/dashboard]
+in FCPATH\vendor\codeigniter4\framework\system\Exceptions\FrameworkException.php on line 39.
+ 1 FCPATH\vendor\codeigniter4\framework\system\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/main/layout.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/main/layout', [], true)
+ 3 APPPATH\Controllers\Admin.php(39): view('admin/main/layout', [...])
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-22 15:18:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/main/layout.php"
+[Method: GET, Route: admin/dashboard]
+in FCPATH\vendor\codeigniter4\framework\system\Exceptions\FrameworkException.php on line 39.
+ 1 FCPATH\vendor\codeigniter4\framework\system\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/main/layout.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/main/layout', [], true)
+ 3 APPPATH\Controllers\Admin.php(39): view('admin/main/layout', [...])
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-22 15:20:17 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Admin.php on line 39
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Common.php on line 1161.
+ 1 APPPATH\Controllers\Admin.php(39): view('admin/main/header', 'admin/dashboard', 'admin/main/footer')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-22 15:21:04 --> TypeError: view(): Argument #1 ($name) must be of type string, array given, called in C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Admin.php on line 39
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Common.php on line 1161.
+ 1 APPPATH\Controllers\Admin.php(39): view([...])
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

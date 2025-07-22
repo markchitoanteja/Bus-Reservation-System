@@ -6,33 +6,41 @@ use CodeIgniter\HTTP\RedirectResponse;
 
 class Admin extends BaseController
 {
-    public function index(): string|RedirectResponse
+    /**
+     * View dashboard page.
+     *
+     * @return string
+     */
+    public function index() : string|RedirectResponse
     {
-        $session = session();
-
-        // Check if 'user' exists in session
-        if (!$session->has('user')) {
-            $session->setFlashdata([
-                'type' => 'error',
-                'message' => 'You must log in first!',
-            ]);
-            return redirect()->to(base_url());
-        }
-
-        // Get user data from session
-        $user = $session->get('user');
-
-        // Check if user_type is 'admin'
-        if (!isset($user['user_type']) || $user['user_type'] !== 'admin') {
-            $session->setFlashdata([
-                'type' => 'error',
-                'message' => 'Access denied! Admins only.',
-            ]);
-            
-            return redirect()->to(base_url());
+        if ( $redirect = require_admin() ) {
+            return $redirect;
         }
 
         // Load dashboard view if user is admin
-        return view('admin/dashboard');
+        $headerView = view( 'admin/main/header' );
+        $bodyView   = view( 'admin/dashboard' );
+        $footerView = view( 'admin/main/footer' );
+
+        return "{$headerView}{$bodyView}{$footerView}";
+    }
+
+    /**
+     * View bookings page.
+     *
+     * @return string|RedirectResponse
+     */
+    public function viewBookings() : string|RedirectResponse
+    {
+        if ( $redirect = require_admin() ) {
+            return $redirect;
+        }
+
+        // Load bookings view if user is admin
+        $headerView = view( 'admin/main/header' );
+        $bodyView   = view( 'admin/bookings' );
+        $footerView = view( 'admin/main/footer' );
+
+        return "{$headerView}{$bodyView}{$footerView}";
     }
 }

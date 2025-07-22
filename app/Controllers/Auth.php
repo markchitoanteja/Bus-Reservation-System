@@ -8,148 +8,149 @@ class Auth extends BaseController
 {
     public function login()
     {
-        $email = $this->request->getPost("email");
-        $password = $this->request->getPost("password");
-        $user_type = $this->request->getPost("user_type"); // Get user_type from request
+        $email     = $this->request->getPost( "email" );
+        $password  = $this->request->getPost( "password" );
+        $user_type = $this->request->getPost( "user_type" ); // Get user_type from request
 
         $User_Model = new User_Model();
 
         // Query using both email and user_type
         $user = $User_Model
-            ->where("email", $email)
-            ->where("user_type", $user_type)
+            ->where( "email", $email )
+            ->where( "user_type", $user_type )
             ->first();
 
         $success = false;
 
-        if ($user && password_verify($password, $user["password"])) {
+        if ( $user && password_verify( $password, $user[ "password" ] ) ) {
             $success = true;
 
-            session()->setFlashdata([
-                "type" => "success",
-                "message" => "Welcome back, " . $user["name"] . "!",
-            ]);
+            session()->setFlashdata( [ 
+                "type"    => "success",
+                "message" => "Welcome back, " . $user[ "name" ] . "!",
+            ] );
 
-            session()->set("user", [
-                "id" => $user["id"],
-                "name" => $user["name"],
-                "email" => $user["email"],
-                "image" => $user["image"],
-                "user_type" => $user["user_type"],
-            ]);
+            session()->set( "user", [ 
+                "id"        => $user[ "id" ],
+                "name"      => $user[ "name" ],
+                "email"     => $user[ "email" ],
+                "image"     => $user[ "image" ],
+                "user_type" => $user[ "user_type" ],
+            ] );
         }
 
-        return $this->response->setJSON([
-            "success" => $success,
-            "user_type" => $success ? $user["user_type"] : null,
-        ]);
+        return $this->response->setJSON( [ 
+            "success"   => $success,
+            "user_type" => $success ? $user[ "user_type" ] : null,
+        ] );
     }
 
     public function signup()
     {
-        $name = $this->request->getPost("name");
-        $email = $this->request->getPost("email");
-        $password = $this->request->getPost("password");
+        $name     = $this->request->getPost( "name" );
+        $email    = $this->request->getPost( "email" );
+        $password = $this->request->getPost( "password" );
 
         $User_Model = new User_Model();
 
-        $user = $User_Model->where("email", $email)->first();
+        $user = $User_Model->where( "email", $email )->first();
 
-        $success = false;
+        $success    = false;
         $error_type = null;
 
-        if ($user) {
+        if ( $user ) {
             $error_type = "email_exists";
         } else {
-            $data = [
-                "uuid" => generate_uuid(),
-                "name" => $name,
-                "email" => $email,
-                "password" => password_hash($password, PASSWORD_BCRYPT),
-                "image" => "default-user-image.webp",
-                "user_type" => "user",
-                "created_at" => date("Y-m-d H:i:s"),
-                "updated_at" => date("Y-m-d H:i:s"),
+            $data = [ 
+                "uuid"       => generate_uuid(),
+                "name"       => $name,
+                "email"      => $email,
+                "password"   => password_hash( $password, PASSWORD_BCRYPT ),
+                "image"      => "default-user-image.webp",
+                "user_type"  => "user",
+                "created_at" => date( "Y-m-d H:i:s" ),
+                "updated_at" => date( "Y-m-d H:i:s" ),
             ];
 
-            if ($User_Model->insert($data)) {
+            if ( $User_Model->insert( $data ) ) {
                 $success = true;
 
-                session()->setFlashdata([
-                    "type" => "success",
+                session()->setFlashdata( [ 
+                    "type"    => "success",
                     "message" => "Account created successfully! You can now log in.",
-                ]);
+                ] );
+
             } else {
-                $success = false;
+                $success    = false;
                 $error_type = "db_error";
             }
         }
 
-        return $this->response->setJSON([
-            "success" => $success,
+        return $this->response->setJSON( [ 
+            "success"    => $success,
             "error_type" => $error_type
-        ]);
+        ] );
     }
 
     public function update_profile()
     {
-        $id = $this->request->getPost('id');
-        $name = $this->request->getPost('name');
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
+        $id       = $this->request->getPost( 'id' );
+        $name     = $this->request->getPost( 'name' );
+        $email    = $this->request->getPost( 'email' );
+        $password = $this->request->getPost( 'password' );
 
-        $User_Model = new User_Model();
-        $existingUser = $User_Model->where('email', $email)->where('id !=', $id)->first();
+        $User_Model   = new User_Model();
+        $existingUser = $User_Model->where( 'email', $email )->where( 'id !=', $id )->first();
 
-        $success = false;
+        $success    = false;
         $error_type = null;
 
-        if ($existingUser) {
+        if ( $existingUser ) {
             $error_type = 'email_exists';
         } else {
-            $updateData = [
-                'name' => $name,
-                'email' => $email,
-                'updated_at' => date('Y-m-d H:i:s'),
+            $updateData = [ 
+                'name'       => $name,
+                'email'      => $email,
+                'updated_at' => date( 'Y-m-d H:i:s' ),
             ];
 
-            if (!empty($password)) {
-                $updateData['password'] = password_hash($password, PASSWORD_BCRYPT);
+            if ( !empty( $password ) ) {
+                $updateData[ 'password' ] = password_hash( $password, PASSWORD_BCRYPT );
             }
 
-            if ($User_Model->update($id, $updateData)) {
+            if ( $User_Model->update( $id, $updateData ) ) {
                 $success = true;
 
-                $updatedUser = $User_Model->find($id);
-                session()->set('user', $updatedUser);
+                $updatedUser = $User_Model->find( $id );
+                session()->set( 'user', $updatedUser );
 
-                session()->setFlashdata([
-                    'type' => 'success',
+                session()->setFlashdata( [ 
+                    'type'    => 'success',
                     'message' => 'Profile updated successfully!',
-                ]);
+                ] );
             } else {
                 $error_type = 'db_error';
             }
         }
 
-        return $this->response->setJSON([
-            'success' => $success,
+        return $this->response->setJSON( [ 
+            'success'    => $success,
             'error_type' => $error_type,
-        ]);
+        ] );
     }
 
     public function logout()
     {
-        session()->remove("user");
+        session()->remove( "user" );
 
-        session()->setFlashdata([
-            "type" => "success",
+        session()->setFlashdata( [ 
+            "type"    => "success",
             "message" => "You have been logged out successfully."
-        ]);
+        ] );
 
-        return $this->response->setJSON([
+        return $this->response->setJSON( [ 
             "success" => true,
             "message" => "You have been logged out successfully."
-        ]);
+        ] );
     }
 }
