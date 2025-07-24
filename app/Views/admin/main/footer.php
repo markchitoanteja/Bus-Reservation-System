@@ -8,6 +8,9 @@
 </div>
 
 <!-- Scripts -->
+<!-- Add these in your HTML head or before closing </body> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script src="<?= base_url() ?>public/plugins/jquery/jquery.min.js"></script>
 <script src="<?= base_url() ?>public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url() ?>public/plugins/moment/moment.min.js"></script>

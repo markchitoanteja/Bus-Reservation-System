@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>public/plugins/fontawesome-free/css/all.min.css">
 
     <!-- AdminLTE -->
+    <link rel="stylesheet" href="<?= base_url() ?>public/dist/admin/css/sweetAlertStyle.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/dist/admin/css/adminlte.min.css">
     <link rel="stylesheet"
         href="<?= base_url() ?>public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
@@ -112,7 +113,8 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
 
                         <li class="nav-item">
-                            <a href="dashboard" class="nav-link active">
+                            <a href="dashboard"
+                                class="nav-link <?= session()->get( 'active_tab' ) === 'dashboard' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Dashboard</p>
                             </a>
@@ -121,28 +123,32 @@
                         <li class="nav-header">MANAGEMENT</li>
 
                         <li class="nav-item">
-                            <a href="bookings" class="nav-link">
+                            <a href="bookings"
+                                class="nav-link <?= session()->get( 'active_tab' ) === 'bookings' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>Bookings</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="passengers" class="nav-link">
+                            <a href="passengers"
+                                class="nav-link <?= session()->get( 'active_tab' ) === 'passengers' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Passengers</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="routes" class="nav-link">
+                            <a href="routes"
+                                class="nav-link <?= session()->get( 'active_tab' ) === 'routes' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-route"></i>
                                 <p>Routes</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="buses" class="nav-link">
+                            <a href="buses"
+                                class="nav-link <?= session()->get( 'active_tab' ) === 'buses' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-bus"></i>
                                 <p>Buses</p>
                             </a>
@@ -151,7 +157,8 @@
                         <li class="nav-header">SYSTEM</li>
 
                         <li class="nav-item">
-                            <a href="settings" class="nav-link">
+                            <a href="settings"
+                                class="nav-link <?= session()->get( 'active_tab' ) === 'settings' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-cogs"></i>
                                 <p>Settings</p>
                             </a>
