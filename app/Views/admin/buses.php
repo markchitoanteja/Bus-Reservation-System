@@ -19,8 +19,42 @@
     <!-- Buses Content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="text-secondary">
-                <h1>Underdevelopment</h1>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Buses List</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Bus Number</th>
+                                <th>Driver</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>BUS-001</td>
+                                <td>John Doe</td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-sm">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>BUS-002</td>
+                                <td>Jane Smith</td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-sm">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>

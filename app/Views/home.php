@@ -234,6 +234,34 @@
                         <label for="passenger" class="form-label">No. of Passengers</label>
                         <input type="number" class="form-control" id="passenger" min="1" value="1" required>
                     </div>
+                    <div class="col-lg-12">
+                        <label for="busSelect" class="form-label">Choose a Bus</label>
+                        <select id="busSelect" class="form-select w-100 mx-auto">
+                            <option value="">-- Select a Bus --</option>
+                            <option value="busA">Bus 383 (ordinary)</option>
+                            <option value="busB">Bus 456 (air-conditioned)</option>
+                        </select>
+                    </div>
+                    <!-- Top "Choose set" button -->
+                    <div class="col-md-12 text-center mb-3">
+                        <button class="btn btn-primary-theme btn-md w-100">Choose set</button>
+                    </div>
+
+                    <?php
+                    $prefixes = [ 'L', 'M', 'R', '', 'X', 'Y' ]; // '' means a blank slot (empty div)
+                    
+                    for ( $i = 1; $i <= 14; $i++ ) {
+                        foreach ( $prefixes as $prefix ) {
+                            echo '<div class="col-md-2 text-center mb-2">';
+                            if ( $prefix !== '' ) {
+                                echo '<button class="btn btn-outline-success btn-md w-100">' . $prefix . $i . '</button>';
+                            } else {
+                                echo '<!-- Blank -->';
+                            }
+                            echo '</div>';
+                        }
+                    }
+                    ?>
                 </div>
                 <div class="text-center mt-4">
                     <button type="submit" class="btn btn-primary-theme btn-lg">Search Buses</button>
@@ -446,6 +474,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="public/dist/home/js/script.js?v=1.3.4"></script>
+    <script src="public/dist/home/js/booking.script.js?v=1.3.4"></script>
 </body>
 
 </html>
