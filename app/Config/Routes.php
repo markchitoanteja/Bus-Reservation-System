@@ -22,3 +22,18 @@ $routes->post( '/login', 'Auth::login' );
 $routes->post( '/signup', 'Auth::signup' );
 $routes->post( '/update_profile', 'Auth::update_profile' );
 $routes->post( '/logout', 'Auth::logout' );
+
+/* Pages Controller */
+// Routes Controller
+$routes->post( '/admin/routes/checkRouteExists', 'Pages\Routes::checkRouteExists' );
+$routes->post( '/admin/routes/checkEditRouteExists', 'Pages\Routes::checkEditRouteExists' );
+$routes->post( '/admin/routes/addRoute', 'Pages\Routes::addRoute' );
+$routes->post( '/admin/routes/editRoute', 'Pages\Routes::editRoute' );
+$routes->post( '/admin/routes/deleteRoute', 'Pages\Routes::deleteRoute' );
+
+// Buses Controller
+$routes->post( '/admin/buses/checkBusExists', 'Pages\Buses::checkBusExists' );
+$routes->post( '/admin/buses/checkEditBusExists', 'Pages\Buses::checkEditBusExists' );
+$routes->post( '/admin/buses/addBus', 'Pages\Buses::addBus' );
+$routes->post( '/admin/buses/editBus', 'Pages\Buses::editBus' );
+$routes->post( '/admin/buses/deleteBus', 'Pages\Buses::deleteBus' );

@@ -18,10 +18,34 @@
 <script src="<?= base_url() ?>public/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="<?= base_url() ?>public/dist/admin/js/adminlte.js"></script>
 
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
 <script src="<?= base_url() ?>public/dist/admin/js/main/main.js"></script>
 
+<?php if ( session()->get( 'active_tab' ) === 'routes' ) : ?>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/routes.script.js"></script>
+<?php endif; ?>
 
+<?php if ( session()->get( 'active_tab' ) === 'buses' ) : ?>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/buses.script.js"></script>
+<?php endif; ?>
+
+<?php if ( session()->has( 'swalAlert' ) ) : ?>
+    <script>
+        Swal.fire({
+            title: '<?= esc( session( 'swalAlert' )[ 'title' ] ) ?>',
+            text: '<?= esc( session( 'swalAlert' )[ 'text' ] ) ?>',
+            icon: '<?= esc( session( 'swalAlert' )[ 'icon' ] ) ?>',
+            timer: 2000, // 3 seconds
+            showConfirmButton: false,
+            customClass: {
+                confirmButton: 'btn btn-primary'
+            },
+            buttonsStyling: false
+        });
+    </script>
+<?php endif; ?>
 
 </body>
 

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard | Eastern Goldtrans Tours Inc.</title>
 
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= base_url( 'favicon.ico' ) ?>" type="image/x-icon" />
+
 
     <!-- Fonts & Icons -->
     <link rel="stylesheet"
@@ -16,6 +17,10 @@
     <!-- AdminLTE -->
     <link rel="stylesheet" href="<?= base_url() ?>public/dist/admin/css/sweetAlertStyle.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/dist/admin/css/adminlte.min.css">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
     <link rel="stylesheet"
         href="<?= base_url() ?>public/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
