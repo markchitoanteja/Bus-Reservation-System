@@ -159,6 +159,16 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="schedules"
+                                class="nav-link <?= session()->get( 'active_tab' ) === 'schedules' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-clock"></i>
+                                <p>Schedules</p>
+                            </a>
+                        </li>
+
+
+
                         <li class="nav-header">SYSTEM</li>
 
                         <li class="nav-item">

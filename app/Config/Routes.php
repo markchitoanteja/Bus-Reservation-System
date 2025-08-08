@@ -15,6 +15,7 @@ $routes->get( '/admin/bookings', 'Admin::viewBookings' );
 $routes->get( '/admin/passengers', 'Admin::viewPassengers' );
 $routes->get( '/admin/routes', 'Admin::viewRoutes' );
 $routes->get( '/admin/buses', 'Admin::viewBuses' );
+$routes->get( '/admin/schedules', 'Admin::viewSchedules' );
 $routes->get( '/admin/settings', 'Admin::viewSettings' );
 
 // Server side routes
@@ -37,3 +38,10 @@ $routes->post( '/admin/buses/checkEditBusExists', 'Pages\Buses::checkEditBusExis
 $routes->post( '/admin/buses/addBus', 'Pages\Buses::addBus' );
 $routes->post( '/admin/buses/editBus', 'Pages\Buses::editBus' );
 $routes->post( '/admin/buses/deleteBus', 'Pages\Buses::deleteBus' );
+
+// Schedules Controller
+$routes->post( '/admin/schedules/checkScheduleExists', 'Pages\Schedules::checkScheduleExists' );
+$routes->post( '/admin/schedules/checkEditScheduleExists', 'Pages\Schedules::checkEditScheduleExists' );
+$routes->post( '/admin/schedules/addSchedule', 'Pages\Schedules::addSchedule' );
+$routes->post( '/admin/schedules/editSchedule', 'Pages\Schedules::editSchedule' );
+$routes->post( '/admin/schedules/deleteSchedule', 'Pages\Schedules::deleteSchedule' );

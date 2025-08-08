@@ -246,22 +246,49 @@
                     <div class="col-md-12 text-center mb-3">
                         <button class="btn btn-primary-theme btn-md w-100">Choose set</button>
                     </div>
+                    <style>
+                        .button-row {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            /* Prevent wrapping */
+                            overflow-x: auto;
+                            /* Enable horizontal scroll on small screens */
+                            gap: 8px;
+                            /* Space between buttons */
+                            margin-bottom: 10px;
+                        }
 
-                    <?php
-                    $prefixes = [ 'L', 'M', 'R', '', 'X', 'Y' ]; // '' means a blank slot (empty div)
-                    
-                    for ( $i = 1; $i <= 14; $i++ ) {
-                        foreach ( $prefixes as $prefix ) {
-                            echo '<div class="col-md-2 text-center mb-2">';
-                            if ( $prefix !== '' ) {
-                                echo '<button class="btn btn-outline-success btn-md w-100">' . $prefix . $i . '</button>';
-                            } else {
-                                echo '<!-- Blank -->';
+                        .button-row .btn-wrapper {
+                            flex: 0 0 calc((100% - 40px) / 6);
+                            /* 6 items with 8px gap between each */
+                            text-align: center;
+                        }
+
+                        .button-row .btn {
+                            width: 100%;
+                        }
+                    </style>
+
+                    <div class="container">
+                        <?php
+                        $prefixes = [ 'L', 'M', 'R', '', 'X', 'Y' ]; // 6 items per row
+                        
+                        for ( $i = 1; $i <= 14; $i++ ) {
+                            echo '<div class="button-row">';
+                            foreach ( $prefixes as $prefix ) {
+                                echo '<div class="btn-wrapper">';
+                                if ( $prefix !== '' ) {
+                                    echo '<button class="btn btn-outline-success btn-sm">' . $prefix . $i . '</button>';
+                                } else {
+                                    echo '&nbsp;'; // Blank space keeps alignment
+                                }
+                                echo '</div>';
                             }
                             echo '</div>';
                         }
-                    }
-                    ?>
+                        ?>
+                    </div>
+
                 </div>
                 <div class="text-center mt-4">
                     <button type="submit" class="btn btn-primary-theme btn-lg">Search Buses</button>

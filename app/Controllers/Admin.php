@@ -111,6 +111,23 @@ class Admin extends BaseController
 
         return "{$headerView}{$bodyView}{$footerView}";
     }
+
+    public function viewSchedules() : string|RedirectResponse
+    {
+        if ( $redirect = require_admin() ) {
+            return $redirect;
+        }
+
+        session()->set( 'active_tab', 'schedules' );
+
+        // Load schedules view if user is admin
+        $headerView = view( 'admin/main/header' );
+        $bodyView   = view( 'admin/schedules' );
+        $footerView = view( 'admin/main/footer' );
+
+        return "{$headerView}{$bodyView}{$footerView}";
+    }
+
     /**
      * View settings page.
      *

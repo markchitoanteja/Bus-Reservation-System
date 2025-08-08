@@ -1,0 +1,1237 @@
+CRITICAL - 2025-08-08 14:58:18 --> Error: Call to undefined function getAllSchedules()
+[Method: GET, Route: admin/schedules]
+in APPPATH\Views\admin\schedules.php on line 49.
+ 1 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include()
+ 2 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+ 4 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 17:54:12 --> mysqli_sql_exception: Unknown column 'bus_trav_sched_tb.id' in 'order clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bus_tra...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_tra...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_tra...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_tra...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\app\Views\admin\schedules.php(49): getAllSchedules()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', Array, true)
+#11 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Admin.php(125): view('admin/schedules')
+#12 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+#13 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#14 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#16 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#17 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#18 {main}
+CRITICAL - 2025-08-08 17:54:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+[Method: GET, Route: admin/schedules]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 6 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 7 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+ 9 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+11 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+12 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 17:54:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 8 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 9 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+11 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+12 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+13 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+14 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 17:54:12 --> [Caused by] mysqli_sql_exception: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 9 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+10 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+12 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+13 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+14 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+15 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 17:56:18 --> mysqli_sql_exception: Unknown column 'bus_trav_sched_tb.id' in 'order clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bus_tra...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_tra...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_tra...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_tra...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\app\Views\admin\schedules.php(49): getAllSchedules()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', Array, true)
+#11 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Admin.php(125): view('admin/schedules')
+#12 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+#13 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#14 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#16 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#17 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#18 {main}
+CRITICAL - 2025-08-08 17:56:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+[Method: GET, Route: admin/schedules]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 6 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 7 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+ 9 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+11 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+12 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 17:56:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 8 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 9 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+11 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+12 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+13 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+14 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 17:56:18 --> [Caused by] mysqli_sql_exception: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 9 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+10 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+12 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+13 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+14 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+15 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 17:56:23 --> mysqli_sql_exception: Unknown column 'bus_trav_sched_tb.id' in 'order clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bus_tra...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_tra...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_tra...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_tra...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\app\Views\admin\schedules.php(49): getAllSchedules()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', Array, true)
+#11 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Admin.php(125): view('admin/schedules')
+#12 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+#13 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#14 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#16 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#17 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#18 {main}
+CRITICAL - 2025-08-08 17:56:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+[Method: GET, Route: admin/schedules]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 6 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 7 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+ 9 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+11 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+12 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 17:56:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 8 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 9 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+11 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+12 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+13 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+14 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 17:56:23 --> [Caused by] mysqli_sql_exception: Unknown column 'bus_trav_sched_tb.id' in 'order clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bus_trav_sched_tb`.*, `buses_tb`.`bus_name`, `buses_tb`.`bus_no`, `buses_tb`.`bus_type`, `routes_tb`.`origin`, `routes_tb`.`destination`
+FROM `bus_trav_sched_tb`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_trav_sched_tb`.`routes_tb_id`
+ORDER BY `bus_trav_sched_tb`.`id` ASC', [], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 SYSTEMPATH\Helpers\schedules_helper.php(18): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Views\admin\schedules.php(49): getAllSchedules()
+ 9 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+10 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+12 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+13 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+14 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+15 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+17 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+18 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 12:31:56 --> ErrorException: Cannot redeclare getAllRoutes() (previously declared in C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\routes_helper.php:7)
+[Method: GET, Route: admin/schedules]
+in SYSTEMPATH\Helpers\schedules_helper.php on line 25.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-08 12:32:35 --> ErrorException: Cannot redeclare getAllRoutes() (previously declared in C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\routes_helper.php:7)
+[Method: GET, Route: admin/schedules]
+in SYSTEMPATH\Helpers\schedules_helper.php on line 25.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-08 12:34:50 --> ErrorException: Cannot redeclare getAllRoutes() (previously declared in C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\routes_helper.php:7)
+[Method: GET, Route: admin/schedules]
+in SYSTEMPATH\Helpers\schedules_helper.php on line 25.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-08 12:34:51 --> ErrorException: Cannot redeclare getAllRoutes() (previously declared in C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\routes_helper.php:7)
+[Method: GET, Route: admin/schedules]
+in SYSTEMPATH\Helpers\schedules_helper.php on line 25.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-08 12:34:52 --> ErrorException: Cannot redeclare getAllRoutes() (previously declared in C:\xampp\htdocs\Bus-Reservation-System\system\Helpers\routes_helper.php:7)
+[Method: GET, Route: admin/schedules]
+in SYSTEMPATH\Helpers\schedules_helper.php on line 25.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-08-08 18:36:27 --> ErrorException: Undefined array key "bus_id"
+[Method: GET, Route: admin/schedules]
+in APPPATH\Views\admin\schedules.php on line 195.
+ 1 APPPATH\Views\admin\schedules.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "bus_id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php', 195)
+ 2 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 3 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+ 5 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 18:36:28 --> ErrorException: Undefined array key "bus_id"
+[Method: GET, Route: admin/schedules]
+in APPPATH\Views\admin\schedules.php on line 195.
+ 1 APPPATH\Views\admin\schedules.php(195): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "bus_id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php', 195)
+ 2 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\schedules.php')
+ 3 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/schedules', [], true)
+ 5 APPPATH\Controllers\Admin.php(125): view('admin/schedules')
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->viewSchedules()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 19:14:53 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-08-08 19:14:53 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-08 19:14:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:14:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:14:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:14:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:14:53 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:14:53 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 19:14:54 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-08 19:14:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:14:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:14:54 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 19:18:36 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-08-08 19:18:36 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-08 19:18:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:18:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:18:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:18:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:18:36 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:18:36 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 19:18:43 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-08 19:18:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:18:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:18:43 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 19:22:17 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-08 19:22:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:22:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:22:17 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 19:22:17 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-08 19:22:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:22:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:22:17 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-08-08 19:22:31 --> mysqli_sql_exception: Unknown column 'route_id' in 'where clause' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-08-08 19:22:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+[Method: POST, Route: admin/schedules/checkScheduleExists]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:22:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-08 19:22:31 --> [Caused by] mysqli_sql_exception: Unknown column 'route_id' in 'where clause'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = \'3\'
+AND `date` = \'2025-08-22\'
+AND `dep_time` = \'19:14\'
+AND `buses_tb_id` = \'1\'')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `bus_trav_sched_tb`
+WHERE `route_id` = :route_id:
+AND `date` = :date:
+AND `dep_time` = :dep_time:
+AND `buses_tb_id` = :buses_tb_id:', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Pages\Schedules.php(24): CodeIgniter\Model->countAllResults()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->checkScheduleExists()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

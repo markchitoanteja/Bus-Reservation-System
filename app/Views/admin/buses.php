@@ -25,53 +25,55 @@
                         <i class="fas fa-plus"></i>&nbsp;Add New Bus
                     </button>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Buses List</h3>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="busesTable" class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Bus Number</th>
-                                    <th>Bus Name</th>
-                                    <th>Bus Type</th>
-                                    <th class="text-center">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $no = 1; ?>
-                                <?php foreach ( getAllBuses() as $bus ) : ?>
-                                    <tr>
-                                        <td><?= $no++ ?></td>
-                                        <td><?= esc( $bus[ 'bus_no' ] ) ?></td>
-                                        <td><?= esc( $bus[ 'bus_name' ] ) ?></td>
-                                        <td><?= esc( $bus[ 'bus_type' ] ) ?></td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-info btn-sm mr-1 edit-bus"
-                                                data-id="<?= $bus[ 'buses_tb_id' ] ?>"
-                                                data-busno="<?= esc( $bus[ 'bus_no' ] ) ?>"
-                                                data-busname="<?= esc( $bus[ 'bus_name' ] ) ?>"
-                                                data-bustype="<?= esc( $bus[ 'bus_type' ] ) ?>">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </a>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Buses List</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="busesTable" class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Bus No.</th>
+                                            <th>Bus Name</th>
+                                            <th>Bus Type</th>
+                                            <th class="text-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $no = 1; ?>
+                                        <?php foreach ( getAllBuses() as $bus ) : ?>
+                                            <tr>
+                                                <td><?= $no++ ?></td>
+                                                <td><?= esc( $bus[ 'bus_no' ] ) ?></td>
+                                                <td><?= esc( $bus[ 'bus_name' ] ) ?></td>
+                                                <td><?= esc( $bus[ 'bus_type' ] ) ?></td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-info btn-sm mr-1 edit-bus"
+                                                        data-id="<?= $bus[ 'buses_tb_id' ] ?>"
+                                                        data-busno="<?= esc( $bus[ 'bus_no' ] ) ?>"
+                                                        data-busname="<?= esc( $bus[ 'bus_name' ] ) ?>"
+                                                        data-bustype="<?= esc( $bus[ 'bus_type' ] ) ?>">
+                                                        <i class="fas fa-edit"></i> Edit
+                                                    </a>
 
-                                            <a href="javascript:void(0)" class="btn btn-danger btn-sm delete-bus"
-                                                data-id="<?= $bus[ 'buses_tb_id' ] ?>" data-url="buses/deleteBus">
-                                                <i class="fas fa-trash-alt"></i> Delete
-                                            </a>
+                                                    <a href="javascript:void(0)" class="btn btn-danger btn-sm delete-bus"
+                                                        data-id="<?= $bus[ 'buses_tb_id' ] ?>" data-url="buses/deleteBus">
+                                                        <i class="fas fa-trash-alt"></i> Delete
+                                                    </a>
 
 
-                                        </td>
+                                                </td>
 
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
 
-                        </table>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

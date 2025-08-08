@@ -44,6 +44,7 @@ $(document).ready(function () {
     $("#editBusErrorAlert").addClass("d-none").html("");
     $("#editBusNumber, #editBusName").removeClass("is-invalid");
   }
+
   $("#editBusNumber, #editBusName").on("input blur", function () {
     const busNumber = $("#editBusNumber").val().trim();
     const busName = $("#editBusName").val().trim();

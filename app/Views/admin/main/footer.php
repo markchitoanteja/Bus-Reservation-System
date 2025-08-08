@@ -31,6 +31,10 @@
     <script src="<?= base_url() ?>public/dist/admin/js/pages/buses.script.js"></script>
 <?php endif; ?>
 
+<?php if ( session()->get( 'active_tab' ) === 'schedules' ) : ?>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/schedules.script.js"></script>
+<?php endif; ?>
+
 <?php if ( session()->has( 'swalAlert' ) ) : ?>
     <script>
         Swal.fire({

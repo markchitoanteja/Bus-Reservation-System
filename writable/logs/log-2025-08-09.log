@@ -1,0 +1,36 @@
+CRITICAL - 2025-08-09 01:38:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: admin/schedules/editSchedule]
+in FCPATH\vendor\codeigniter4\framework\system\Model.php on line 456.
+ 1 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(1027): CodeIgniter\Model->doUpdate(null, [...])
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Pages\Schedules.php(99): CodeIgniter\Model->update(null, [...])
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->editSchedule()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-09 01:45:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: admin/schedules/deleteSchedule]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php on line 2819.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 2 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(1157): CodeIgniter\Model->doDelete(null, false)
+ 3 APPPATH\Controllers\Pages\Schedules.php(123): CodeIgniter\BaseModel->delete(null)
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->deleteSchedule()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-09 01:47:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Deletes are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: admin/schedules/deleteSchedule]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php on line 2819.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Model.php(521): CodeIgniter\Database\BaseBuilder->delete()
+ 2 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(1157): CodeIgniter\Model->doDelete(null, false)
+ 3 APPPATH\Controllers\Pages\Schedules.php(123): CodeIgniter\BaseModel->delete(null)
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Pages\Schedules->deleteSchedule()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Schedules))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
