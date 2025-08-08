@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2025 at 08:44 AM
+-- Generation Time: Aug 08, 2025 at 08:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,7 +33,7 @@ CREATE TABLE `buses_tb` (
   `bus_no` varchar(10) NOT NULL,
   `bus_type` enum('Ordinary','Air-Con','','') NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,7 +42,6 @@ CREATE TABLE `buses_tb` (
 
 INSERT INTO `buses_tb` (`buses_tb_id`, `bus_name`, `bus_no`, `bus_type`, `created_at`, `updated_at`) VALUES
 (1, 'Goldtrans Tours', '2333', 'Ordinary', '2025-08-07 14:07:02', '2025-08-07 14:39:41'),
-(2, 'Goldtrans Tours', '1234', 'Air-Con', '2025-08-07 14:21:27', '2025-08-07 14:21:27'),
 (3, 'Goldtrans Tours', '834', 'Air-Con', '2025-08-07 14:41:32', '2025-08-07 14:41:32');
 
 -- --------------------------------------------------------
@@ -53,11 +52,26 @@ INSERT INTO `buses_tb` (`buses_tb_id`, `bus_name`, `bus_no`, `bus_type`, `create
 
 CREATE TABLE `bus_trav_sched_tb` (
   `bus_trav_sched_tb_id` int(11) NOT NULL,
-  `datetime_trav` datetime NOT NULL,
-  `route` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `dep_time` time NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `buses_tb_id` int(11) NOT NULL
+  `updated_at` datetime DEFAULT NULL,
+  `buses_tb_id` int(11) NOT NULL,
+  `routes_tb_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `routes_tb`
+--
+
+CREATE TABLE `routes_tb` (
+  `routes_tb_id` int(11) NOT NULL,
+  `origin` varchar(100) NOT NULL,
+  `destination` varchar(100) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -107,7 +121,14 @@ ALTER TABLE `buses_tb`
 --
 ALTER TABLE `bus_trav_sched_tb`
   ADD PRIMARY KEY (`bus_trav_sched_tb_id`),
-  ADD KEY `buses_tb_id` (`buses_tb_id`);
+  ADD KEY `bus_trav_sched_tb_ibfk_1` (`buses_tb_id`),
+  ADD KEY `bus_trav_sched_tb_ibfk_2` (`routes_tb_id`);
+
+--
+-- Indexes for table `routes_tb`
+--
+ALTER TABLE `routes_tb`
+  ADD PRIMARY KEY (`routes_tb_id`);
 
 --
 -- Indexes for table `users`
@@ -125,13 +146,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `buses_tb`
 --
 ALTER TABLE `buses_tb`
-  MODIFY `buses_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `buses_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `bus_trav_sched_tb`
 --
 ALTER TABLE `bus_trav_sched_tb`
-  MODIFY `bus_trav_sched_tb_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bus_trav_sched_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `routes_tb`
+--
+ALTER TABLE `routes_tb`
+  MODIFY `routes_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -147,7 +174,8 @@ ALTER TABLE `users`
 -- Constraints for table `bus_trav_sched_tb`
 --
 ALTER TABLE `bus_trav_sched_tb`
-  ADD CONSTRAINT `bus_trav_sched_tb_ibfk_1` FOREIGN KEY (`buses_tb_id`) REFERENCES `buses_tb` (`buses_tb_id`);
+  ADD CONSTRAINT `bus_trav_sched_tb_ibfk_1` FOREIGN KEY (`buses_tb_id`) REFERENCES `buses_tb` (`buses_tb_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `bus_trav_sched_tb_ibfk_2` FOREIGN KEY (`routes_tb_id`) REFERENCES `routes_tb` (`routes_tb_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
