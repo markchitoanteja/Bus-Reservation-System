@@ -4,18 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Buses_Model extends Model
+class BusTravelSchedules_Model extends Model
 {
-    protected $table = "buses_tb";
-    protected $primaryKey = "buses_tb_id";
+    protected $table = "bus_trav_sched_tb";
+    protected $primaryKey = "bus_trav_sched_tb_id";
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
     protected $allowedFields = [ 
-        'buses_tb_id',
-        'bus_name',
-        'bus_no',
-        'bus_type',
+        'date',
+        'occupied_seats',
         'created_at',
         'updated_at',
+        'buses_tb_id',
     ];
 }

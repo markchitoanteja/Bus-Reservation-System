@@ -39,9 +39,17 @@ $routes->post( '/admin/buses/addBus', 'Pages\Buses::addBus' );
 $routes->post( '/admin/buses/editBus', 'Pages\Buses::editBus' );
 $routes->post( '/admin/buses/deleteBus', 'Pages\Buses::deleteBus' );
 
-// Schedules Controller
-$routes->post( '/admin/schedules/checkScheduleExists', 'Pages\Schedules::checkScheduleExists' );
-$routes->post( '/admin/schedules/checkEditScheduleExists', 'Pages\Schedules::checkEditScheduleExists' );
-$routes->post( '/admin/schedules/addSchedule', 'Pages\Schedules::addSchedule' );
-$routes->post( '/admin/schedules/editSchedule', 'Pages\Schedules::editSchedule' );
-$routes->post( '/admin/schedules/deleteSchedule', 'Pages\Schedules::deleteSchedule' );
+// Bus Travel Schedules Controller
+$routes->post( '/admin/schedules/checkBusTravelScheduleExists', 'Pages\Schedules::checkBusTravelScheduleExists' );
+$routes->post( '/admin/schedules/checkEditBusTravelScheduleExists', 'Pages\Schedules::checkEditBusTravelScheduleExists' );
+$routes->post( '/admin/schedules/addBusTravelSchedule', 'Pages\Schedules::addBusTravelSchedule' );
+$routes->post( '/admin/schedules/editBusTravelSchedule', 'Pages\Schedules::editBusTravelSchedule' );
+$routes->post( '/admin/schedules/deleteBusTravelSchedule', 'Pages\Schedules::deleteBusTravelSchedule' );
+
+// Routes Schedules Controller
+$routes->post( '/admin/schedules/getBusesByDate', 'Pages\Schedules::getBusesByDate' );
+$routes->post( '/admin/schedules/checkRouteScheduleExists', 'Pages\Schedules::checkRouteScheduleExists' );
+$routes->post( '/admin/schedules/checkEditRouteScheduleExists', 'Pages\Schedules::checkEditRouteScheduleExists' );
+$routes->post( '/admin/schedules/addRouteSchedule', 'Pages\Schedules::addRouteSchedule' );
+$routes->post( '/admin/schedules/editRouteSchedule', 'Pages\Schedules::editRouteSchedule' );
+$routes->post( '/admin/schedules/deleteRouteSchedule', 'Pages\Schedules::deleteRouteSchedule' );

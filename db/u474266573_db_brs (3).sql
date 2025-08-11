@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2025 at 08:42 PM
+-- Generation Time: Aug 11, 2025 at 06:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,18 +47,49 @@ INSERT INTO `buses_tb` (`buses_tb_id`, `bus_name`, `bus_no`, `bus_type`, `create
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bus_routes_tb`
+--
+
+CREATE TABLE `bus_routes_tb` (
+  `bus_routes_tb_id` int(11) NOT NULL,
+  `dep_time` time NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `routes_tb_id` int(11) NOT NULL,
+  `bus_trav_sched_tb_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bus_routes_tb`
+--
+
+INSERT INTO `bus_routes_tb` (`bus_routes_tb_id`, `dep_time`, `created_at`, `updated_at`, `routes_tb_id`, `bus_trav_sched_tb_id`) VALUES
+(2, '07:16:00', '2025-08-11 19:15:19', '2025-08-11 23:57:16', 4, 11),
+(3, '00:24:00', '2025-08-12 00:24:25', '2025-08-12 00:24:25', 4, 10);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `bus_trav_sched_tb`
 --
 
 CREATE TABLE `bus_trav_sched_tb` (
   `bus_trav_sched_tb_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `dep_time` time NOT NULL,
+  `occupied_seats` varchar(279) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `buses_tb_id` int(11) NOT NULL,
-  `routes_tb_id` int(11) NOT NULL
+  `buses_tb_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `bus_trav_sched_tb`
+--
+
+INSERT INTO `bus_trav_sched_tb` (`bus_trav_sched_tb_id`, `date`, `occupied_seats`, `created_at`, `updated_at`, `buses_tb_id`) VALUES
+(8, '2025-08-12', NULL, '2025-08-11 14:05:58', '2025-08-11 14:05:58', 1),
+(10, '2025-08-13', NULL, '2025-08-11 14:18:45', '2025-08-11 14:51:41', 1),
+(11, '2025-08-20', NULL, '2025-08-11 14:23:00', '2025-08-11 14:23:00', 3);
 
 -- --------------------------------------------------------
 
@@ -73,6 +104,13 @@ CREATE TABLE `routes_tb` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `routes_tb`
+--
+
+INSERT INTO `routes_tb` (`routes_tb_id`, `origin`, `destination`, `created_at`, `updated_at`) VALUES
+(4, 'Can-avid, Eastern Samar', 'Cobao, Manila', '2025-08-11 16:59:08', '2025-08-11 16:59:08');
 
 -- --------------------------------------------------------
 
@@ -104,7 +142,7 @@ INSERT INTO `users` (`id`, `uuid`, `name`, `email`, `password`, `image`, `user_t
 (5, '16923517-14ff-45fc-a34d-8e30da2a5b7d', 'kristine', 'kristine@gmail.com', '$2y$10$vCUl7V0L8b.dXTW10DGqGOVrLgAbE7.eoLTgRtNlwFA7nf573AoaS', 'default-user-image.webp', 'user', '2025-06-01 21:26:53', '2025-06-01 21:26:53'),
 (6, 'a606114e-7512-4c38-8b5e-a9d0119432da', 'Ken Docabo', 'kendo@gmail.com', '$2y$10$79R5tfH4QPXvnktSM2Xgo.nj.qUSOVqug3Zr9Kx88XIkiwiTxLZ.i', 'default-user-image.webp', 'user', '2025-06-05 05:07:53', '2025-06-05 05:07:53'),
 (7, '45fecc3e-0760-442a-bc2a-7efff51eee8b', 'Kristine Oblino', 'tintin@gmail.com', '$2y$10$bX5hNY7h6J/kd6lTBLkT5egt4Qald1fpes/nOzWuW2ACC9g/aoaWG', 'default-user-image.webp', 'user', '2025-06-05 14:52:26', '2025-06-05 14:52:26'),
-(10, '30dd9ad4-b8d2-40a1-9707-065b02f63cef', 'Clarck Cruz', 'clarck@gmail.com', '$2y$10$iYwYvjPLmSwtgiIGJdmzZu7u/dfj5yeC2WdNiw15pPTHKX3mjrv4G', 'default-user-image.webp', 'user', '2025-07-22 16:24:29', '2025-07-22 16:24:29');
+(10, '30dd9ad4-b8d2-40a1-9707-065b02f63cef', 'Clarck Cruz', 'clarck@gmail.com', '$2y$10$wHnAHwPX1/VTbJAWr4VOmeaYw3LCjHIdozjs5uSXJMqE26celZ2P.', 'default-user-image.webp', 'user', '2025-07-22 16:24:29', '2025-07-22 16:24:29');
 
 --
 -- Indexes for dumped tables
@@ -117,12 +155,19 @@ ALTER TABLE `buses_tb`
   ADD PRIMARY KEY (`buses_tb_id`);
 
 --
+-- Indexes for table `bus_routes_tb`
+--
+ALTER TABLE `bus_routes_tb`
+  ADD PRIMARY KEY (`bus_routes_tb_id`),
+  ADD KEY `bus_trav_sched_tb_id` (`bus_trav_sched_tb_id`),
+  ADD KEY `routes_tb_id` (`routes_tb_id`);
+
+--
 -- Indexes for table `bus_trav_sched_tb`
 --
 ALTER TABLE `bus_trav_sched_tb`
   ADD PRIMARY KEY (`bus_trav_sched_tb_id`),
-  ADD KEY `bus_trav_sched_tb_ibfk_1` (`buses_tb_id`),
-  ADD KEY `bus_trav_sched_tb_ibfk_2` (`routes_tb_id`);
+  ADD KEY `bus_trav_sched_tb_ibfk_1` (`buses_tb_id`);
 
 --
 -- Indexes for table `routes_tb`
@@ -149,16 +194,22 @@ ALTER TABLE `buses_tb`
   MODIFY `buses_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `bus_routes_tb`
+--
+ALTER TABLE `bus_routes_tb`
+  MODIFY `bus_routes_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `bus_trav_sched_tb`
 --
 ALTER TABLE `bus_trav_sched_tb`
-  MODIFY `bus_trav_sched_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `bus_trav_sched_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `routes_tb`
 --
 ALTER TABLE `routes_tb`
-  MODIFY `routes_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `routes_tb_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -171,11 +222,17 @@ ALTER TABLE `users`
 --
 
 --
+-- Constraints for table `bus_routes_tb`
+--
+ALTER TABLE `bus_routes_tb`
+  ADD CONSTRAINT `bus_routes_tb_ibfk_1` FOREIGN KEY (`bus_trav_sched_tb_id`) REFERENCES `bus_trav_sched_tb` (`bus_trav_sched_tb_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `bus_routes_tb_ibfk_2` FOREIGN KEY (`routes_tb_id`) REFERENCES `routes_tb` (`routes_tb_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `bus_trav_sched_tb`
 --
 ALTER TABLE `bus_trav_sched_tb`
-  ADD CONSTRAINT `bus_trav_sched_tb_ibfk_1` FOREIGN KEY (`buses_tb_id`) REFERENCES `buses_tb` (`buses_tb_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `bus_trav_sched_tb_ibfk_2` FOREIGN KEY (`routes_tb_id`) REFERENCES `routes_tb` (`routes_tb_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `bus_trav_sched_tb_ibfk_1` FOREIGN KEY (`buses_tb_id`) REFERENCES `buses_tb` (`buses_tb_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
