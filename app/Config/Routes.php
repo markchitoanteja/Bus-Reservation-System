@@ -53,3 +53,8 @@ $routes->post( '/admin/schedules/checkEditRouteScheduleExists', 'Pages\Schedules
 $routes->post( '/admin/schedules/addRouteSchedule', 'Pages\Schedules::addRouteSchedule' );
 $routes->post( '/admin/schedules/editRouteSchedule', 'Pages\Schedules::editRouteSchedule' );
 $routes->post( '/admin/schedules/deleteRouteSchedule', 'Pages\Schedules::deleteRouteSchedule' );
+
+
+/* Booking Controller */
+$routes->post( '/booking/getAvailableBuses', 'Booking::getAvailableBuses' );
+$routes->post( '/booking/getBusAvailableSeats', 'Booking::getBusAvailableSeats' );

@@ -441,7 +441,7 @@ $(document).ready(function () {
         url: "schedules/getBusesByDate",
         type: "POST",
         data: { date: date },
-        dataType: "json", // important so we don't need JSON.parse()
+        dataType: "json",
         success: function (buses) {
           let $select = $("#editRouteScheduleBus");
           $select.empty();

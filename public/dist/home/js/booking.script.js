@@ -1,93 +1,188 @@
 $(document).ready(function () {
-  // Booking Form Submission
-  const $bookingForm = $("#booking form");
-  if ($bookingForm.length) {
-    const $from = $("#from");
-    const $to = $("#to");
-    const $date = $("#date");
-    const $passenger = $("#passenger");
+  let selectedSeats = [];
+  $("#route, #date").on("input change blur", function () {
+    const route = $("#route").val();
+    const date = $("#date").val();
 
-    // Handle form submit
-    $bookingForm.on("submit", function (e) {
-      e.preventDefault();
-      let valid = true;
+    if (route && date) {
+      $.ajax({
+        url: "booking/getAvailableBuses",
+        type: "POST",
+        data: {
+          route: route,
+          date: date,
+        },
+        dataType: "json",
+        success: function (buses) {
+          let $select = $("#bus");
+          $select.empty();
 
-      // Basic empty check for all fields
-      [$from, $to, $date, $passenger].forEach(($input) => {
-        if (!$input.val().trim()) {
-          $input.addClass("is-invalid");
-          valid = false;
-        } else {
-          $input.removeClass("is-invalid");
-        }
+          if (buses.length > 0) {
+            hider();
+
+            $select.append(
+              `<option value="" disabled selected>Select a bus</option>`
+            );
+            buses.forEach(function (bus) {
+              $select.append(
+                `<option value="${bus.bus_trav_sched_tb_id}">
+                                ${bus.bus_name} (${bus.bus_no}) - ${bus.bus_type}
+                             </option>`
+              );
+            });
+          } else {
+            $select.append(`<option value="">No bus available</option>`);
+            hider();
+          }
+        },
+        error: function () {
+          alert("Error fetching buses.");
+        },
       });
+    }
+  });
 
-      // Check if origin and destination are the same, but only if both have values
-      const fromVal = $from.val().trim().toLowerCase();
-      const toVal = $to.val().trim().toLowerCase();
-
-      if (fromVal && toVal && fromVal === toVal) {
-        Swal.fire({
-          icon: "warning",
-          title: "Invalid Selection",
-          text: "Origin and destination cannot be the same.",
-          confirmButtonText: "OK",
-        });
-        $from.addClass("is-invalid");
-        $to.addClass("is-invalid");
-        valid = false;
-      }
-
-      // Check if date is not in the past
-      const selectedDate = new Date($date.val());
-      const today = new Date();
-      today.setHours(0, 0, 0, 0); // Normalize to midnight for comparison
-
-      if ($date.val().trim() && selectedDate < today) {
-        Swal.fire({
-          icon: "warning",
-          title: "Invalid Date",
-          text: "Please select a date that is today or later.",
-          confirmButtonText: "OK",
-        });
-        $date.addClass("is-invalid");
-        valid = false;
-      }
-
-      if (!valid) return;
-
-      // Successful submission alert
-      Swal.fire({
-        icon: "success",
-        title: "Booking Submitted",
-        html: `Demo Booking:<br><strong>From:</strong> ${$from.val()}<br><strong>To:</strong> ${$to.val()}<br><strong>Date:</strong> ${$date.val()}<br><strong>Passengers:</strong> ${$passenger.val()}<br><br><em>This is a demo. Booking is not functional yet.</em>`,
-        confirmButtonText: "OK",
-      });
-
-      $bookingForm[0].reset();
-    });
-
-    // Real-time input validation
-    [$from, $to, $date, $passenger].forEach(($input) => {
-      $input.on("input change", function () {
-        const value = $(this).val().trim();
-
-        // Basic required field check
-        if (value) {
-          $(this).removeClass("is-invalid");
-        } else {
-          $(this).addClass("is-invalid");
-        }
-
-        // Extra check for from/to: if both filled and not equal, remove invalid styling
-        const fromVal = $from.val().trim().toLowerCase();
-        const toVal = $to.val().trim().toLowerCase();
-
-        if (fromVal && toVal && fromVal !== toVal) {
-          $from.removeClass("is-invalid");
-          $to.removeClass("is-invalid");
-        }
-      });
-    });
+  function hider() {
+    $("#seatContainer").html("");
+    $("#chooseSeatsBtn").addClass("d-none");
+    $("#seatContainer").addClass("d-none");
   }
+
+  // Handle bus change and seat rendering (your existing code)
+  $("#bus").on("input change blur", function () {
+    const busId = $(this).val();
+    const date = $("#date").val();
+
+    if (busId && date) {
+      $.ajax({
+        url: "booking/getBusAvailableSeats",
+        type: "POST",
+        data: { busId, date },
+        dataType: "json",
+        success: function (busDetails) {
+          selectedSeats = []; // reset selection
+          $("#selectedSeats").val("");
+
+          let occupied = [];
+          if (busDetails.occupied_seats) {
+            occupied = busDetails.occupied_seats.split(",");
+          }
+
+          const prefixes = ["L", "M", "R", "", "X", "Y"];
+          let html =
+            "<label for='seats' class='form-label'>Select your seat(s)</label>";
+
+          for (let i = 1; i <= 14; i++) {
+            html += '<div class="button-row">';
+            prefixes.forEach((prefix) => {
+              html += '<div class="btn-wrapper">';
+              if (prefix !== "") {
+                const seatCode = prefix + i;
+                const isOccupied = occupied.includes(seatCode);
+                html += `<button type="button" 
+                  class="btn btn-sm ${
+                    isOccupied ? "btn-danger" : "btn-outline-success"
+                  } seat-btn" 
+                  data-seat="${seatCode}" 
+                  ${isOccupied ? "disabled" : ""}>${seatCode}</button>`;
+              } else {
+                html += "&nbsp;";
+              }
+              html += "</div>";
+            });
+            html += "</div>";
+          }
+
+          $("#seatContainer").html(html);
+          $("#chooseSeatsBtn").removeClass("d-none");
+        },
+        error: function () {
+          alert("Error fetching bus details.");
+        },
+      });
+    }
+  });
+
+  // Toggle seat selection
+  $(document).on("click", ".seat-btn", function () {
+    const seat = $(this).data("seat");
+    const passengerCount = parseInt($("#passenger").val());
+
+    if ($(this).hasClass("btn-success")) {
+      // Deselect
+      $(this).removeClass("btn-success").addClass("btn-outline-success");
+      selectedSeats = selectedSeats.filter((s) => s !== seat);
+    } else {
+      // Select (check max limit)
+      if (selectedSeats.length < passengerCount) {
+        $(this).removeClass("btn-outline-success").addClass("btn-success");
+        selectedSeats.push(seat);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Seat Selection Limit",
+          text: "You can only select up to " + passengerCount + " seat(s).",
+          timer: 5000, // Auto close after 5 seconds
+          timerProgressBar: true,
+          showConfirmButton: true,
+          confirmButtonText: "OK",
+          customClass: {
+            confirmButton: "btn btn-primary",
+          },
+          buttonsStyling: false,
+        });
+      }
+    }
+
+    $("#selectedSeats").val(selectedSeats.join(","));
+  });
+
+  $("#chooseSeatsBtn").on("click", function () {
+    if ($("#seatContainer").is(":visible")) {
+      $("#seatContainer").addClass("d-none");
+    } else {
+      $("#seatContainer").removeClass("d-none");
+    }
+  });
+
+  $("#bookingForm").on("submit", function (e) {
+    e.preventDefault();
+
+    const passengerCount = parseInt($("#passenger").val());
+    const selectedCount = selectedSeats.length;
+
+    if (selectedCount !== passengerCount) {
+      Swal.fire({
+        icon: "error",
+        title: "Seat Selection Mismatch",
+        text: `You selected ${selectedCount} ${
+          selectedCount === 1 ? "seat" : "seats"
+        }, but you entered ${passengerCount} ${
+          passengerCount === 1 ? "passenger" : "passengers"
+        }.`,
+        timer: 5000,
+        timerProgressBar: true,
+        showConfirmButton: true,
+        confirmButtonText: "OK",
+        customClass: {
+          confirmButton: "btn btn-primary",
+        },
+        buttonsStyling: false,
+      });
+    } else {
+      Swal.fire({
+        icon: "info", // "notification" is not a default SweetAlert icon
+        title: "System Notification",
+        text: "The subscription booking feature is currently under development. We apologize for the inconvenience.",
+        timer: 10000,
+        timerProgressBar: true,
+        showConfirmButton: true,
+        confirmButtonText: "OK",
+        customClass: {
+          confirmButton: "btn btn-primary",
+        },
+        buttonsStyling: false,
+      });
+    }
+  });
 });

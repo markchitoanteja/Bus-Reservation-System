@@ -198,54 +198,42 @@
         <div class="container form-section">
             <div class="text-center mb-4">
                 <h2 class="section-title mb-0">Book a Ticket</h2>
-                <small class="text-muted">Note: this is still not connected to the database.</small>
+                <small class="text-muted">Note: this is still not connected to the database.</small><br>
+                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#infoModal"><i
+                        class="fa-regular fa-circle-question fa-lg text-secondary"></i></a>
+
             </div>
-            <form class="needs-validation" novalidate>
+            <form method="POST" id="bookingForm" action="booking/submitBooking">
                 <div class="row g-3">
                     <div class="col-md-6">
-                        <label for="from" class="form-label">From</label>
-                        <input list="all-locations" class="form-control" id="from" placeholder="Select origin" required>
+                        <label for="route" class="form-label">Origin & Destination</label>
+                        <select id="route" name="route" class="form-select w-100 mx-auto" required>
+                            <option value="" disabled selected>-- Select origin & destination --</option>
+                            <?php foreach ( getAllRoutes() as $route ) : ?>
+                                <option value="<?= $route[ 'routes_tb_id' ] ?>">
+                                    <?= esc( $route[ 'origin' ] ) ?> — <?= esc( $route[ 'destination' ] ) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
-                    <div class="col-md-6">
-                        <label for="to" class="form-label">To</label>
-                        <input list="all-locations" class="form-control" id="to" placeholder="Select destination"
-                            required>
-                    </div>
-                    <datalist id="all-locations">
-                        <!-- Manila Terminals -->
-                        <option value="Sampaloc, Manila">
-                        <option value="PITX, Manila">
-                        <option value="Pasay, Manila">
-                        <option value="Cubao, Quezon City">
 
-                            <!-- Eastern Samar Towns -->
-                        <option value="Oras">
-                        <option value="Dolores">
-                        <option value="Taft">
-                        <option value="Sulat">
-                        <option value="San Julian">
-                        <option value="Borongan">
-                    </datalist>
                     <div class="col-md-6">
                         <label for="date" class="form-label">Travel Date</label>
-                        <input type="date" id="date" class="form-control" min="" required>
+                        <input type="date" id="date" name="date" class="form-control" min="" required>
                     </div>
                     <div class="col-md-6">
                         <label for="passenger" class="form-label">No. of Passengers</label>
-                        <input type="number" class="form-control" id="passenger" min="1" value="1" required>
+                        <input type="number" class="form-control" id="passenger" name="passenger" min="1" value="1"
+                            required>
                     </div>
-                    <div class="col-lg-12">
-                        <label for="busSelect" class="form-label">Choose a Bus</label>
-                        <select id="busSelect" class="form-select w-100 mx-auto">
-                            <option value="">-- Select a Bus --</option>
-                            <option value="busA">Bus 383 (ordinary)</option>
-                            <option value="busB">Bus 456 (air-conditioned)</option>
+                    <div class="col-md-6">
+                        <label for="bus" class="form-label">Choose a Bus</label>
+                        <select id="bus" class="form-select w-100 mx-auto" required>
+                            <option value="">No bus available</option>
                         </select>
                     </div>
-                    <!-- Top "Choose set" button -->
-                    <div class="col-md-12 text-center mb-3">
-                        <button class="btn btn-primary-theme btn-md w-100">Choose set</button>
-                    </div>
+
+                    <!-- Choose seat" -->
                     <style>
                         .button-row {
                             display: flex;
@@ -268,34 +256,64 @@
                             width: 100%;
                         }
                     </style>
-
-                    <div class="container">
-                        <?php
-                        $prefixes = [ 'L', 'M', 'R', '', 'X', 'Y' ]; // 6 items per row
-                        
-                        for ( $i = 1; $i <= 14; $i++ ) {
-                            echo '<div class="button-row">';
-                            foreach ( $prefixes as $prefix ) {
-                                echo '<div class="btn-wrapper">';
-                                if ( $prefix !== '' ) {
-                                    echo '<button class="btn btn-outline-success btn-sm">' . $prefix . $i . '</button>';
-                                } else {
-                                    echo '&nbsp;'; // Blank space keeps alignment
-                                }
-                                echo '</div>';
-                            }
-                            echo '</div>';
-                        }
-                        ?>
+                    <div class="col-md-12 text-center">
+                        <button type="button" id="chooseSeatsBtn"
+                            class="btn btn-primary-theme btn-lg mt-3 d-none">Choose
+                            Seat(s)</button>
                     </div>
-
+                    <div class="container mt-3 d-none" id="seatContainer"></div>
                 </div>
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary-theme btn-lg">Search Buses</button>
+                    <button type="submit" class="btn btn-primary-theme btn-lg">Buy Now</button>
                 </div>
             </form>
         </div>
+        <!-- Guide Modal -->
+        <!-- Info Modal -->
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">
+                            <i class="fa-regular fa-circle-question text-primary me-2"></i>How to Book a Ticket
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Select your <strong>Origin & Destination</strong> from the
+                                dropdown menu.</li>
+                            <li class="list-group-item">Choose your <strong>Travel Date</strong>.</li>
+                            <li class="list-group-item">Enter the number of <strong>Passengers</strong>.</li>
+                            <li class="list-group-item">Select an available <strong>Bus</strong> from the list.</li>
+                            <li class="list-group-item">Click <strong>Choose Seat(s)</strong> and pick your preferred
+                                seat(s) from the layout.</li>
+                            <li class="list-group-item">Once all required fields are filled and seats are selected,
+                                click <strong>Buy Now</strong>.</li>
+                        </ol>
+
+                        <div class="alert alert-info mt-3">
+                            <i class="fa-solid fa-circle-info me-2"></i>
+                            Note: This booking feature is currently under development. Payment and confirmation are not
+                            yet functional.
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it!</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </section>
+
 
     <footer class="text-center py-4 bg-dark text-light">
         <div class="container">
