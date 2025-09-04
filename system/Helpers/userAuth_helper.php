@@ -16,8 +16,9 @@ if ( !function_exists( 'require_user' ) ) {
         // Check if logged in
         if ( !$session->has( 'user' ) ) {
             $session->setFlashdata( [ 
-                'type'    => 'error',
-                'message' => 'You must log in first!',
+                'type'           => 'error',
+                'message'        => 'You must log in first!',
+                'showLoginModal' => true,
             ] );
             return redirect()->to( base_url() );
         }

@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  if (window.showLoginModal) {
+    $("#loginModal").modal("show");
+  }
+
   let selectedSeats = [];
 
   // ==============================

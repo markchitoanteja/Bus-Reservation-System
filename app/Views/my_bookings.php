@@ -36,7 +36,7 @@
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center text-light fw-bold" href="/">
-                <img src="public/dist/img/logo.png" alt="Logo" width="40" class="me-2" /> Eastern Goldtrans Tours
+                <img src="public/dist/home/img/logo.png" alt="Logo" width="40" class="me-2" /> Eastern Goldtrans Tours
             </a>
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -45,12 +45,14 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link text-light" href="<?= base_url() ?>#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="<?= base_url() ?>#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="<?= base_url() ?>#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="<?= base_url() ?>#gallery">Gallery</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link text-light" href="<?= base_url() ?>#booking">Book</a></li>
                     <li class="nav-item dropdown">
-                        <?php if (session()->get("user")) : ?>
-                            <a class="nav-link text-light active" href="javascript:void(0)" role="button" data-bs-toggle="dropdown">
-                                <span class="d-none d-md-inline"><?= session()->get("user")["name"] ?></span>
+                        <?php if ( session()->get( "user" ) ) : ?>
+                            <a class="nav-link text-light active" href="javascript:void(0)" role="button"
+                                data-bs-toggle="dropdown">
+                                <span class="d-none d-md-inline"><?= session()->get( "user" )[ "name" ] ?></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
@@ -72,7 +74,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        <?php else: ?>
+                        <?php else : ?>
                             <a class="nav-link text-light" href="javascript:void(0)" id="accountBtn">Account</a>
                         <?php endif ?>
                     </li>
@@ -90,7 +92,7 @@
                 </p>
             </div>
 
-            <?php if (session()->get("user")) : ?>
+            <?php if ( session()->get( "user" ) ) : ?>
                 <div class="alert alert-info text-center shadow-sm">
                     <i class="fas fa-info-circle me-2"></i> Booking details will be available soon.
                 </div>
@@ -110,13 +112,14 @@
                         <tbody>
                             <tr>
                                 <td colspan="6" class="text-center text-muted py-4">
-                                    <em><i class="fas fa-clock me-2"></i>Booking records will be shown here once available.</em>
+                                    <em><i class="fas fa-clock me-2"></i>Booking records will be shown here once
+                                        available.</em>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            <?php else: ?>
+            <?php else : ?>
                 <div class="alert alert-warning text-center">
                     <i class="fas fa-exclamation-triangle me-2"></i> Please log in to view your bookings.
                 </div>
@@ -130,8 +133,9 @@
         </div>
     </footer>
 
-    <?php if (session()->get("user")) : ?>
-        <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel" aria-hidden="true">
+    <?php if ( session()->get( "user" ) ) : ?>
+        <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -173,18 +177,22 @@
                             <div class="mb-3">
                                 <label for="updateConfirmPassword" class="form-label">Confirm New Password</label>
                                 <input type="password" class="form-control" id="updateConfirmPassword">
-                                <div class="invalid-feedback" id="confirmPasswordRequired">Confirm password is required when changing your password.</div>
-                                <div class="invalid-feedback d-none" id="confirmPasswordMismatch">Passwords do not match.</div>
+                                <div class="invalid-feedback" id="confirmPasswordRequired">Confirm password is required when
+                                    changing your password.</div>
+                                <div class="invalid-feedback d-none" id="confirmPasswordMismatch">Passwords do not match.
+                                </div>
                             </div>
 
                             <!-- Hidden User ID -->
-                            <input type="hidden" id="updateUserId" value="<?= session()->get('user')['id'] ?>" />
+                            <input type="hidden" id="updateUserId" value="<?= session()->get( 'user' )[ 'id' ] ?>" />
                         </form>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary w-100" id="updateProfileSubmitBtn" form="updateProfileForm">
-                            <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="updateProfileLoadingSpinner"></span>
+                        <button type="submit" class="btn btn-primary w-100" id="updateProfileSubmitBtn"
+                            form="updateProfileForm">
+                            <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true"
+                                id="updateProfileLoadingSpinner"></span>
                             Update
                         </button>
                     </div>
@@ -194,8 +202,8 @@
     <?php endif; ?>
 
     <script>
-        const notification = <?php echo json_encode(session()->getFlashdata()); ?>;
-        const user = <?php echo json_encode(session()->get("user")); ?>;
+        const notification = <?php echo json_encode( session()->getFlashdata() ); ?>;
+        const user = <?php echo json_encode( session()->get( "user" ) ); ?>;
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -203,12 +211,12 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             if (notification && Object.keys(notification).length > 0) {
                 displayPopupMessage(notification.message, notification.type);
             }
 
-            $("#editProfileBtn").click(function() {
+            $("#editProfileBtn").click(function () {
                 $("#updateName").val(user.name);
                 $("#updateEmail").val(user.email);
                 $("#updateRole").val(user.user_type);
@@ -217,7 +225,7 @@
             });
 
             // Handle logout button click
-            $('#logoutBtn').on('click', function() {
+            $('#logoutBtn').on('click', function () {
                 Swal.fire({
                     title: 'Are you sure?',
                     text: "You will be logged out.",
@@ -227,7 +235,7 @@
                     cancelButtonText: 'No, cancel'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        $.post('<?= base_url('logout') ?>', function(response) {
+                        $.post('<?= base_url( 'logout' ) ?>', function (response) {
                             if (response.success) {
                                 window.location.href = '<?= base_url() ?>';
                             } else {
@@ -261,7 +269,7 @@
                 const $errorAlert = $('#updateProfileErrorAlert');
                 const $userId = $('#updateUserId');
 
-                $updateProfileForm.on('submit', function(e) {
+                $updateProfileForm.on('submit', function (e) {
                     e.preventDefault();
                     let valid = true;
 
@@ -336,7 +344,7 @@
                         processData: false,
                         contentType: false,
                         dataType: 'JSON',
-                        success: function(response) {
+                        success: function (response) {
                             stopModalLoading($modal, $submitBtn, $spinner);
 
                             if (!response.success) {
@@ -350,7 +358,7 @@
                                 location.reload();
                             }
                         },
-                        error: function(_, _, error) {
+                        error: function (_, _, error) {
                             stopModalLoading($modal, $submitBtn, $spinner);
                             console.error(error);
                             $errorAlert.removeClass('d-none').addClass('d-block');
@@ -360,13 +368,13 @@
 
                 // Real-time field validation
 
-                $name.on('input change', function() {
+                $name.on('input change', function () {
                     $(this).val().trim() ?
                         $(this).removeClass('is-invalid') :
                         $(this).addClass('is-invalid');
                 });
 
-                $email.on('input change', function() {
+                $email.on('input change', function () {
                     const isValid = $(this).val().trim() && this.checkValidity();
                     if (isValid) {
                         $(this).removeClass('is-invalid');
@@ -376,7 +384,7 @@
                     }
                 });
 
-                $password.on('input change', function() {
+                $password.on('input change', function () {
                     const passVal = $(this).val().trim();
                     const confirmVal = $confirmPassword.val().trim();
 
@@ -399,7 +407,7 @@
                     }
                 });
 
-                $confirmPassword.on('input change', function() {
+                $confirmPassword.on('input change', function () {
                     const confirmVal = $(this).val().trim();
                     const passVal = $password.val().trim();
 

@@ -536,6 +536,7 @@
     <script>
         const notification = <?php echo json_encode( session()->getFlashdata() ); ?>;
         const user = <?php echo json_encode( session()->get( "user" ) ); ?>;
+        window.showLoginModal = <?= session()->getFlashdata( 'showLoginModal' ) ? 'true' : 'false' ?>;
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -543,7 +544,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="public/dist/home/js/script.js?v=1.3.4"></script>
-    <script src="public/dist/home/js/booking.script.js?v=1.3.4"></script>
+    <script src="public/dist/home/js/booking.script.js?v=1.4.5"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
 </body>
