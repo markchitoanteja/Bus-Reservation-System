@@ -25,6 +25,10 @@ $routes->post( '/update_profile', 'Auth::update_profile' );
 $routes->post( '/logout', 'Auth::logout' );
 
 /* Pages Controller */
+
+/* Passengers Controller */
+$routes->post( '/admin/passengers/fetch', 'Pages\Passengers::fetch' );
+
 // Routes Controller
 $routes->post( '/admin/routes/checkRouteExists', 'Pages\Routes::checkRouteExists' );
 $routes->post( '/admin/routes/checkEditRouteExists', 'Pages\Routes::checkEditRouteExists' );
@@ -58,3 +62,7 @@ $routes->post( '/admin/schedules/deleteRouteSchedule', 'Pages\Schedules::deleteR
 /* Booking Controller */
 $routes->post( '/booking/getAvailableBuses', 'Booking::getAvailableBuses' );
 $routes->post( '/booking/getBusAvailableSeats', 'Booking::getBusAvailableSeats' );
+$routes->post( '/booking/submitBooking', 'Booking::submitBooking' );
+
+
+

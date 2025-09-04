@@ -33,12 +33,19 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="routesTable" class="table table-hover">
-                                    <thead>
+                                    <thead class="table-bordered">
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Origin</th>
-                                            <th>Destination</th>
-                                            <th class="text-center">Actions</th>
+                                            <th rowspan="2" class="text-center">No.</th>
+                                            <th rowspan="2" class="text-center">Origin</th>
+                                            <th rowspan="2" class="text-center">Destination</th>
+                                            <th colspan="2" class="text-center">Fare Type</th>
+                                            <th rowspan="2" class="text-center">Actions</th>
+                                        </tr>
+                                        <tr>
+
+                                            <th class="text-center">Ordinary</th>
+                                            <th class="text-center">Aircon</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -48,11 +55,18 @@
                                                 <td><?= $no++ ?></td>
                                                 <td><?= esc( $route[ 'origin' ] ) ?></td>
                                                 <td><?= esc( $route[ 'destination' ] ) ?></td>
+                                                <td><i class="fa fa-peso-sign"></i>
+                                                    <?= number_format( $route[ 'ordinary_fare' ], 2 ) ?></td>
+                                                <td><i class="fa fa-peso-sign"></i>
+                                                    <?= number_format( $route[ 'aircon_fare' ], 2 ) ?></td>
+
                                                 <td class="text-center">
                                                     <a href="#" class="btn btn-info btn-sm mr-1 edit-route"
                                                         data-id="<?= $route[ 'routes_tb_id' ] ?>"
                                                         data-origin="<?= esc( $route[ 'origin' ] ) ?>"
-                                                        data-destination="<?= esc( $route[ 'destination' ] ) ?>">
+                                                        data-destination="<?= esc( $route[ 'destination' ] ) ?>"
+                                                        data-ordinary="<?= esc( $route[ 'ordinary_fare' ] ) ?>"
+                                                        data-aircon="<?= esc( $route[ 'aircon_fare' ] ) ?>">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
 
@@ -105,6 +119,16 @@
                         <input type="text" class="form-control" id="routeDestination" name="destination"
                             placeholder="e.g. Borongan" required>
                     </div>
+                   <div class="form-group">
+                        <label for="routeOrdinary">Ordinary Fare</label>
+                        <input type="number" class="form-control" id="routeOrdinary" name="ordinary_fare"
+                            placeholder="e.g. 500" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="routeAircon">Aircon Fare</label>
+                        <input type="number" class="form-control" id="routeAircon" name="aircon_fare"
+                            placeholder="e.g. 700" required>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -145,6 +169,16 @@
                         <label for="editRouteDestination">Destination</label>
                         <input type="text" class="form-control" id="editRouteDestination" name="destination"
                             placeholder="e.g. Borongan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editRouteOrdinary">Ordinary Fare</label>
+                        <input type="number" class="form-control" id="editRouteOrdinary" name="ordinary"
+                            placeholder="e.g. 500" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editRouteAircon">Aircon Fare</label>
+                        <input type="number" class="form-control" id="editRouteAircon" name="aircon"
+                            placeholder="e.g. 700" required>
                     </div>
                 </div>
                 <div class="modal-footer">

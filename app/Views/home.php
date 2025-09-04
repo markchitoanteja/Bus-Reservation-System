@@ -8,7 +8,8 @@
     <title>Eastern Goldtrans Tours Inc.</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="public/dist/home/css/style.css?v=1.1.6" />
@@ -228,10 +229,13 @@
                     </div>
                     <div class="col-md-6">
                         <label for="bus" class="form-label">Choose a Bus</label>
-                        <select id="bus" class="form-select w-100 mx-auto" required>
+                        <select id="bus" name="bus" class="form-select w-100 mx-auto" required>
                             <option value="">No bus available</option>
                         </select>
                     </div>
+
+                    <!-- Passenger Names will be generated here -->
+                    <div class="row g-1" id="passengerNamesContainer"></div>
 
                     <!-- Choose seat" -->
                     <style>
@@ -261,8 +265,28 @@
                             class="btn btn-primary-theme btn-lg mt-3 d-none">Choose
                             Seat(s)</button>
                     </div>
+                    <!-- Hidden input -->
+                    <input type="hidden" name="seats" id="selectedSeats">
                     <div class="container mt-3 d-none" id="seatContainer"></div>
                 </div>
+                <!-- Include the GCash logo next to the label -->
+
+
+                <div class="col-md-12 text-center mt-3">
+                    <label for="payment_method" class="form-label">Payment Method</label><br>
+                    <select id="payment_method" name="payment_method" class="selectpicker w-100"
+                        data-live-search="false" required>
+                        <option value="" disabled selected>-- Select Payment Method --</option>
+                        <option disabled value="GCash"
+                            data-content="<img src='public/dist/home/img/gcash.png' height='24' class='me-2'> GCash (unavailable)">
+                            GCash (unavailable)</option>
+                        <option value="COB"
+                            data-content="<i class='fa-solid fa-money-bill-wave me-2 ml-3'></i> Cash on Board">Cash on
+                            Board
+                        </option>
+                    </select>
+                </div>
+
                 <div class="text-center mt-4">
                     <button type="submit" class="btn btn-primary-theme btn-lg">Buy Now</button>
                 </div>
@@ -520,6 +544,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="public/dist/home/js/script.js?v=1.3.4"></script>
     <script src="public/dist/home/js/booking.script.js?v=1.3.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+
 </body>
 
 </html>

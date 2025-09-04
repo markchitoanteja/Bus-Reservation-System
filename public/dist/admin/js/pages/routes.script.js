@@ -120,10 +120,14 @@ $(document).ready(function () {
     const id = $(this).data("id");
     const origin = $(this).data("origin");
     const destination = $(this).data("destination");
+    const ordinary = $(this).data("ordinary");
+    const aircon = $(this).data("aircon");
 
     $("#editRouteId").val(id);
     $("#editRouteOrigin").val(origin);
     $("#editRouteDestination").val(destination);
+    $("#editRouteOrdinary").val(ordinary);
+    $("#editRouteAircon").val(aircon);
 
     $("#editRouteModal").modal("show");
   });

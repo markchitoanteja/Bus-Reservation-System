@@ -49,12 +49,16 @@ class Routes extends BaseController
     {
         $origin      = ucwords( trim( $this->request->getPost( 'origin' ) ) );
         $destination = ucwords( trim( $this->request->getPost( 'destination' ) ) );
+        $ordinaryFare = $this->request->getPost( 'ordinary_fare' );
+        $airconFare   = $this->request->getPost( 'aircon_fare' );
 
         $routesModel = new Routes_Model();
 
         $data = [ 
             'origin'      => $origin,
             'destination' => $destination,
+            'ordinary_fare'    => $ordinaryFare,
+            'aircon_fare'      => $airconFare,
             'created_at'  => date( 'Y-m-d H:i:s' ),
             'updated_at'  => date( 'Y-m-d H:i:s' ),
         ];
@@ -83,13 +87,17 @@ class Routes extends BaseController
         $routeId          = $this->request->getPost( 'route_id' );
         $routeOrigin      = ucwords( trim( $this->request->getPost( 'origin' ) ) );
         $routeDestination = ucwords( trim( $this->request->getPost( 'destination' ) ) );
+        $routeOrdinary    = ucwords( trim( $this->request->getPost( 'ordinary' ) ) );
+        $routeAircon      = ucwords( trim( $this->request->getPost( 'aircon' ) ) );
 
         $routesModel = new Routes_Model();
 
         $updateData = [ 
             'origin'      => $routeOrigin,
             'destination' => $routeDestination,
-            'updated_at'  => date( 'Y-m-d H:i:s' ) // set manually
+            'ordinary_fare'    => $routeOrdinary,
+            'aircon_fare'      => $routeAircon,
+            'updated_at'  => date( 'Y-m-d H:i:s' ),
         ];
 
         $routesModel->update( $routeId, $updateData );

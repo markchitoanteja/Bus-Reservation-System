@@ -34,8 +34,8 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover schedulesTable">
-                                    <thead>
+                                <table class="table table-hover schedulesTable">
+                                    <thead class="table-bordered">
                                         <tr>
                                             <th>No.</th>
                                             <th>Date</th>
@@ -92,8 +92,8 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover schedulesTable">
-                                    <thead>
+                                <table class="table table-hover schedulesTable">
+                                    <thead class="table-bordered">
                                         <tr>
                                             <th rowspan="2">No.</th>
                                             <th rowspan="2">Route</th>

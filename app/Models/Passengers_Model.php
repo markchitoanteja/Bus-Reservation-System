@@ -4,18 +4,19 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Routes_Model extends Model
+class Passengers_Model extends Model
 {
-    protected $table = "routes_tb";
-    protected $primaryKey = "routes_tb_id";
+    protected $table = "passengers_tb";
+    protected $primaryKey = "passengers_tb_id";
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
     protected $allowedFields = [ 
-        'origin',
-        'destination',
-        'ordinary_fare',
-        'aircon_fare',
+        'passengers_name',
+        'age',
+        'gender',
         'created_at',
         'updated_at',
+        'bookings_tb_id'
     ];
+
 }
