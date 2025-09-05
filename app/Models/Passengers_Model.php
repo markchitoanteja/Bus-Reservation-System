@@ -11,9 +11,11 @@ class Passengers_Model extends Model
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
     protected $allowedFields = [ 
+        'booking_id',
         'passengers_name',
         'age',
         'gender',
+        'travel_status',
         'created_at',
         'updated_at',
         'bookings_tb_id'

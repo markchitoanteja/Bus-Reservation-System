@@ -62,17 +62,21 @@
                                 <table id="passengerTable" class="table table-hover">
                                     <thead class="table-bordered">
                                         <tr>
-                                            <th class="text-center">#</th>
+                                            <th class="text-center">No.</th>
+                                            <th class="text-center">Booking ID</th>
                                             <th class="text-center">Passenger Name</th>
                                             <th class="text-center">Age</th>
                                             <th class="text-center">Gender</th>
                                             <th class="text-center">Route</th>
                                             <th class="text-center">Booking Reference</th>
-                                            <th class="text-center">Action</th>
+                                            <th class="text-center">Booked By</th>
+                                            <th class="text-center">Travel Status</th>
                                         </tr>
                                     </thead>
                                     <tbody id="passengerTableBody" class="text-nowrap text-center">
                                         <tr>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -86,9 +90,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>

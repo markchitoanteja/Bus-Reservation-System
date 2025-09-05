@@ -35,9 +35,7 @@
                         <?php if ( session()->get( "user" ) ) : ?>
                             <a class="nav-link text-light" href="javascript:void(0)" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <span class="d-none d-md-inline">
-                                    <?= session()->get( "user" )[ "name" ] ?>
-                                </span>
+                                <?= session()->get( "user" )[ "name" ] ?>
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountBtn">

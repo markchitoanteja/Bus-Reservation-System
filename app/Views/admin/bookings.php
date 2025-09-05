@@ -31,6 +31,7 @@
                                     <thead class="table-bordered">
                                         <tr>
                                             <th rowspan="2" class="text-center">No.</th>
+                                            <th rowspan="2" class="text-center">Booking Reference</th>
                                             <th rowspan="2" class="text-center">Name</th>
                                             <th rowspan="2" class="text-center">Routes</th>
                                             <th colspan="2" class="text-center">Departure</th>
@@ -55,41 +56,44 @@
                                         <?php foreach ( getAllBookings() as $route ) : ?>
                                             <tr class="text-nowrap">
                                                 <td><?= $no++ ?></td>
+                                                <td><?= esc( $route[ 'booking_ref' ] ) ?></td>
                                                 <td><?= esc( $route[ 'name' ] ) ?></td>
                                                 <td>
                                                     <?= esc( $route[ 'origin' ] ) ?> — <?= esc( $route[ 'destination' ] ) ?>
                                                 </td>
                                                 <td><?= date( 'F j, Y', strtotime( $route[ 'date' ] ) ) ?></td>
                                                 <td><?= date( 'h:i A', strtotime( $route[ 'dep_time' ] ) ) ?></td>
-                                                <td><?= esc( $route[ 'bus_name' ] ) ?> (<?= esc( $route[ 'bus_no' ] ) ?>) - <?= esc( $route[ 'bus_type' ] ) ?></td>
+                                                <td><?= esc( $route[ 'bus_name' ] ) ?> (<?= esc( $route[ 'bus_no' ] ) ?>) -
+                                                    <?= esc( $route[ 'bus_type' ] ) ?>
+                                                </td>
                                                 <td class="text-center"><?= esc( $route[ 'no_of_passenger' ] ) ?></td>
                                                 <td><?= esc( $route[ 'seats' ] ) ?></td>
                                                 <td>
                                                     <i class="fa fa-peso-sign"></i>&nbsp;<?= esc(
-                                                    number_format(
-                                                        $route['bus_type'] === 'Ordinary' 
-                                                            ? $route['ordinary_fare'] 
-                                                            : $route['aircon_fare'], 
-                                                        2
-                                                    )) ?>
+                                                        number_format(
+                                                            $route[ 'bus_type' ] === 'Ordinary'
+                                                            ? $route[ 'ordinary_fare' ]
+                                                            : $route[ 'aircon_fare' ],
+                                                            2
+                                                        )
+                                                    ) ?>
                                                 </td>
-                                                <td><i class="fa fa-peso-sign"></i>&nbsp;<?= esc( number_format($route[ 'amount' ]) ) ?></td>
-                                                <td><i class="fa fa-peso-sign"></i>&nbsp;<?= esc( number_format($route[ 'amount_paid' ]) ) ?></td>
+                                                <td><i
+                                                        class="fa fa-peso-sign"></i>&nbsp;<?= esc( number_format( $route[ 'amount' ] ) ) ?>
+                                                </td>
+                                                <td><i
+                                                        class="fa fa-peso-sign"></i>&nbsp;<?= esc( number_format( $route[ 'amount_paid' ] ) ) ?>
+                                                </td>
                                                 <td class="text-center"><?= esc( $route[ 'payment_method' ] ) ?></td>
                                                 <td><?= esc( $route[ 'payment_status' ] ) ?></td>
                                                 <td><?= esc( $route[ 'status' ] ) ?></td>
                                                 <td class="text-center">
-
-
                                                     <a href="javascript:void(0)" class="btn btn-danger btn-sm delete-route"
                                                         data-id="<?= $route[ 'bus_routes_tb_id' ] ?>"
                                                         data-url="routes/deleteRoute">
                                                         <i class="fas fa-trash-alt"></i> Delete
                                                     </a>
-
-
                                                 </td>
-
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

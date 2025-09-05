@@ -27,21 +27,12 @@
                         <span class="info-box-icon bg-info"><i class="fas fa-ticket-alt"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Total Bookings Today</span>
-                            <span class="info-box-number">36</span>
+                            <span class="info-box-number"><?= getTotalBookingsToday(); ?></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Most Booked Route -->
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-primary"><i class="fas fa-map-marker-alt"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Most Booked Route</span>
-                            <span class="info-box-number">Borongan - Pasay</span>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Buses in Transit -->
                 <div class="col-md-3 col-sm-6 col-12">
@@ -49,83 +40,106 @@
                         <span class="info-box-icon bg-success"><i class="fas fa-shuttle-van"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Buses in Transit</span>
-                            <span class="info-box-number">7</span>
+                            <span class="info-box-number"><?= getBusesInTransit(); ?></span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pending Customer Support -->
-                <div class="col-md-3 col-sm-6 col-12">
+
+
+                <!-- Most Booked Route -->
+                <div class="col-md-12 col-sm-6 col-12">
                     <div class="info-box">
-                        <span class="info-box-icon bg-danger"><i class="fas fa-headset"></i></span>
+                        <span class="info-box-icon bg-primary"><i class="fas fa-map-marker-alt"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Support Tickets</span>
-                            <span class="info-box-number">4</span>
+                            <span class="info-box-text">Most Booked Route</span>
+                            <?php $routes = getMostBookedRoutes(); ?>
+
+                            <?php if ( $routes ) : ?>
+                                <div class="table-responsive">
+                                    <table class="table table-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Origin</th>
+                                                <th>Destination</th>
+                                                <th>Total Bookings</th>
+                                                <th>Percentage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ( $routes as $r ) : ?>
+                                                <tr class="text-nowrap">
+                                                    <td><?= esc( $r[ 'origin' ] ) ?></td>
+                                                    <td><?= esc( $r[ 'destination' ] ) ?></td>
+                                                    <td><?= esc( $r[ 'total_bookings' ] ) ?></td>
+                                                    <td><?= $r[ 'percentage' ] ?>%</td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <?php else : ?>
+                                <span class="info-box-number">No bookings yet</span>
+                            <?php endif; ?>
+
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-lg-12">
 
-            <!-- Table: Recent Bookings -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Recent Bookings</h3>
-                </div>
-                <div class="card-body table-responsive p-0">
-                    <table class="table table-hover text-nowrap">
-                        <thead>
-                            <tr>
-                                <th>Booking ID</th>
-                                <th>Customer</th>
-                                <th>Route</th>
-                                <th>Departure</th>
-                                <th>Terminal</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#EGT2025001</td>
-                                <td>Anna Tolosa</td>
-                                <td>Guiuan - Pasay</td>
-                                <td>May 27, 2025</td>
-                                <td>Pasay</td>
-                                <td><span class="badge badge-success">Confirmed</span></td>
-                            </tr>
-                            <tr>
-                                <td>#EGT2025002</td>
-                                <td>Jerome Gomez</td>
-                                <td>Oras - Cubao</td>
-                                <td>May 27, 2025</td>
-                                <td>Cubao</td>
-                                <td><span class="badge badge-warning">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>#EGT2025003</td>
-                                <td>Maricel Dela Cruz</td>
-                                <td>San Julian - Pasay</td>
-                                <td>May 28, 2025</td>
-                                <td>Pasay</td>
-                                <td><span class="badge badge-success">Confirmed</span></td>
-                            </tr>
-                            <tr>
-                                <td>#EGT2025004</td>
-                                <td>Ronald Santiago</td>
-                                <td>Dolores - Cubao</td>
-                                <td>May 29, 2025</td>
-                                <td>Cubao</td>
-                                <td><span class="badge badge-danger">Cancelled</span></td>
-                            </tr>
-                            <tr>
-                                <td>#EGT2025005</td>
-                                <td>Karen Borja</td>
-                                <td>Taft - Pasay</td>
-                                <td>May 30, 2025</td>
-                                <td>Pasay</td>
-                                <td><span class="badge badge-success">Confirmed</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <!-- Table: Recent Bookings -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Bookings</h3>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover text-nowrap">
+                                    <thead class="table-bordered">
+                                        <tr>
+                                            <th rowspan="2">Booking Reference</th>
+                                            <th rowspan="2">Customer</th>
+                                            <th rowspan="2">Route</th>
+                                            <th colspan="2" class="text-center">Departure</th>
+                                            <th rowspan="2">Status</th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ( getAllRecentBookings() as $route ) : ?>
+                                            <tr class="text-nowrap">
+                                                <td><?= esc( $route[ 'booking_ref' ] ) ?></td>
+                                                <td><?= esc( $route[ 'name' ] ) ?></td>
+                                                <td>
+                                                    <?= esc( $route[ 'origin' ] ) ?> — <?= esc( $route[ 'destination' ] ) ?>
+                                                </td>
+                                                <td><?= date( 'F j, Y', strtotime( $route[ 'date' ] ) ) ?></td>
+                                                <td><?= date( 'h:i A', strtotime( $route[ 'dep_time' ] ) ) ?></td>
+                                                <td>
+                                                    <?php
+                                                    // Map status to badge classes
+                                                    $badgeClasses = [ 
+                                                        'Pending'   => 'badge-warning',
+                                                        'Cancelled' => 'badge-danger',
+                                                        'Confirmed' => 'badge-success'
+                                                    ];
+
+                                                    $status     = $route[ 'status' ];
+                                                    $badgeClass = $badgeClasses[ $status ] ?? 'badge-secondary'; // fallback for unknown status
+                                                    ?>
+                                                    <span class="badge <?= $badgeClass ?>"><?= esc( $status ) ?></span>
+                                                </td>
+
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

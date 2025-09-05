@@ -64,22 +64,28 @@ $(document).ready(function () {
               tbody.append(`
                 <tr>
                   <td>${i + 1}</td>
+                  <td>${row.booking_id}</td>
                   <td class="text-left">${row.passengers_name}</td>
                   <td>${row.age}</td>
                   <td>${row.gender}</td>
                   <td class="text-left">${row.origin} — ${row.destination}</td>
                   <td>${row.booking_ref}</td>
-                  <td><button class="btn btn-primary">View</button></td>
+                  <td>${row.name}</td>
+                  <td>${row.travel_status}</td>
                 </tr>
               `);
             });
           } else {
             tbody.html(
-              `<tr><td colspan="7" class="text-center">No passengers found.</td></tr>`
+              `<tr><td colspan="9" class="text-center">No passengers found.</td></tr>`
             );
           }
         },
       });
+    } else {
+      tbody.html(
+        `<tr><td colspan="9" class="text-center">No passengers found.</td></tr>`
+      );
     }
   }
 });

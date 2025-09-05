@@ -49,10 +49,6 @@ class Booking extends BaseController
             ->where( 'bus_trav_sched_tb.date', $date )
             ->first();
 
-
-
-
-
         return $this->response->setJSON( $availableSeats );
     }
 
@@ -65,12 +61,11 @@ class Booking extends BaseController
         $routeModel              = new BusRoutes_Model();
         $busTravelSchedulesModel = new BusTravelSchedules_Model();
         $passengerModel          = new Passengers_Model();
-        // Clean input
-        // $bus_routes_tb_id        = trim( $this->request->getPost( 'bus' ) );
+
         $passengerCount   = (int) $this->request->getPost( 'passenger' );
         $seats            = trim( $this->request->getPost( 'seats' ) ); // e.g. "L1,M1,R1"
         $paymentMethod    = trim( $this->request->getPost( 'payment_method' ) );
-        $busValue         = trim( $this->request->getPost( 'bus' ) ); // e.g. "5-10"
+        $busValue         = trim( $this->request->getPost( 'bus' ) );
         $passengerNames   = $this->request->getPost( 'passenger_names' );
         $passengerAges    = $this->request->getPost( 'passenger_ages' );
         $passengerGenders = $this->request->getPost( 'passenger_genders' );
@@ -78,7 +73,7 @@ class Booking extends BaseController
         list( $bus_routes_tb_id, $bus_trav_sched_tb_id ) = explode( '-', $busValue );
         // Default data
         $amount = 0;
-        $status = 'Upcoming';
+        $status = 'Pending';
 
         // Get route fare
         $builder = $routeModel
@@ -115,15 +110,16 @@ class Booking extends BaseController
         // Insert booking
         $inserted = $bookingModel->insert( $data );
         // Get inserted booking_id
-        $bookingId = $bookingModel->getInsertID();
-
+        $bookingTbId = $bookingModel->getInsertID();
         foreach ( $passengerNames as $index => $name ) {
+            $bookingId = generate_booking_id();
             $passengerModel->insert( [ 
+                'booking_id'      => $bookingId,
                 'passengers_name' => trim( $name ),
                 'age'             => $passengerAges[ $index ],
                 'gender'          => $passengerGenders[ $index ],
                 'created_at'      => date( 'Y-m-d H:i:s' ),
-                'bookings_tb_id'  => $bookingId,
+                'bookings_tb_id'  => $bookingTbId,
             ] );
         }
 

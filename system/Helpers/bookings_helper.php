@@ -14,13 +14,30 @@ function getAllBookings()
         ->findAll();
 }
 
-if (!function_exists('generateBookingRef')) {
-    function generateBookingRef($length = 6) {
+if ( !function_exists( 'generateBookingRef' ) ) {
+    function generateBookingRef( $length = 6 )
+    {
         $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        $ref = '';
-        for ($i = 0; $i < $length; $i++) {
-            $ref .= $characters[random_int(0, strlen($characters) - 1)];
+        $ref        = '';
+        for ( $i = 0; $i < $length; $i++ ) {
+            $ref .= $characters[ random_int( 0, strlen( $characters ) - 1 ) ];
         }
-        return $ref;
+        return sprintf( '#GTB-%s', $ref );
     }
 }
+
+if ( !function_exists( 'generate_booking_id' ) ) {
+    /**
+     * Generate a booking ID like: #EGT20250904123
+     *
+     * @param int|null $seq Optional sequence number (default: random 3 digits)
+     * @return string
+     */
+    function generate_booking_id( int $seq = null ) : string
+    {
+        $today = date( 'Ymd' ); // e.g. 20250904
+        $seq   = $seq ?? rand( 100, 999 ); // if no sequence given, random 3 digits
+        return sprintf( '#EGT%s%03d', $today, $seq );
+    }
+}
+
