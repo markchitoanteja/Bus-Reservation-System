@@ -1,0 +1,28 @@
+CRITICAL - 2025-09-06 13:53:21 --> ErrorException: Array to string conversion
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\admin\main\header.php on line 50.
+ 1 APPPATH\Views\admin\main\header.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\main\\header.php', 50)
+ 2 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\main\\header.php')
+ 3 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/main/header', [], true)
+ 5 APPPATH\Controllers\Admin.php(23): view('admin/main/header')
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-06 13:58:13 --> ErrorException: Array to string conversion
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\admin\main\header.php on line 50.
+ 1 APPPATH\Views\admin\main\header.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\main\\header.php', 50)
+ 2 FCPATH\vendor\codeigniter4\framework\system\View\View.php(224): include('C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Views\\admin\\main\\header.php')
+ 3 FCPATH\vendor\codeigniter4\framework\system\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/main/header', [], true)
+ 5 APPPATH\Controllers\Admin.php(23): view('admin/main/header')
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

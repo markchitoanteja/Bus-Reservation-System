@@ -1,0 +1,990 @@
+CRITICAL - 2025-09-05 21:59:56 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 21:59:59 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:02 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:05 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:08 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:11 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:15 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:18 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:21 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:23 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:26 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:32 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:38 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:44 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:47 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:50 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:53 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:00:58 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:01 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:07 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:10 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:13 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:16 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:19 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:22 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:25 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:28 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:31 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:34 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:37 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:40 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:43 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:46 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:49 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:01:52 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:03 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:03 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:03 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:07 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:10 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:13 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:16 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:19 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:22 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:26 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:28 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:31 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:34 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:37 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:40 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:43 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:46 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:49 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:52 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:55 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:02:58 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:01 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:07 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:10 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:13 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:25 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:30 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:32 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:38 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:43 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:44 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:47 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:50 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:53 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:56 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:03:59 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:02 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:05 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:08 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:11 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:14 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:17 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:20 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:23 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:32 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:35 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:38 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:44 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:04:49 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:06:04 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:06:17 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:07:17 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:08:19 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:08:27 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-05 22:08:28 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/%3C]
+in FCPATH\vendor\codeigniter4\framework\system\Router\Router.php on line 739.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('admin/<')
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

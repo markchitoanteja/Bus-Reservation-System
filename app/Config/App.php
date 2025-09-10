@@ -17,7 +17,7 @@ class App extends BaseConfig
      * E.g., http://example.com/
      */
     // Offline
-    public string $baseURL = 'http://10.186.17.36/Bus-Reservation-System';
+    public string $baseURL = 'http://localhost/Bus-Reservation-System';
 
     // Online
     // public string $baseURL = 'https://bus-reservation-system.essuc.online/';

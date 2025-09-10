@@ -48,34 +48,11 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Notifications Icon -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
+                    <a class="nav-link" data-toggle="dropdown" href="#" id="notifBell">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">4</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">4 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item text-truncate w-100">
-                            <i class=" fas fa-bus mr-2"></i> 2 Bookings from Pasay
-                            <span class="float-right text-muted text-sm">5m</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item text-truncate w-100">
-                            <i class="fas fa-exclamation-circle mr-2"></i> 1 Delay reported...
-                            <span class="float-right text-muted text-sm">12m</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item text-truncate w-100">
-                            <i class="fas fa-user-plus mr-2"></i> New user from E. Samar
-                            <span class="float-right text-muted text-sm">30m</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item text-truncate w-100">
-                            <i class="fas fa-cogs mr-2"></i> System maintenanc...
-                            <span class="float-right text-muted text-sm">1h</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">View All</a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="notifArea">
+
                     </div>
                 </li>
 

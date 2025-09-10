@@ -22,25 +22,26 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
 <script src="<?= base_url() ?>public/dist/admin/js/main/main.js"></script>
+<script src="<?= base_url() ?>public/dist/admin/js/main/notifications.script.js?v=2.2.2"></script>
 
 <?php if ( session()->get( 'active_tab' ) === 'bookings' ) : ?>
-    <script src="<?= base_url() ?>public/dist/admin/js/pages/bookings.script.js"></script>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/bookings.script.js?v=2.2.2"></script>
 <?php endif; ?>
 
 <?php if ( session()->get( 'active_tab' ) === 'passengers' ) : ?>
-    <script src="<?= base_url() ?>public/dist/admin/js/pages/passengers.script.js"></script>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/passengers.script.js?v=2.2.2"></script>
 <?php endif; ?>
 
 <?php if ( session()->get( 'active_tab' ) === 'routes' ) : ?>
-    <script src="<?= base_url() ?>public/dist/admin/js/pages/routes.script.js"></script>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/routes.script.js?v=2.2.2"></script>
 <?php endif; ?>
 
 <?php if ( session()->get( 'active_tab' ) === 'buses' ) : ?>
-    <script src="<?= base_url() ?>public/dist/admin/js/pages/buses.script.js"></script>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/buses.script.js?v=2.2.2"></script>
 <?php endif; ?>
 
 <?php if ( session()->get( 'active_tab' ) === 'schedules' ) : ?>
-    <script src="<?= base_url() ?>public/dist/admin/js/pages/schedules.script.js"></script>
+    <script src="<?= base_url() ?>public/dist/admin/js/pages/schedules.script.js?v=2.2.2"></script>
 <?php endif; ?>
 
 <?php if ( session()->has( 'swalAlert' ) ) : ?>

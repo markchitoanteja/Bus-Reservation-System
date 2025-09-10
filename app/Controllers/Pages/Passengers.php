@@ -11,7 +11,6 @@ class Passengers extends BaseController
         $date  = $this->request->getPost( 'date' );
         $busId = $this->request->getPost( 'bus_id' );
 
-
         $passengersModel = new Passengers_Model();
 
         $availablePassengers = $passengersModel

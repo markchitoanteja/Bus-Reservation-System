@@ -233,12 +233,18 @@ $(document).ready(function () {
     });
   }
 
+  document
+    .getElementById("registerContact")
+    .addEventListener("input", function (e) {
+      this.value = this.value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+    });
   // Sign Up Form Validation
   const $signUpForm = $("#signUpForm");
   if ($signUpForm.length) {
     const $modal = $("#loginModal");
 
     const $name = $("#registerName");
+    const $contact = $("#registerContact");
     const $email = $("#registerEmail");
     const $password = $("#registerPassword");
     const $confirmPassword = $("#registerConfirmPassword");
@@ -248,6 +254,8 @@ $(document).ready(function () {
     const $confirmPasswordRequired = $("#confirmPasswordRequired");
     const $confirmPasswordMismatch = $("#confirmPasswordMismatch");
     const $emailExistsFeedback = $("#emailExistsFeedback");
+    const $contactExistsFeedback = $("#contactExistsFeedback");
+    const $contactInvalidFeedback = $("#contactInvalidFeedback");
 
     $signUpForm.on("submit", function (e) {
       e.preventDefault();
@@ -263,6 +271,22 @@ $(document).ready(function () {
         valid = false;
       } else {
         $name.removeClass("is-invalid");
+      }
+
+      // Contact Number
+      const contactVal = $contact.val().trim(); // $contact = $("#registerContact")
+      if (!/^9/.test(contactVal)) {
+        // Must start with 9
+        $contact.addClass("is-invalid");
+        $contactInvalidFeedback
+          .text(
+            "Contact number must start with 9 and be 10 digits long (e.g., 9XXXXXXXXX)."
+          )
+          .removeClass("d-none");
+      } else {
+        // Valid
+        $contact.removeClass("is-invalid");
+        $contactInvalidFeedback.addClass("d-none");
       }
 
       // Email
@@ -309,6 +333,7 @@ $(document).ready(function () {
       const formData = new FormData();
       formData.append("name", $name.val());
       formData.append("email", $email.val());
+      formData.append("contact", $contact.val());
       formData.append("password", $password.val());
 
       $.ajax({
@@ -325,6 +350,11 @@ $(document).ready(function () {
             if (response.error_type === "email_exists") {
               $email.addClass("is-invalid");
               $emailExistsFeedback.removeClass("d-none");
+            } else if (response.error_type === "contact_exists") {
+              $contact.addClass("is-invalid");
+              $contactInvalidFeedback
+                .text("Contact number is already in use.")
+                .removeClass("d-none");
             } else {
               $("#signUpErrorAlert").addClass("d-block").removeClass("d-none");
             }
@@ -345,6 +375,25 @@ $(document).ready(function () {
       $(this).val().trim()
         ? $(this).removeClass("is-invalid")
         : $(this).addClass("is-invalid");
+    });
+
+    $contact.on("input change", function () {
+      const val = $(this).val().trim();
+      const isValid = /^9\d{9}$/.test(val); // must start with 9 and have 10 digits total
+
+      if (!isValid) {
+        // Must start with 9
+        $contact.addClass("is-invalid");
+        $contactInvalidFeedback
+          .text(
+            "Contact number must start with 9 and be 10 digits long (e.g., 9XXXXXXXXX)."
+          )
+          .removeClass("d-none");
+      } else {
+        // Valid
+        $contact.removeClass("is-invalid");
+        $contactInvalidFeedback.addClass("d-none");
+      }
     });
 
     $email.on("input change", function () {
@@ -441,6 +490,11 @@ $(document).ready(function () {
       showConfirmButton: false,
       toast: true,
       position: "top-end",
+      customClass: {
+        confirmButton: "btn btn-primary ml-2",
+        cancelButton: "btn btn-danger",
+      },
+      buttonsStyling: false, // disable SweetAlert default button styles
     });
   }
 
@@ -453,6 +507,10 @@ $(document).ready(function () {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, log out!",
+      customClass: {
+        confirmButton: "btn btn-primary ml-2",
+        cancelButton: "btn btn-danger",
+      },
     }).then((result) => {
       if (result.isConfirmed) {
         $.ajax({
@@ -471,6 +529,7 @@ $(document).ready(function () {
 
   $("#editProfileBtn").click(function () {
     $("#updateName").val(user.name);
+    $("#updateContact").val(user.contact_no);
     $("#updateEmail").val(user.email);
     $("#updateRole").val(user.user_type);
 
@@ -484,6 +543,7 @@ $(document).ready(function () {
     const $modal = $("#updateProfileModal");
 
     const $name = $("#updateName");
+    const $contact = $("#updateContact");
     const $email = $("#updateEmail");
     const $password = $("#updatePassword");
     const $confirmPassword = $("#updateConfirmPassword");
@@ -492,6 +552,7 @@ $(document).ready(function () {
 
     const $confirmPasswordRequired = $("#confirmPasswordRequired");
     const $confirmPasswordMismatch = $("#confirmPasswordMismatch");
+    const $contactInvalidFeedback = $("#updateContactInvalidFeedback");
     const $emailExistsFeedback = $("#emailExistsFeedback");
     const $errorAlert = $("#updateProfileErrorAlert");
     const $userId = $("#updateUserId");
@@ -506,6 +567,7 @@ $(document).ready(function () {
 
       const nameVal = $name.val().trim();
       const emailVal = $email.val().trim();
+      const contactVal = $contact.val().trim();
       const passVal = $password.val().trim();
       const confirmVal = $confirmPassword.val().trim();
 
@@ -515,6 +577,21 @@ $(document).ready(function () {
         valid = false;
       } else {
         $name.removeClass("is-invalid");
+      }
+
+      // Contact Number
+      if (!/^9/.test(contactVal)) {
+        // Must start with 9
+        $contact.addClass("is-invalid");
+        $contactInvalidFeedback
+          .text(
+            "Contact number must start with 9 and be 10 digits long (e.g., 9XXXXXXXXX)."
+          )
+          .removeClass("d-none");
+      } else {
+        // Valid
+        $contact.removeClass("is-invalid");
+        $contactInvalidFeedback.addClass("d-none");
       }
 
       // Email validation
@@ -557,20 +634,21 @@ $(document).ready(function () {
 
       const formData = new FormData();
       formData.append("id", $userId.val());
-      formData.append("name", nameVal);
-      formData.append("email", emailVal);
+      formData.append("name", $name.val());
+      formData.append("email", $email.val());
+      formData.append("contact", $contact.val());
 
       if (passVal) {
         formData.append("password", passVal);
       }
 
       $.ajax({
-        url: "update_profile",
-        method: "POST",
+        url: "updateProfile",
         data: formData,
+        type: "POST",
+        dataType: "JSON",
         processData: false,
         contentType: false,
-        dataType: "JSON",
         success: function (response) {
           stopModalLoading($modal, $submitBtn, $spinner);
 
@@ -580,6 +658,11 @@ $(document).ready(function () {
               $emailExistsFeedback
                 .removeClass("d-none")
                 .text("This email is already associated with another account.");
+            } else if (response.error_type === "contact_exists") {
+              $contact.addClass("is-invalid");
+              $contactInvalidFeedback
+                .text("Contact number is already in use.")
+                .removeClass("d-none");
             } else {
               $("#updateProfileErrorAlert")
                 .addClass("d-block")
@@ -603,6 +686,25 @@ $(document).ready(function () {
       $(this).val().trim()
         ? $(this).removeClass("is-invalid")
         : $(this).addClass("is-invalid");
+    });
+
+    $contact.on("input change", function () {
+      const val = $(this).val().trim();
+      const isValid = /^9\d{9}$/.test(val); // must start with 9 and have 10 digits total
+
+      if (!isValid) {
+        // Must start with 9
+        $contact.addClass("is-invalid");
+        $contactInvalidFeedback
+          .text(
+            "Contact number must start with 9 and be 10 digits long (e.g., 9XXXXXXXXX)."
+          )
+          .removeClass("d-none");
+      } else {
+        // Valid
+        $contact.removeClass("is-invalid");
+        $contactInvalidFeedback.addClass("d-none");
+      }
     });
 
     $email.on("input change", function () {

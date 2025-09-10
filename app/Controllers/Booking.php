@@ -4,6 +4,7 @@ use App\Models\BusRoutes_Model;
 use App\Models\BusTravelSchedules_Model;
 use App\Models\Bookings_Model;
 use App\Models\Passengers_Model;
+use App\Models\Notifications_Model;
 
 class Booking extends BaseController
 {
@@ -52,6 +53,26 @@ class Booking extends BaseController
         return $this->response->setJSON( $availableSeats );
     }
 
+    function getFare()
+    {
+        $bus_id   = $this->request->getPost( 'bus_id' );
+        $route_id = $this->request->getPost( 'route_id' );
+
+        $busRoutesModel = new BusRoutes_Model();
+        $fare           = $busRoutesModel
+            ->select( 'bus_routes_tb.*,
+            routes_tb.*, 
+            buses_tb.*
+        ' )
+            ->join( 'bus_trav_sched_tb', 'bus_trav_sched_tb.bus_trav_sched_tb_id = bus_routes_tb.bus_trav_sched_tb_id' )
+            ->join( 'buses_tb', 'buses_tb.buses_tb_id = bus_trav_sched_tb.buses_tb_id' )
+            ->join( 'routes_tb', 'routes_tb.routes_tb_id = bus_routes_tb.routes_tb_id' )
+            ->where( 'bus_routes_tb.bus_routes_tb_id', $bus_id )
+            ->where( 'routes_tb.routes_tb_id', $route_id )
+            ->first();
+
+        return $this->response->setJSON( $fare );
+    }
     function submitBooking()
     {
         if ( $redirect = require_user() ) {
@@ -61,6 +82,7 @@ class Booking extends BaseController
         $routeModel              = new BusRoutes_Model();
         $busTravelSchedulesModel = new BusTravelSchedules_Model();
         $passengerModel          = new Passengers_Model();
+        $notificationModel       = new Notifications_Model();
 
         $passengerCount   = (int) $this->request->getPost( 'passenger' );
         $seats            = trim( $this->request->getPost( 'seats' ) ); // e.g. "L1,M1,R1"
@@ -73,7 +95,7 @@ class Booking extends BaseController
         list( $bus_routes_tb_id, $bus_trav_sched_tb_id ) = explode( '-', $busValue );
         // Default data
         $amount = 0;
-        $status = 'Pending';
+        $status = 'Scheduled';
 
         // Get route fare
         $builder = $routeModel
@@ -124,6 +146,14 @@ class Booking extends BaseController
         }
 
         if ( $inserted ) {
+
+            $notificationModel->insert( [ 
+                'notify_for' => 'New Booking',
+                'which_tb'   => 'bookings_tb',
+                'tb_id'      => $bookingTbId,
+                'status'     => 'Unseen',
+            ] );
+
             $update = $busTravelSchedulesModel->set( 'occupied_seats', "CONCAT(IFNULL(occupied_seats, ''), ',', '{$seats}')", false )
                 ->where( 'bus_trav_sched_tb_id', $bus_trav_sched_tb_id )
                 ->update();
@@ -142,6 +172,7 @@ class Booking extends BaseController
                 'message' => 'Booking failed. Please try again.'
             ] );
         }
+
 
         return redirect()->to( base_url() . '/#booking' );
 

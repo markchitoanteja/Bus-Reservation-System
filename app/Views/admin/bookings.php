@@ -44,7 +44,7 @@
                                             <th rowspan="2" class="text-center">Payment Method</th>
                                             <th rowspan="2" class="text-center">Payment Status</th>
                                             <th rowspan="2" class="text-center">Status</th>
-                                            <th rowspan="2" class="text-center">Actions</th>
+                                            <!-- <th rowspan="2" class="text-center">Actions</th> -->
                                         </tr>
                                         <tr>
                                             <th class="text-center">Date</th>
@@ -87,13 +87,7 @@
                                                 <td class="text-center"><?= esc( $route[ 'payment_method' ] ) ?></td>
                                                 <td><?= esc( $route[ 'payment_status' ] ) ?></td>
                                                 <td><?= esc( $route[ 'status' ] ) ?></td>
-                                                <td class="text-center">
-                                                    <a href="javascript:void(0)" class="btn btn-danger btn-sm delete-route"
-                                                        data-id="<?= $route[ 'bus_routes_tb_id' ] ?>"
-                                                        data-url="routes/deleteRoute">
-                                                        <i class="fas fa-trash-alt"></i> Delete
-                                                    </a>
-                                                </td>
+
                                             </tr>
                                         <?php endforeach; ?>
                                     </tbody>

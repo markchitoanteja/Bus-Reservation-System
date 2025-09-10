@@ -8,45 +8,48 @@ class Home extends BaseController
     {
         $session = session();
 
-        if ($session->has('user')) {
-            $user = $session->get('user');
+        if ( $session->has( 'user' ) ) {
+            $user = $session->get( 'user' );
 
             // Check if user_type is 'user'
-            if (isset($user['user_type']) && $user['user_type'] === 'user') {
+            if ( isset( $user[ 'user_type' ] ) && $user[ 'user_type' ] === 'user' ) {
                 // User is logged in and is a 'user'
                 // You can load a user-specific view or redirect somewhere else
-                return view('home');  // example user dashboard view
+                return view( 'home' );  // example user dashboard view
             } else {
                 // User is logged in but NOT a 'user' (e.g., admin or other)
                 // Redirect to admin or another appropriate place
-                return redirect()->to(base_url('admin/dashboard'));
+                return redirect()->to( base_url( 'admin/dashboard' ) );
             }
         }
 
         // No user data in session, load the public home page
-        return view('home');
+        return view( 'home' );
     }
 
     public function my_bookings()
     {
+        if ( $redirect = require_user() ) {
+            return $redirect;
+        }
         $session = session();
 
-        if ($session->has('user')) {
-            $user = $session->get('user');
+        if ( $session->has( 'user' ) ) {
+            $user = $session->get( 'user' );
 
             // Check if user_type is 'user'
-            if (isset($user['user_type']) && $user['user_type'] === 'user') {
+            if ( isset( $user[ 'user_type' ] ) && $user[ 'user_type' ] === 'user' ) {
                 // User is logged in and is a 'user'
                 // You can load a user-specific view or redirect somewhere else
-                return view('my_bookings');  // example user dashboard view
+                return view( 'my_bookings' );  // example user dashboard view
             } else {
                 // User is logged in but NOT a 'user' (e.g., admin or other)
                 // Redirect to admin or another appropriate place
-                return redirect()->to(base_url('admin/dashboard'));
+                return redirect()->to( base_url( 'admin/dashboard' ) );
             }
         }
 
         // No user data in session, load the public home page
-        return view('my_bookings');
+        return view( 'my_bookings' );
     }
 }

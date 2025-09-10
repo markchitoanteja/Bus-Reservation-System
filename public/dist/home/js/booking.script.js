@@ -13,6 +13,8 @@ $(document).ready(function () {
     const date = $("#date").val();
 
     if (route && date) {
+      $("#getFare").val("0.00");
+      updateFare();
       $.ajax({
         url: "booking/getAvailableBuses",
         type: "POST",
@@ -65,6 +67,40 @@ $(document).ready(function () {
     $("#seatContainer").addClass("d-none");
   }
 
+  function updateFare() {
+    const fare = parseFloat($("#getFare").val()) || 0;
+    const passengerCount = parseInt($("#passenger").val()) || 1;
+    const total = fare * passengerCount;
+    $("#fare").text(`₱${fare.toFixed(2)}`);
+    $("#totalFare").text(`₱${total.toFixed(2)}`);
+  }
+
+  $("#bus").on("input change blur", function () {
+    const bus_id = $(this).val();
+    const route_id = $("#route").val();
+
+    if (bus_id && route_id) {
+      $.ajax({
+        url: "booking/getFare",
+        type: "POST",
+        data: { bus_id, route_id },
+        dataType: "json",
+        success: function (fare) {
+          if (fare.bus_type === "Ordinary") {
+            $("#getFare").val(fare.ordinary_fare);
+          } else if (fare.bus_type === "Air-Con") {
+            $("#getFare").val(fare.aircon_fare);
+          } else {
+            $("#getFare").val("0.00");
+          }
+          updateFare();
+        },
+        error: function () {
+          alert("Error fetching bus details.");
+        },
+      });
+    }
+  });
   // ==============================
   // Fetch seat availability
   // ==============================
@@ -293,9 +329,20 @@ $(document).ready(function () {
   generatePassengerFields(passengerInput.value || 1);
 
   // Update fields on change
-  passengerInput.addEventListener("change", function () {
-    let count = parseInt(this.value) || 1;
+  // passengerInput.addEventListener("change", function () {
+  //   let count = parseInt(this.value) || 1;
+  //   if (count < 1) count = 1;
+  //   generatePassengerFields(count);
+  // });
+
+  function handlePassengerChange() {
+    let count = parseInt(passengerInput.value) || 1;
     if (count < 1) count = 1;
     generatePassengerFields(count);
-  });
+    updateFare();
+  }
+
+  passengerInput.addEventListener("change", handlePassengerChange);
+  passengerInput.addEventListener("input", handlePassengerChange);
+  passengerInput.addEventListener("blur", handlePassengerChange);
 });

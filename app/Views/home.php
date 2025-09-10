@@ -285,6 +285,13 @@
                     </select>
                 </div>
 
+                <div class="col-md-12 text-left mt-3">
+
+                    <input type="hidden" id="getFare" readonly>
+                    <h6>Fare: <span id="fare">₱0.00</span></h6>
+                    <h6>Total: <span id="totalFare">₱0.00</span></h6>
+
+                </div>
                 <div class="text-center mt-4">
                     <button type="submit" class="btn btn-primary-theme btn-lg">Buy Now</button>
                 </div>
@@ -414,6 +421,16 @@
                                 <div class="invalid-feedback">Please enter a valid name.</div>
                             </div>
                             <div class="mb-3">
+                                <label for="registerContact" class="form-label">Contact Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">+63</span>
+                                    <input type="tel" class="form-control" id="registerContact" placeholder="9XXXXXXXXX"
+                                        pattern="^9\d{9}$" maxlength="10" required>
+                                    <div class="invalid-feedback d-none" id="contactInvalidFeedback"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="registerEmail" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="registerEmail" required>
                                 <div class="invalid-feedback">Please enter a valid email.</div>
@@ -487,12 +504,24 @@
                                 <div class="invalid-feedback">Please enter a valid name.</div>
                             </div>
 
+                            <!-- Contact Number -->
+                            <div class="mb-3">
+                                <label for="updateContact" class="form-label">Contact Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">+63</span>
+                                    <input type="tel" class="form-control" id="updateContact" placeholder="9XXXXXXXXX"
+                                        pattern="^9\d{9}$" maxlength="10" required>
+                                    <div class="invalid-feedback d-none" id="updateContactInvalidFeedback"></div>
+                                </div>
+                            </div>
+
                             <!-- Email -->
                             <div class="mb-3">
                                 <label for="updateEmail" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="updateEmail" required>
                                 <div class="invalid-feedback">Please enter a valid email.</div>
-                                <div class="invalid-feedback d-none" id="emailExistsFeedback">Email already exists.</div>
+                                <div class="invalid-feedback d-none" id="emailExistsFeedback">Email already exists.
+                                </div>
                             </div>
 
                             <!-- Password (Optional) -->
@@ -507,14 +536,15 @@
                             <div class="mb-3">
                                 <label for="updateConfirmPassword" class="form-label">Confirm New Password</label>
                                 <input type="password" class="form-control" id="updateConfirmPassword">
-                                <div class="invalid-feedback" id="confirmPasswordRequired">Confirm password is required when
+                                <div class="invalid-feedback" id="confirmPasswordRequired">Confirm password is required
+                                    when
                                     changing your password.</div>
                                 <div class="invalid-feedback d-none" id="confirmPasswordMismatch">Passwords do not match.
                                 </div>
                             </div>
 
                             <!-- Hidden User ID -->
-                            <input type="hidden" id="updateUserId" value="<?= session()->get( 'user' )[ 'id' ] ?>" />
+                            <input type="hidden" id="updateUserId" value="<?= session()->get( 'user' )[ 'users_id' ] ?>" />
                         </form>
                     </div>
 
@@ -541,7 +571,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="public/dist/home/js/script.js?v=1.3.4"></script>
+    <script src="public/dist/home/js/script.js?v=3.3.4"></script>
     <script src="public/dist/home/js/booking.script.js?v=1.4.5"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 

@@ -21,8 +21,13 @@ $routes->get( '/admin/settings', 'Admin::viewSettings' );
 // Server side routes
 $routes->post( '/login', 'Auth::login' );
 $routes->post( '/signup', 'Auth::signup' );
-$routes->post( '/update_profile', 'Auth::update_profile' );
+$routes->post( '/updateProfile', 'Auth::updateProfile' );
 $routes->post( '/logout', 'Auth::logout' );
+
+/* Notifications Controller */
+$routes->get( 'admin/notifications/CheckUpdatesNotifications', 'Notifications::CheckUpdatesNotifications' );
+$routes->get( 'admin/notifications/fetchUpdatesNotifications', 'Notifications::fetchUpdatesNotifications' );
+$routes->post( 'admin/notifications/markAsSeen', 'Notifications::markAsSeen' );
 
 /* Pages Controller */
 
@@ -62,6 +67,7 @@ $routes->post( '/admin/schedules/deleteRouteSchedule', 'Pages\Schedules::deleteR
 /* Booking Controller */
 $routes->post( '/booking/getAvailableBuses', 'Booking::getAvailableBuses' );
 $routes->post( '/booking/getBusAvailableSeats', 'Booking::getBusAvailableSeats' );
+$routes->post( '/booking/getFare', 'Booking::getFare' );
 $routes->post( '/booking/submitBooking', 'Booking::submitBooking' );
 
 

@@ -31,11 +31,12 @@ class Auth extends BaseController
             ] );
 
             session()->set( "user", [ 
-                "id"        => $user[ "users_id" ],
-                "name"      => $user[ "name" ],
-                "email"     => $user[ "email" ],
-                "image"     => $user[ "image" ],
-                "user_type" => $user[ "user_type" ],
+                "users_id"   => $user[ "users_id" ],
+                "name"       => $user[ "name" ],
+                "contact_no" => $user[ "contact_no" ],
+                "email"      => $user[ "email" ],
+                "image"      => $user[ "image" ],
+                "user_type"  => $user[ "user_type" ],
             ] );
         }
 
@@ -47,42 +48,51 @@ class Auth extends BaseController
 
     public function signup()
     {
-        $name     = $this->request->getPost( "name" );
+        $name     = ucwords( strtolower( trim( $this->request->getPost( "name" ) ) ) );
         $email    = $this->request->getPost( "email" );
+        $contact  = $this->request->getPost( "contact" );
         $password = $this->request->getPost( "password" );
 
         $User_Model = new User_Model();
 
-        $user = $User_Model->where( "email", $email )->first();
+        $user = $User_Model->where( "contact_no", $contact )->first();
 
         $success    = false;
         $error_type = null;
 
         if ( $user ) {
-            $error_type = "email_exists";
+            $error_type = "contact_exists";
         } else {
-            $data = [ 
-                "uuid"       => generate_uuid(),
-                "name"       => $name,
-                "email"      => $email,
-                "password"   => password_hash( $password, PASSWORD_BCRYPT ),
-                "image"      => "default-user-image.webp",
-                "user_type"  => "user",
-                "created_at" => date( "Y-m-d H:i:s" ),
-                "updated_at" => date( "Y-m-d H:i:s" ),
-            ];
 
-            if ( $User_Model->insert( $data ) ) {
-                $success = true;
+            $user = $User_Model->where( "email", $email )->first();
 
-                session()->setFlashdata( [ 
-                    "type"    => "success",
-                    "message" => "Account created successfully! You can now log in.",
-                ] );
-
+            if ( $user ) {
+                $error_type = "email_exists";
             } else {
-                $success    = false;
-                $error_type = "db_error";
+                $data = [ 
+                    "uuid"       => generate_uuid(),
+                    "name"       => $name,
+                    "contact_no" => $contact,
+                    "email"      => $email,
+                    "password"   => password_hash( $password, PASSWORD_BCRYPT ),
+                    "image"      => "default-user-image.webp",
+                    "user_type"  => "user",
+                    "created_at" => date( "Y-m-d H:i:s" ),
+                    "updated_at" => date( "Y-m-d H:i:s" ),
+                ];
+
+                if ( $User_Model->insert( $data ) ) {
+                    $success = true;
+
+                    session()->setFlashdata( [ 
+                        "type"    => "success",
+                        "message" => "Account created successfully! You can now log in.",
+                    ] );
+
+                } else {
+                    $success    = false;
+                    $error_type = "db_error";
+                }
             }
         }
 
@@ -92,44 +102,51 @@ class Auth extends BaseController
         ] );
     }
 
-    public function update_profile()
+    public function updateProfile()
     {
         $id       = $this->request->getPost( 'id' );
-        $name     = $this->request->getPost( 'name' );
+        $name     = ucwords( strtolower( trim( $this->request->getPost( "name" ) ) ) );
+        $contact  = $this->request->getPost( 'contact' );
         $email    = $this->request->getPost( 'email' );
         $password = $this->request->getPost( 'password' );
 
         $User_Model   = new User_Model();
-        $existingUser = $User_Model->where( 'email', $email )->where( 'id !=', $id )->first();
+        $existingUser = $User_Model->where( 'contact_no', $contact )->where( 'users_id !=', $id )->first();
 
         $success    = false;
         $error_type = null;
 
         if ( $existingUser ) {
-            $error_type = 'email_exists';
+            $error_type = 'contact_exists';
         } else {
-            $updateData = [ 
-                'name'       => $name,
-                'email'      => $email,
-                'updated_at' => date( 'Y-m-d H:i:s' ),
-            ];
-
-            if ( !empty( $password ) ) {
-                $updateData[ 'password' ] = password_hash( $password, PASSWORD_BCRYPT );
-            }
-
-            if ( $User_Model->update( $id, $updateData ) ) {
-                $success = true;
-
-                $updatedUser = $User_Model->find( $id );
-                session()->set( 'user', $updatedUser );
-
-                session()->setFlashdata( [ 
-                    'type'    => 'success',
-                    'message' => 'Profile updated successfully!',
-                ] );
+            $existingUser = $User_Model->where( 'email', $email )->where( 'users_id !=', $id )->first();
+            if ( $existingUser ) {
+                $error_type = 'email_exists';
             } else {
-                $error_type = 'db_error';
+                $updateData = [ 
+                    'name'       => $name,
+                    'contact_no' => $contact,
+                    'email'      => $email,
+                    'updated_at' => date( 'Y-m-d H:i:s' ),
+                ];
+
+                if ( !empty( $password ) ) {
+                    $updateData[ 'password' ] = password_hash( $password, PASSWORD_BCRYPT );
+                }
+
+                if ( $User_Model->update( $id, $updateData ) ) {
+                    $success = true;
+
+                    $updatedUser = $User_Model->find( $id );
+                    session()->set( 'user', $updatedUser );
+
+                    session()->setFlashdata( [ 
+                        'type'    => 'success',
+                        'message' => 'Profile updated successfully!',
+                    ] );
+                } else {
+                    $error_type = 'db_error';
+                }
             }
         }
 
