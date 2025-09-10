@@ -1,12 +1,4 @@
 $(document).ready(function () {
-  // $("#bookingsTable").DataTable({
-  //   ordering: false,
-  //   searching: false,
-  //   paging: false,
-  //   info: false,
-  //   bordered: true,
-  // });
-
   if (notification && Object.keys(notification).length > 0) {
     displayPopupMessage(notification.message, notification.type);
   }
@@ -51,7 +43,7 @@ $(document).ready(function () {
           "logout",
           function (response) {
             if (response.success) {
-              window.location.href = "<?= base_url() ?>";
+              window.location.href = BASE_URL + "#home";
             } else {
               Swal.fire({
                 title: "Error!",
