@@ -571,8 +571,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="public/dist/home/js/script.js?v=3.3.4"></script>
-    <script src="public/dist/home/js/booking.script.js?v=1.4.5"></script>
+    <script src="public/dist/home/js/script.js?v=4.4.4"></script>
+    <script src="public/dist/home/js/editProfile.script.js?v4.3.4"></script>
+    <script src="public/dist/home/js/booking.script.js?v=4.4.4"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
 </body>

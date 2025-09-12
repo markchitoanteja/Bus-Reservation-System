@@ -104,6 +104,14 @@
 
                         <?php if ( !empty( $myBookings ) ) : ?>
                             <?php foreach ( $myBookings as $myBooking ) : ?>
+                                <?php
+                                $fare = ( $myBooking[ 'bus_type' ] === 'Ordinary' )
+                                    ? $myBooking[ 'ordinary_fare' ]
+                                    : $myBooking[ 'aircon_fare' ];
+
+                                $btnDisabled = in_array( $myBooking[ 'status' ], [ 'Cancelled', 'Ongoing' ] ) ? 'true' : 'false';
+
+                                ?>
                                 <tr class="text-nowrap">
                                     <td><?= esc( $myBooking[ 'booking_ref' ] ) ?></td>
                                     <td><?= date( 'F j, Y', strtotime( $myBooking[ 'date_created' ] ) ) ?></td>
@@ -111,20 +119,35 @@
                                     <td class="text-center">
                                         <a href="javascript:void(0)" class="btn btn-warning btn-sm view-booking"
                                             style="margin-right: 3px;" data-id="<?= $myBooking[ 'bookings_tb_id' ] ?>"
-                                            data-date="<?= $myBooking[ 'date_created' ] ?>"
+                                            data-btn="<?= $btnDisabled ?>"
+                                            data-date="<?= date( 'F j, Y g:i A', strtotime( $myBooking[ 'date_created' ] ) ) ?>"
+                                            data-ref="<?= $myBooking[ 'booking_ref' ] ?>"
                                             data-origin="<?= $myBooking[ 'origin' ] ?>"
                                             data-destination="<?= $myBooking[ 'destination' ] ?>"
-                                            data-schedule="<?= $myBooking[ 'dep_time' ] ?>"
+                                            data-depdate="<?= date( 'F j, Y', strtotime( $myBooking[ 'date' ] ) ) ?>"
+                                            data-deptime="<?= date( 'g:i A', strtotime( $myBooking[ 'dep_time' ] ) ) ?>"
                                             data-bus="<?= $myBooking[ 'bus_name' ] ?>"
+                                            data-bustype="<?= $myBooking[ 'bus_type' ] ?>"
+                                            data-seats="<?= $myBooking[ 'seats' ] ?>"
+                                            data-amountpaid="<?= esc( number_format( $myBooking[ 'amount_paid' ] ) ) ?>"
+                                            data-paymentmethod="<?= $myBooking[ 'payment_method' ] ?>"
+                                            data-paymentstatus="<?= $myBooking[ 'payment_status' ] ?>"
+                                            data-noofpassengers="<?= $myBooking[ 'no_of_passenger' ] ?>"
+                                            data-fare="<?= esc( number_format( $fare ) ) ?>"
+                                            data-total="<?= esc( number_format( $myBooking[ 'amount' ] ) ) ?>"
                                             data-status="<?= $myBooking[ 'status' ] ?>">
                                             <i class="fas fa-eye text-danger"></i> View
                                         </a>
 
-                                        <a href="javascript:void(0)" class="btn btn-danger btn-sm cancel-booking"
+                                        <a href="javascript:void(0)"
+                                            class="btn btn-danger btn-sm cancel-booking <?= in_array( $myBooking[ 'status' ], [ 'Cancelled', 'Ongoing' ] ) ? 'disabled' : '' ?>"
                                             data-id="<?= $myBooking[ 'bookings_tb_id' ] ?>"
-                                            data-url="my_bookings/cancel_booking">
-                                            <i class="fas fa-trash-alt"></i> Cancel Booking
+                                            data-url="<?= base_url( 'myBookings/cancelBooking' ) ?>">
+                                            <span class="spinner-border spinner-border-sm me-2 d-none" role="status"
+                                                aria-hidden="true"></span>
+                                            <i class="fas fa-ban"></i> Cancel Booking
                                         </a>
+
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -140,11 +163,111 @@
         </div>
     </main>
 
+
     <footer class="text-center py-4 bg-dark text-light">
         <div class="container">
             <p class="mb-1">&copy; 2025 Eastern Goldtrans Tours Inc. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- View Info Modal -->
+    <!-- View Info Modal -->
+    <div class="modal fade" id="bookingInfoModal" tabindex="-1" aria-labelledby="bookingInfoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingInfoModalLabel">Booking Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Booking Details -->
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Booking Reference:</strong>
+                            <span id="infoBookingRef"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Date Created:</strong>
+                            <span id="infoDateCreated"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Origin:</strong>
+                            <span id="infoOrigin"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Destination:</strong>
+                            <span id="infoDestination"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Departure Time:</strong>
+                            <span id="infoSchedule"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Bus:</strong>
+                            <span id="infoBus"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Bus Type:</strong>
+                            <span id="infoBusType"></span>
+                        </li>
+
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>No. of Passengers:</strong>
+                            <span id="infoPassengerCount"></span>
+                        </li>
+
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Seats:</strong>
+                            <span id="infoSeats"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Payment Method:</strong>
+                            <span id="infoPaymentMethod"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Payment Status:</strong>
+                            <span id="infoPaymentStatus"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Amount Paid:</strong>
+                            <span id="infoAmountPaid"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Fare:</strong>
+                            <span id="infoFare"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Total:</strong>
+                            <span id="infoTotal"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Status:</strong>
+                            <span id="infoStatus"></span>
+                        </li>
+                    </ul>
+
+
+                    <!-- Passengers List -->
+                    <ul class="list-group" id="infoPassengers"></ul>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button id="cancel-booking" data-url="<?= base_url( 'myBookings/cancelBooking' ) ?>"
+                        class="btn btn-danger">
+                        <span class="spinner-border spinner-border-sm me-2 d-none" role="status"
+                            aria-hidden="true"></span>
+                        <i class="fas fa-ban"></i> Cancel Booking</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
     <?php if ( session()->get( "user" ) ) : ?>
         <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel"
@@ -234,12 +357,12 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="public/dist/home/js/my_bookings.script.js?v4.3.4"></script>
+    <script src="public/dist/home/js/editProfile.script.js?v4.3.4"></script>
 
     <script>
         const BASE_URL = "<?= base_url() ?>";
     </script>
-    <script src="<?= base_url( 'public/dist/home/js/my_bookings.script.js?v4.3.4' ) ?>"></script>
+    <script src="<?= base_url( 'public/dist/home/js/my_bookings.script.js?v6.6.6' ) ?>"></script>
 
 </body>
 

@@ -1,19 +1,20 @@
 $(document).ready(function () {
   $("#editProfileBtn").click(function () {
     $("#updateName").val(user.name);
+    $("#updateContact").val(user.contact_no);
     $("#updateEmail").val(user.email);
     $("#updateRole").val(user.user_type);
 
     $("#updateProfileModal").modal("show");
   });
 
-  // Update Profile Form Validation
   const $updateProfileForm = $("#updateProfileForm");
 
   if ($updateProfileForm.length) {
     const $modal = $("#updateProfileModal");
 
     const $name = $("#updateName");
+    const $contact = $("#updateContact");
     const $email = $("#updateEmail");
     const $password = $("#updatePassword");
     const $confirmPassword = $("#updateConfirmPassword");
@@ -22,6 +23,7 @@ $(document).ready(function () {
 
     const $confirmPasswordRequired = $("#confirmPasswordRequired");
     const $confirmPasswordMismatch = $("#confirmPasswordMismatch");
+    const $contactInvalidFeedback = $("#updateContactInvalidFeedback");
     const $emailExistsFeedback = $("#emailExistsFeedback");
     const $errorAlert = $("#updateProfileErrorAlert");
     const $userId = $("#updateUserId");
@@ -36,6 +38,7 @@ $(document).ready(function () {
 
       const nameVal = $name.val().trim();
       const emailVal = $email.val().trim();
+      const contactVal = $contact.val().trim();
       const passVal = $password.val().trim();
       const confirmVal = $confirmPassword.val().trim();
 
@@ -45,6 +48,21 @@ $(document).ready(function () {
         valid = false;
       } else {
         $name.removeClass("is-invalid");
+      }
+
+      // Contact Number
+      if (!/^9/.test(contactVal)) {
+        // Must start with 9
+        $contact.addClass("is-invalid");
+        $contactInvalidFeedback
+          .text(
+            "Contact number must start with 9 and be 10 digits long (e.g., 9XXXXXXXXX)."
+          )
+          .removeClass("d-none");
+      } else {
+        // Valid
+        $contact.removeClass("is-invalid");
+        $contactInvalidFeedback.addClass("d-none");
       }
 
       // Email validation
@@ -87,20 +105,21 @@ $(document).ready(function () {
 
       const formData = new FormData();
       formData.append("id", $userId.val());
-      formData.append("name", nameVal);
-      formData.append("email", emailVal);
+      formData.append("name", $name.val());
+      formData.append("email", $email.val());
+      formData.append("contact", $contact.val());
 
       if (passVal) {
         formData.append("password", passVal);
       }
 
       $.ajax({
-        url: "update_profile",
-        method: "POST",
+        url: "updateProfile",
         data: formData,
+        type: "POST",
+        dataType: "JSON",
         processData: false,
         contentType: false,
-        dataType: "JSON",
         success: function (response) {
           stopModalLoading($modal, $submitBtn, $spinner);
 
@@ -110,6 +129,11 @@ $(document).ready(function () {
               $emailExistsFeedback
                 .removeClass("d-none")
                 .text("This email is already associated with another account.");
+            } else if (response.error_type === "contact_exists") {
+              $contact.addClass("is-invalid");
+              $contactInvalidFeedback
+                .text("Contact number is already in use.")
+                .removeClass("d-none");
             } else {
               $("#updateProfileErrorAlert")
                 .addClass("d-block")
@@ -133,6 +157,25 @@ $(document).ready(function () {
       $(this).val().trim()
         ? $(this).removeClass("is-invalid")
         : $(this).addClass("is-invalid");
+    });
+
+    $contact.on("input change", function () {
+      const val = $(this).val().trim();
+      const isValid = /^9\d{9}$/.test(val); // must start with 9 and have 10 digits total
+
+      if (!isValid) {
+        // Must start with 9
+        $contact.addClass("is-invalid");
+        $contactInvalidFeedback
+          .text(
+            "Contact number must start with 9 and be 10 digits long (e.g., 9XXXXXXXXX)."
+          )
+          .removeClass("d-none");
+      } else {
+        // Valid
+        $contact.removeClass("is-invalid");
+        $contactInvalidFeedback.addClass("d-none");
+      }
     });
 
     $email.on("input change", function () {
@@ -193,5 +236,19 @@ $(document).ready(function () {
         $confirmPasswordMismatch.addClass("d-none");
       }
     });
+  }
+
+  function startModalLoading($modal, $submitBtn, $spinner) {
+    formSubmitting = true;
+    $submitBtn.prop("disabled", true);
+    $spinner.removeClass("d-none");
+    $modal.find(".btn-close").hide(); // Hide close button
+  }
+
+  function stopModalLoading($modal, $submitBtn, $spinner) {
+    formSubmitting = false;
+    $submitBtn.prop("disabled", false);
+    $spinner.addClass("d-none");
+    $modal.find(".btn-close").show(); // Show close button
   }
 });

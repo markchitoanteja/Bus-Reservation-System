@@ -69,6 +69,8 @@ $routes->post( '/booking/getAvailableBuses', 'Booking::getAvailableBuses' );
 $routes->post( '/booking/getBusAvailableSeats', 'Booking::getBusAvailableSeats' );
 $routes->post( '/booking/getFare', 'Booking::getFare' );
 $routes->post( '/booking/submitBooking', 'Booking::submitBooking' );
+$routes->post( '/myBookings/getPassengers', 'MyBookings::getPassengers' );
+$routes->post( '/myBookings/cancelBooking', 'MyBookings::cancelBooking' );
 
 
 
