@@ -71,9 +71,9 @@
                                                 <td>
                                                     <i class="fa fa-peso-sign"></i>&nbsp;<?= esc(
                                                         number_format(
-                                                            $route[ 'bus_type' ] === 'Ordinary'
-                                                            ? $route[ 'ordinary_fare' ]
-                                                            : $route[ 'aircon_fare' ],
+                                                            $route[ 'bus_type' ] === '2x2 Aircon with CR, 45-seater'
+                                                            ? $route[ 'with_cr_fare' ]
+                                                            : $route[ 'without_cr_fare' ],
                                                             2
                                                         )
                                                     ) ?>

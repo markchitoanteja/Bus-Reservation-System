@@ -5,22 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Eastern Goldtrans Tours Inc.</title>
+    <title>Mega Bus Lines Corp.</title>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon" />
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="public/dist/home/css/style.css?v=1.1.6" />
+    <link rel="stylesheet" href="public/dist/home/css/style.css?v=1.1.8" />
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center text-light fw-bold" href="#">
-                <img src="public/dist/home/img/logo.png" alt="Logo" loading="lazy" width="40" class="me-2" /> Eastern
-                Goldtrans Tours
+                <img src="public/dist/home/img/logo.png" alt="Logo" loading="lazy" width="40" class="me-2" />
+                Mega Bus Lines Corp.
             </a>
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -71,24 +71,29 @@
 
     <header id="home" class="hero text-center d-flex align-items-center justify-content-center">
         <div class="container text-white">
-            <h1 class="display-4 fw-bold">Eastern Goldtrans Tours</h1>
-            <p class="lead">Serving Since 1994 — <strong>Serbisyong Ginto</strong> saan man <strong>Patungo</strong></p>
+            <h1 class="display-4 fw-bold">Mega Bus Lines Corp.</h1>
+            <p class="lead">
+                <span class="badge badge-pink-theme text-white">
+                    Tiwala at Ginhawa — <strong></strong>Mega Bus Lines Corp.</strong> Hatid sa Iyo
+                </span>
+            </p>
+
             <a href="#booking" class="btn btn-primary-theme btn-lg mt-3">Book Now</a>
         </div>
     </header>
 
     <section id="about" class="py-5 text-center bg-light">
         <div class="container">
-            <h2 class="section-title mb-4">Why Choose Eastern Goldtrans?</h2>
+            <h2 class="section-title mb-4">Why Choose Mega Bus Lines?</h2>
             <p class="lead mx-auto" style="max-width: 750px;">
-                Since <strong>1994</strong>, <strong>Eastern Goldtrans Tours Inc.</strong> has been a trusted name in
-                transportation across Eastern Visayas.
-                With over <strong>30 years</strong> of experience, we provide <span
-                    class="text-danger fw-semibold">safe</span>,
-                <span class="text-danger fw-semibold">comfortable</span>, and <span
-                    class="text-danger fw-semibold">reliable</span> travel solutions for individuals, families, and
+                Since the <strong>mid-2000s</strong>, <strong>Mega Bus Lines Corp.</strong> has been a trusted name in
+                transportation across Eastern Visayas. With nearly <strong>20 years</strong> of experience, we provide
+                <span class="text-danger fw-semibold">safe</span>,
+                <span class="text-danger fw-semibold">comfortable</span>, and
+                <span class="text-danger fw-semibold">reliable</span> travel solutions for individuals, families, and
                 groups.
             </p>
+
             <div class="row mt-5">
                 <div class="col-md-4">
                     <h5 class="fw-bold">🚍 Modern Fleet</h5>
@@ -111,7 +116,7 @@
                         a family gathering, or a personal journey, Eastern Goldtrans is here to make every trip count.
                     </p>
                     <p class="small">
-                        Visit our <a href="https://www.facebook.com/goldtranstoursofficial/" target="_blank"
+                        Visit our <a href="https://web.facebook.com/megabuslinescorp329" target="_blank"
                             rel="noopener noreferrer">official Facebook page</a> for updates, promos, and travel tips.
                     </p>
                 </div>
@@ -122,12 +127,12 @@
     <section id="gallery" class="py-5 bg-white text-center">
         <div class="container">
             <h2 class="section-title mb-4">Promotions & Announcements</h2>
-            <div class="row g-4">
+            <!-- <div class="row g-4">
                 <div class="col-lg-12 mx-auto">
                     <div class="video-wrapper shadow rounded mb-4">
                         <div class="ratio ratio-16x9 rounded">
-                            <iframe src="https://www.youtube.com/embed/BBXwadCYC08"
-                                title="Welcome to Eastern Goldtrans Tours Inc" frameborder="0"
+                            <iframe src="https://www.youtube.com/embed/I5JsqwxA_dc"
+                                title="Welcome to Mega Bus Lines Corp." frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="w-100 rounded"></iframe>
                         </div>
@@ -189,7 +194,133 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+
+            <!-- Coming Soon -->
+            <div class="row g-4 justify-content-center text-center">
+                <div class="col-12 col-md-8">
+                    <div class="mega-coming card-coming-soon p-5">
+                        <div class="coming-inner d-flex flex-column align-items-center justify-content-center">
+                            <div class="coming-text">
+                                <h2>Coming Soon</h2>
+                                <p class="lead">
+                                    Mega Bus Lines Corp. route update — new trips and schedules arriving soon.
+                                    Stay tuned for ticket releases and promos.
+                                </p>
+
+                                <div class="actions mt-4 d-flex justify-content-center gap-3">
+                                    <a class="btn btn-outline-dark" href="#about" role="button">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+            <!-- Styles (paste into your stylesheet or in a <style> block) -->
+            <style>
+                .card-coming-soon {
+                    width: 100%;
+                    border-radius: 12px;
+                    background: linear-gradient(90deg, rgba(179, 0, 0, 0.06), rgba(0, 0, 0, 0.02));
+                    padding: 18px;
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                }
+
+                .coming-inner {
+                    display: flex;
+                    gap: 18px;
+                    align-items: center;
+                    width: 100%;
+                    max-width: 960px;
+                }
+
+
+
+                @keyframes float {
+                    0% {
+                        transform: translateY(0) translateX(-6px);
+                    }
+
+                    50% {
+                        transform: translateY(-6px) translateX(-2px);
+                    }
+
+                    100% {
+                        transform: translateY(0) translateX(-6px);
+                    }
+                }
+
+                .coming-text {
+                    flex: 1 1 auto;
+                }
+
+                .card-coming-soon h2 {
+                    margin: 0 0 6px;
+                    font-size: 1.6rem;
+                    color: #b30000;
+                    /* Mega red accent */
+                    letter-spacing: 0.4px;
+                }
+
+                .card-coming-soon .lead {
+                    margin: 0 0 10px;
+                    color: #333;
+                }
+
+                .meta-row {
+                    display: flex;
+                    gap: 8px;
+                    flex-wrap: wrap;
+                    margin-bottom: 12px;
+                }
+
+                .pill {
+                    background: rgba(179, 0, 0, 0.08);
+                    color: #7a0000;
+                    padding: 6px 10px;
+                    border-radius: 999px;
+                    font-size: 0.85rem;
+                }
+
+                .actions {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                }
+
+                .btn {
+                    padding: 8px 14px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+
+
+                /* Responsive */
+                @media (max-width: 680px) {
+                    .coming-inner {
+                        flex-direction: column;
+                        text-align: center;
+                        gap: 12px;
+                    }
+
+
+                    .card-coming-soon h2 {
+                        font-size: 1.35rem;
+                    }
+
+                    .meta-row {
+                        justify-content: center;
+                    }
+                }
+            </style>
+            <!-- End Cooming Soon -->
         </div>
     </section>
 
@@ -197,7 +328,6 @@
         <div class="container form-section">
             <div class="text-center mb-4">
                 <h2 class="section-title mb-0">Book a Ticket</h2>
-                <small class="text-muted">Note: this is still not connected to the database.</small><br>
                 <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#infoModal"><i
                         class="fa-regular fa-circle-question fa-lg text-secondary"></i></a>
 
@@ -206,14 +336,19 @@
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="route" class="form-label">Origin & Destination</label>
-                        <select id="route" name="route" class="form-select w-100 mx-auto" required>
-                            <option value="" disabled selected>-- Select origin & destination --</option>
-                            <?php foreach ( getAllRoutes() as $route ) : ?>
-                                <option value="<?= $route[ 'routes_tb_id' ] ?>">
-                                    <?= esc( $route[ 'origin' ] ) ?> — <?= esc( $route[ 'destination' ] ) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </span>
+                            <select id="route" name="route" class="form-select" required>
+                                <option value="" disabled selected>-- Select origin & destination --</option>
+                                <?php foreach ( getAllRoutes() as $route ) : ?>
+                                    <option value="<?= $route[ 'routes_tb_id' ] ?>">
+                                        <?= esc( $route[ 'origin' ] ) ?> — <?= esc( $route[ 'destination' ] ) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="col-md-6">
@@ -230,6 +365,8 @@
                         <select id="bus" name="bus" class="form-select w-100 mx-auto" required>
                             <option value="">No bus available</option>
                         </select>
+                        <input type="hidden" id="busType" readonly>
+
                     </div>
 
                     <!-- Passenger Names will be generated here -->
@@ -248,7 +385,13 @@
                             margin-bottom: 10px;
                         }
 
-                        .button-row .btn-wrapper {
+                        .button-row .btn-wrapper-with-cr {
+                            flex: 0 0 calc((100% - 40px) / 5);
+                            /* 6 items with 8px gap between each */
+                            text-align: center;
+                        }
+
+                        .button-row .btn-wrapper-without-cr {
                             flex: 0 0 calc((100% - 40px) / 6);
                             /* 6 items with 8px gap between each */
                             text-align: center;
@@ -257,12 +400,23 @@
                         .button-row .btn {
                             width: 100%;
                         }
+
+                        .button-row .btn-wrapper-with-cr.two-col {
+                            flex: 0 0 calc((100% - 40px) / 5 * 2 + 8px);
+                            /* Span two normal columns (+1 gap) */
+                        }
+
+                        .button-row .btn-wrapper-without-cr.three-col {
+                            flex: 0 0 calc((100% - 40px) / 6 * 3 + 16px);
+                            /* Span 3 columns + 2 gaps of 8px each */
+                        }
                     </style>
                     <div class="col-md-12 text-center">
                         <button type="button" id="chooseSeatsBtn"
                             class="btn btn-primary-theme btn-lg mt-3 d-none">Choose
                             Seat(s)</button>
                     </div>
+
                     <!-- Hidden input -->
                     <input type="hidden" name="seats" id="selectedSeats">
                     <div class="container mt-3 d-none" id="seatContainer"></div>
@@ -346,7 +500,7 @@
 
     <footer class="text-center py-4 bg-dark text-light">
         <div class="container">
-            <p class="mb-1">&copy; 2025 Eastern Goldtrans Tours Inc. All rights reserved.</p>
+            <p class="mb-1">&copy; 2025 Mega Bus Lines Corp. All rights reserved.</p>
         </div>
     </footer>
 
@@ -573,7 +727,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="public/dist/home/js/script.js?v=4.4.4"></script>
     <script src="public/dist/home/js/editProfile.script.js?v4.3.4"></script>
-    <script src="public/dist/home/js/booking.script.js?v=4.4.4"></script>
+    <script src="public/dist/home/js/booking.script.js?v=5.5.7"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
 </body>

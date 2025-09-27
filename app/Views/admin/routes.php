@@ -38,13 +38,13 @@
                                             <th rowspan="2" class="text-center">No.</th>
                                             <th rowspan="2" class="text-center">Origin</th>
                                             <th rowspan="2" class="text-center">Destination</th>
-                                            <th colspan="2" class="text-center">Fare Type</th>
+                                            <th colspan="2" class="text-center">Bus Type</th>
                                             <th rowspan="2" class="text-center">Actions</th>
                                         </tr>
                                         <tr>
 
-                                            <th class="text-center">Ordinary</th>
-                                            <th class="text-center">Aircon</th>
+                                            <th class="text-center">2x2 Aircon with CR, 45-seater</th>
+                                            <th class="text-center">2x3 Aircon without CR, 61-seater</th>
 
                                         </tr>
                                     </thead>
@@ -56,17 +56,17 @@
                                                 <td><?= esc( $route[ 'origin' ] ) ?></td>
                                                 <td><?= esc( $route[ 'destination' ] ) ?></td>
                                                 <td><i class="fa fa-peso-sign"></i>
-                                                    <?= number_format( $route[ 'ordinary_fare' ], 2 ) ?></td>
+                                                    <?= number_format( $route[ 'with_cr_fare' ], 2 ) ?></td>
                                                 <td><i class="fa fa-peso-sign"></i>
-                                                    <?= number_format( $route[ 'aircon_fare' ], 2 ) ?></td>
+                                                    <?= number_format( $route[ 'without_cr_fare' ], 2 ) ?></td>
 
                                                 <td class="text-center">
                                                     <a href="#" class="btn btn-info btn-sm mr-1 edit-route"
                                                         data-id="<?= $route[ 'routes_tb_id' ] ?>"
                                                         data-origin="<?= esc( $route[ 'origin' ] ) ?>"
                                                         data-destination="<?= esc( $route[ 'destination' ] ) ?>"
-                                                        data-ordinary="<?= esc( $route[ 'ordinary_fare' ] ) ?>"
-                                                        data-aircon="<?= esc( $route[ 'aircon_fare' ] ) ?>">
+                                                        data-with_cr="<?= esc( $route[ 'with_cr_fare' ] ) ?>"
+                                                        data-without_cr="<?= esc( $route[ 'without_cr_fare' ] ) ?>">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </a>
 
@@ -119,14 +119,14 @@
                         <input type="text" class="form-control" id="routeDestination" name="destination"
                             placeholder="e.g. Borongan" required>
                     </div>
-                   <div class="form-group">
-                        <label for="routeOrdinary">Ordinary Fare</label>
-                        <input type="number" class="form-control" id="routeOrdinary" name="ordinary_fare"
-                            placeholder="e.g. 500" required>
+                    <div class="form-group">
+                        <label for="routeWithCR">With CR</label>
+                        <input type="number" class="form-control" id="routeWithCR" name="with_cr" placeholder="e.g. 500"
+                            required>
                     </div>
                     <div class="form-group">
-                        <label for="routeAircon">Aircon Fare</label>
-                        <input type="number" class="form-control" id="routeAircon" name="aircon_fare"
+                        <label for="routeWithoutCR">Without CR</label>
+                        <input type="number" class="form-control" id="routeWithoutCR" name="without_cr"
                             placeholder="e.g. 700" required>
                     </div>
                 </div>
@@ -171,13 +171,13 @@
                             placeholder="e.g. Borongan" required>
                     </div>
                     <div class="form-group">
-                        <label for="editRouteOrdinary">Ordinary Fare</label>
-                        <input type="number" class="form-control" id="editRouteOrdinary" name="ordinary"
+                        <label for="editRouteWithCR">With CR</label>
+                        <input type="number" class="form-control" id="editRouteWithCR" name="with_cr"
                             placeholder="e.g. 500" required>
                     </div>
                     <div class="form-group">
-                        <label for="editRouteAircon">Aircon Fare</label>
-                        <input type="number" class="form-control" id="editRouteAircon" name="aircon"
+                        <label for="editRouteWithoutCR">Without CR</label>
+                        <input type="number" class="form-control" id="editRouteWithoutCR" name="without_cr"
                             placeholder="e.g. 700" required>
                     </div>
                 </div>

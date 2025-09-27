@@ -13,8 +13,8 @@ class Routes_Model extends Model
     protected $allowedFields = [ 
         'origin',
         'destination',
-        'ordinary_fare',
-        'aircon_fare',
+        'with_cr_fare',
+        'without_cr_fare',
         'created_at',
         'updated_at',
     ];

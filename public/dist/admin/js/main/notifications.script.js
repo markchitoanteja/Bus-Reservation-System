@@ -3,44 +3,60 @@ $(document).ready(function () {
 
   function renderNotifications(data) {
     let badgeHtml = "";
-    if (data.count > 0) {
+
+    // If count > 0 → show badge
+    if (data && data.count > 0) {
       badgeHtml = `<span class="badge badge-warning navbar-badge">${data.count}</span>`;
-      let append = `
-            ${badgeHtml}
-       `;
+      let append = `${badgeHtml}`;
       $("#notifBell").append(append);
     } else {
+      // Remove badge if no notifications
       $("#notifBell .navbar-badge").remove();
     }
 
-    let html = `<span class="dropdown-item dropdown-header">
-            ${data.count} Notifications
-        </span>`;
-    data.per_type.forEach((row) => {
-      html += `
-        <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item text-truncate w-100 notif-item" data-notify="${
-              row.notify_for
-            }">
-                <span class="position-relative d-inline-block mr-2">
-                    <i class="${getNotifIcon(row.notify_for)}"></i>
-                    <span class="badge badge-warning position-absolute"
-                        style="top:-6px; left:15px; min-width:18px; padding:2px 6px; text-align:center; white-space:nowrap;">
-                        ${row.total}
-                    </span>
-                </span>
-                <span class="ml-2">${row.notify_for}</span>
-                <span class="float-right text-muted text-sm">
-                    ${timeAgo(row.last_time)}
-                </span>
-            </a>
-        `;
-    });
+    let html = "";
 
-    html += `
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">View All</a>
-        `;
+    if (
+      data &&
+      data.count > 0 &&
+      Array.isArray(data.per_type) &&
+      data.per_type.length > 0
+    ) {
+      html += `<span class="dropdown-item dropdown-header">
+              ${data.count} Notifications
+            </span>`;
+
+      data.per_type.forEach((row) => {
+        html += `
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item text-truncate w-100 notif-item" data-notify="${
+          row.notify_for
+        }">
+          <span class="position-relative d-inline-block mr-2">
+            <i class="${getNotifIcon(row.notify_for)}"></i>
+            <span class="badge badge-warning position-absolute"
+                  style="top:-6px; left:15px; min-width:18px; padding:2px 6px; text-align:center; white-space:nowrap;">
+              ${row.total}
+            </span>
+          </span>
+          <span class="ml-2">${row.notify_for}</span>
+          <span class="float-right text-muted text-sm">
+            ${timeAgo(row.last_time)}
+          </span>
+        </a>
+      `;
+      });
+
+      html += `
+      <div class="dropdown-divider"></div>
+      <a href="#" class="dropdown-item dropdown-footer">View All</a>
+    `;
+    } else {
+      // No notifications fallback
+      html = `
+      <span class="dropdown-item dropdown-header">No notifications</span>
+    `;
+    }
 
     $("#notifArea").html(html);
   }

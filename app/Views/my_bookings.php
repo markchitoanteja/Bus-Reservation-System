@@ -106,8 +106,8 @@
                             <?php foreach ( $myBookings as $myBooking ) : ?>
                                 <?php
                                 $fare = ( $myBooking[ 'bus_type' ] === 'Ordinary' )
-                                    ? $myBooking[ 'ordinary_fare' ]
-                                    : $myBooking[ 'aircon_fare' ];
+                                    ? $myBooking[ 'with_cr_fare' ]
+                                    : $myBooking[ 'without_cr_fare' ];
 
                                 $btnDisabled = in_array( $myBooking[ 'status' ], [ 'Cancelled', 'Ongoing' ] ) ? 'true' : 'false';
 
@@ -117,7 +117,7 @@
                                     <td><?= date( 'F j, Y', strtotime( $myBooking[ 'date_created' ] ) ) ?></td>
                                     <td><?= esc( $myBooking[ 'status' ] ) ?></td>
                                     <td class="text-center">
-                                        <a href="javascript:void(0)" class="btn btn-warning btn-sm view-booking"
+                                        <a href="javascript:void(0)" class="btn btn-primary btn-sm view-booking"
                                             style="margin-right: 3px;" data-id="<?= $myBooking[ 'bookings_tb_id' ] ?>"
                                             data-btn="<?= $btnDisabled ?>"
                                             data-date="<?= date( 'F j, Y g:i A', strtotime( $myBooking[ 'date_created' ] ) ) ?>"
@@ -136,7 +136,7 @@
                                             data-fare="<?= esc( number_format( $fare ) ) ?>"
                                             data-total="<?= esc( number_format( $myBooking[ 'amount' ] ) ) ?>"
                                             data-status="<?= $myBooking[ 'status' ] ?>">
-                                            <i class="fas fa-eye text-danger"></i> View
+                                            <i class="fas fa-eye"></i> View
                                         </a>
 
                                         <a href="javascript:void(0)"

@@ -49,18 +49,18 @@ class Routes extends BaseController
     {
         $origin      = ucwords( trim( $this->request->getPost( 'origin' ) ) );
         $destination = ucwords( trim( $this->request->getPost( 'destination' ) ) );
-        $ordinaryFare = $this->request->getPost( 'ordinary_fare' );
-        $airconFare   = $this->request->getPost( 'aircon_fare' );
+        $with_cr     = $this->request->getPost( 'with_cr' );
+        $Without_cr  = $this->request->getPost( 'without_cr' );
 
         $routesModel = new Routes_Model();
 
         $data = [ 
-            'origin'      => $origin,
-            'destination' => $destination,
-            'ordinary_fare'    => $ordinaryFare,
-            'aircon_fare'      => $airconFare,
-            'created_at'  => date( 'Y-m-d H:i:s' ),
-            'updated_at'  => date( 'Y-m-d H:i:s' ),
+            'origin'          => $origin,
+            'destination'     => $destination,
+            'with_cr_fare'    => $with_cr,
+            'without_cr_fare' => $Without_cr,
+            'created_at'      => date( 'Y-m-d H:i:s' ),
+            'updated_at'      => date( 'Y-m-d H:i:s' ),
         ];
 
         $inserted = $routesModel->insert( $data );
@@ -87,17 +87,17 @@ class Routes extends BaseController
         $routeId          = $this->request->getPost( 'route_id' );
         $routeOrigin      = ucwords( trim( $this->request->getPost( 'origin' ) ) );
         $routeDestination = ucwords( trim( $this->request->getPost( 'destination' ) ) );
-        $routeOrdinary    = ucwords( trim( $this->request->getPost( 'ordinary' ) ) );
-        $routeAircon      = ucwords( trim( $this->request->getPost( 'aircon' ) ) );
+        $routeWithCR      = ucwords( trim( $this->request->getPost( 'with_cr' ) ) );
+        $routeWithoutCR   = ucwords( trim( $this->request->getPost( 'without_cr' ) ) );
 
         $routesModel = new Routes_Model();
 
         $updateData = [ 
-            'origin'      => $routeOrigin,
-            'destination' => $routeDestination,
-            'ordinary_fare'    => $routeOrdinary,
-            'aircon_fare'      => $routeAircon,
-            'updated_at'  => date( 'Y-m-d H:i:s' ),
+            'origin'          => $routeOrigin,
+            'destination'     => $routeDestination,
+            'with_cr_fare'    => $routeWithCR,
+            'without_cr_fare' => $routeWithoutCR,
+            'updated_at'      => date( 'Y-m-d H:i:s' ),
         ];
 
         $routesModel->update( $routeId, $updateData );

@@ -12,5 +12,6 @@ function getMyBookings()
         ->join( 'buses_tb', 'buses_tb.buses_tb_id = bus_trav_sched_tb.buses_tb_id' )
         ->join( 'users', 'users.users_id = bookings_tb.users_id' )
         ->where( 'bookings_tb.users_id', session()->get( 'user' )[ 'users_id' ] )
+        ->orderBy( 'bookings_tb.created_at', 'DESC' )
         ->findAll();
 }

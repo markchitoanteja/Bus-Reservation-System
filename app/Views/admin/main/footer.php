@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="main-footer">
-    <strong>&copy; 2025 Eastern Goldtrans Tours Inc.</strong> All rights reserved.
+    <strong>&copy; 2025 Mega Bus Lines Corp.</strong> All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> 1.0
     </div>

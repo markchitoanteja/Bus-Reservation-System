@@ -44,8 +44,20 @@ $(document).ready(function () {
               let depTime = formatTime(bus.dep_time);
 
               $select.append(
-                `<option value="${bus.bus_routes_tb_id}-${bus.bus_trav_sched_tb_id}">
-                   ${depTime} ${bus.bus_name} (${bus.bus_no}) - ${bus.bus_type}
+                `<option value="${bus.bus_routes_tb_id}-${
+                  bus.bus_trav_sched_tb_id
+                }">
+                    ${depTime} ${bus.bus_name} (${bus.bus_no}) - ${
+                  bus.bus_type
+                } ₱${(bus.bus_type === "2x2 Aircon with CR, 45-seater"
+                  ? parseFloat(bus.with_cr_fare)
+                  : parseFloat(bus.without_cr_fare)
+                ).toLocaleString("en-PH", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+
+
                  </option>`
               );
             });
@@ -71,8 +83,18 @@ $(document).ready(function () {
     const fare = parseFloat($("#getFare").val()) || 0;
     const passengerCount = parseInt($("#passenger").val()) || 1;
     const total = fare * passengerCount;
-    $("#fare").text(`₱${fare.toFixed(2)}`);
-    $("#totalFare").text(`₱${total.toFixed(2)}`);
+    $("#fare").text(
+      `₱${fare.toLocaleString("en-PH", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}`
+    );
+    $("#totalFare").text(
+      `₱${total.toLocaleString("en-PH", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}`
+    );
   }
 
   $("#bus").on("input change blur", function () {
@@ -86,13 +108,14 @@ $(document).ready(function () {
         data: { bus_id, route_id },
         dataType: "json",
         success: function (fare) {
-          if (fare.bus_type === "Ordinary") {
-            $("#getFare").val(fare.ordinary_fare);
-          } else if (fare.bus_type === "Air-Con") {
-            $("#getFare").val(fare.aircon_fare);
+          if (fare.bus_type === "2x2 Aircon with CR, 45-seater") {
+            $("#getFare").val(fare.with_cr_fare);
+          } else if (fare.bus_type === "2x3 Aircon without CR, 61-seater") {
+            $("#getFare").val(fare.without_cr_fare);
           } else {
             $("#getFare").val("0.00");
           }
+          $("#busType").val(fare.bus_type);
           updateFare();
         },
         error: function () {
@@ -117,38 +140,155 @@ $(document).ready(function () {
         success: function (busDetails) {
           selectedSeats = []; // reset
           $("#selectedSeats").val("");
+          const busType = $("#busType").val();
 
           let occupied = [];
           if (busDetails.occupied_seats) {
             occupied = busDetails.occupied_seats.split(",");
           }
 
-          const prefixes = ["L", "M", "R", "", "X", "Y"];
-          let html =
-            "<label for='seats' class='form-label'>Select your seat(s)</label>";
+          if (busType === "2x2 Aircon with CR, 45-seater") {
+            withCR();
+          }
 
-          for (let i = 1; i <= 14; i++) {
-            html += '<div class="button-row">';
-            prefixes.forEach((prefix) => {
-              html += '<div class="btn-wrapper">';
-              if (prefix !== "") {
-                const seatCode = prefix + i;
-                const isOccupied = occupied.includes(seatCode);
-                html += `<button type="button" 
+          if (busType === "2x3 Aircon without CR, 61-seater") {
+            withoutCR();
+          }
+
+          function withCR() {
+            let html =
+              "<label for='seats' class='form-label'>Select your seat(s)</label>";
+
+            // Define the actual seat layout per row based on the image
+            const seatLayout = [
+              ["ON DUTY DRIVER", "", "", "VIP", "VIP"],
+              ["DRIVER SEAT", "", "", 2, 1],
+              [4, 3, "", 6, 5],
+              [8, 7, "", 10, 9],
+              [12, 11, "", 14, 13],
+              [16, 15, "", "COMFORT ROOM", ""],
+              [18, 17, "", "STAIRS", ""],
+              [12, 11, "", 14, 13],
+            ];
+
+            seatLayout.forEach((row) => {
+              html += '<div class="button-row">';
+              row.forEach((seat, index) => {
+                // Skip empty cell if previous is a two-col seat
+                if (
+                  seat === "" &&
+                  (row[index - 1] === "ON DUTY DRIVER" ||
+                    row[index - 1] === "DRIVER SEAT" ||
+                    row[index - 1] === "COMFORT ROOM" ||
+                    row[index - 1] === "STAIRS")
+                ) {
+                  return;
+                }
+
+                // Assign wrapper class properly
+                let wrapperClass = "btn-wrapper-with-cr";
+                if (
+                  seat === "ON DUTY DRIVER" ||
+                  seat === "DRIVER SEAT" ||
+                  seat === "COMFORT ROOM" ||
+                  seat === "STAIRS"
+                ) {
+                  wrapperClass += " two-col";
+                }
+
+                html += `<div class="${wrapperClass}">`;
+
+                if (seat) {
+                  if (
+                    seat === "ON DUTY DRIVER" ||
+                    seat === "DRIVER SEAT" ||
+                    seat === "COMFORT ROOM" ||
+                    seat === "STAIRS"
+                  ) {
+                    html += `<button type="button" class="btn btn-sm btn-outline-dark seat-btn" disabled style="color:black;">${seat}</button>`;
+                  } else {
+                    const seatCode = seat.toString();
+                    const isOccupied = occupied.includes(seatCode);
+                    html += `<button type="button" 
                   class="btn btn-sm ${
-                    isOccupied ? "btn-danger" : "btn-outline-success"
+                    isOccupied ? "btn-pink" : "btn-outline-primary"
                   } seat-btn" 
                   data-seat="${seatCode}" 
                   ${isOccupied ? "disabled" : ""}>${seatCode}</button>`;
-              } else {
-                html += "&nbsp;";
-              }
+                  }
+                } else {
+                  html += "&nbsp;";
+                }
+
+                html += "</div>";
+              });
               html += "</div>";
             });
-            html += "</div>";
+
+            $("#seatContainer").html(html);
           }
 
-          $("#seatContainer").html(html);
+          function withoutCR() {
+            let html =
+              "<label for='seats' class='form-label'>Select your seat(s)</label>";
+
+            // Define the actual seat layout per row based on the image
+            const seatLayout = [
+              ["DRIVER SEAT", "", "", "", "VIP", "VIP"],
+              [5, 4, 3, "", 2, 1],
+              [10, 9, 8, "", 7, 6],
+              [15, 14, 13, "", 12, 11],
+              [20, 19, 18, "", 17, 16],
+              [25, 24, 23, "", 22, 21],
+              [30, 29, 28, "", 27, 26],
+              [35, 34, 33, "", 32, 31],
+              [40, 39, 38, "", 37, 36],
+              [45, 44, 43, "", 42, 41],
+              [50, 49, 48, "", 47, 46],
+              [55, 54, 53, "", 52, 51],
+              [61, 60, 59, 58, 57, 56],
+            ];
+
+            seatLayout.forEach((row) => {
+              html += '<div class="button-row">';
+              row.forEach((seat, index) => {
+                // Skip empty cells if previous seat spans multiple columns
+                if (seat === "" && row[index - 1] === "DRIVER SEAT") return;
+                if (seat === "" && row[index - 2] === "DRIVER SEAT") return;
+
+                // Assign wrapper class properly
+                let wrapperClass = "btn-wrapper-without-cr";
+                if (seat === "DRIVER SEAT") {
+                  wrapperClass += " three-col";
+                }
+
+                html += `<div class="${wrapperClass}">`;
+
+                if (seat) {
+                  if (seat === "DRIVER SEAT") {
+                    html += `<button type="button" class="btn btn-sm btn-outline-dark seat-btn" disabled style="color:black;">${seat}</button>`;
+                  } else {
+                    const seatCode = seat.toString();
+                    const isOccupied = occupied.includes(seatCode);
+                    html += `<button type="button" 
+                  class="btn btn-sm ${
+                    isOccupied ? "btn-pink" : "btn-outline-primary"
+                  } seat-btn" 
+                  data-seat="${seatCode}" 
+                  ${isOccupied ? "disabled" : ""}>${seatCode}</button>`;
+                  }
+                } else {
+                  html += "&nbsp;";
+                }
+
+                html += "</div>";
+              });
+              html += "</div>";
+            });
+
+            $("#seatContainer").html(html);
+          }
+
           $("#chooseSeatsBtn").removeClass("d-none");
         },
         error: function () {
@@ -165,14 +305,14 @@ $(document).ready(function () {
     const seat = $(this).data("seat");
     const passengerCount = parseInt($("#passenger").val());
 
-    if ($(this).hasClass("btn-success")) {
+    if ($(this).hasClass("btn-primary")) {
       // Deselect
-      $(this).removeClass("btn-success").addClass("btn-outline-success");
+      $(this).removeClass("btn-primary").addClass("btn-outline-primary");
       selectedSeats = selectedSeats.filter((s) => s !== seat);
     } else {
       // Select (limit check)
       if (selectedSeats.length < passengerCount) {
-        $(this).removeClass("btn-outline-success").addClass("btn-success");
+        $(this).removeClass("btn-outline-primary").addClass("btn-primary");
         selectedSeats.push(seat);
       } else {
         Swal.fire({

@@ -74,17 +74,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="passengerTableBody" class="text-nowrap text-center">
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>

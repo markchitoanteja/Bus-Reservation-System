@@ -112,7 +112,7 @@
                                     <tbody>
                                         <?php $no = 1; ?>
                                         <?php foreach ( getAllRoutesSchedules() as $schedule ) : ?>
-                                            <tr>
+                                            <tr class="text-nowrap">
                                                 <td><?= $no++ ?></td>
                                                 <td>
                                                     From: <?= esc( $schedule[ 'origin' ] ) ?><br>To:

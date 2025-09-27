@@ -109,32 +109,38 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ( getAllRecentBookings() as $route ) : ?>
-                                            <tr class="text-nowrap">
-                                                <td><?= esc( $route[ 'booking_ref' ] ) ?></td>
-                                                <td><?= esc( $route[ 'name' ] ) ?></td>
-                                                <td>
-                                                    <?= esc( $route[ 'origin' ] ) ?> — <?= esc( $route[ 'destination' ] ) ?>
-                                                </td>
-                                                <td><?= date( 'F j, Y', strtotime( $route[ 'date' ] ) ) ?></td>
-                                                <td><?= date( 'h:i A', strtotime( $route[ 'dep_time' ] ) ) ?></td>
-                                                <td>
-                                                    <?php
-                                                    // Map status to badge classes
-                                                    $badgeClasses = [ 
-                                                        'Pending'   => 'badge-warning',
-                                                        'Cancelled' => 'badge-danger',
-                                                        'Confirmed' => 'badge-success'
-                                                    ];
+                                        <?php if ( !empty( getAllRecentBookings() ) ) : ?>
+                                            <?php foreach ( getAllRecentBookings() as $route ) : ?>
+                                                <tr class="text-nowrap">
+                                                    <td><?= esc( $route[ 'booking_ref' ] ) ?></td>
+                                                    <td><?= esc( $route[ 'name' ] ) ?></td>
+                                                    <td>
+                                                        <?= esc( $route[ 'origin' ] ) ?> — <?= esc( $route[ 'destination' ] ) ?>
+                                                    </td>
+                                                    <td><?= date( 'F j, Y', strtotime( $route[ 'date' ] ) ) ?></td>
+                                                    <td><?= date( 'h:i A', strtotime( $route[ 'dep_time' ] ) ) ?></td>
+                                                    <td>
+                                                        <?php
+                                                        // Map status to badge classes
+                                                        $badgeClasses = [ 
+                                                            'Pending'   => 'badge-warning',
+                                                            'Cancelled' => 'badge-danger',
+                                                            'Confirmed' => 'badge-success'
+                                                        ];
 
-                                                    $status     = $route[ 'status' ];
-                                                    $badgeClass = $badgeClasses[ $status ] ?? 'badge-secondary'; // fallback for unknown status
-                                                    ?>
-                                                    <span class="badge <?= $badgeClass ?>"><?= esc( $status ) ?></span>
-                                                </td>
+                                                        $status     = $route[ 'status' ];
+                                                        $badgeClass = $badgeClasses[ $status ] ?? 'badge-secondary'; // fallback for unknown status
+                                                        ?>
+                                                        <span class="badge <?= $badgeClass ?>"><?= esc( $status ) ?></span>
+                                                    </td>
 
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
+                                            <tr>
+                                                <td colspan="6" class="text-center text-muted">No recent bookings found</td>
                                             </tr>
-                                        <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </tbody>
                                 </table>
                             </div>

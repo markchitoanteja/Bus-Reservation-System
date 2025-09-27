@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard | Eastern Goldtrans Tours Inc.</title>
+    <title><?= session( 'title' ) ?? '' ?> | Mega Bus Lines Corp.</title>
 
-    <link rel="shortcut icon" href="<?= base_url( 'favicon.ico' ) ?>" type="image/x-icon" />
+
+    <link rel="shortcut icon" href="<?= base_url( 'favicon.ico?v=2' ) ?>" type="image/x-icon" />
 
 
     <!-- Fonts & Icons -->
@@ -33,7 +34,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?= base_url() ?>public/dist/admin/img/logo-circle.png" alt="Logo"
+            <img class="animation__shake" src="<?= base_url() ?>public/dist/admin/img/favicon.ico" alt="Logo"
                 height="60" width="60">
         </div>
 
@@ -75,9 +76,9 @@
         <!-- Sidebar -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="#" class="brand-link">
-                <img src="<?= base_url() ?>public/dist/admin/img/logo.png" alt="Logo"
+                <img src="<?= base_url() ?>public/dist/admin/img/favicon.ico" alt="Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Goldtrans Tours Inc.</span>
+                <span class="brand-text font-weight-light">Mega Bus Lines Corp.</span>
             </a>
 
             <div class="sidebar">

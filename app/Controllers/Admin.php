@@ -17,6 +17,7 @@ class Admin extends BaseController
             return $redirect;
         }
 
+        session()->set( 'title', 'Dashboard' );
         session()->set( 'active_tab', 'dashboard' );
 
         // Load dashboard view if user is admin
@@ -38,6 +39,7 @@ class Admin extends BaseController
             return $redirect;
         }
 
+        session()->set( 'title', 'Bookings' );
         session()->set( 'active_tab', 'bookings' );
 
         // Load bookings view if user is admin
@@ -59,6 +61,7 @@ class Admin extends BaseController
             return $redirect;
         }
 
+        session()->set( 'title', 'Passengers' );
         session()->set( 'active_tab', 'passengers' );
 
         // Load passengers view if user is admin
@@ -81,6 +84,7 @@ class Admin extends BaseController
             return $redirect;
         }
 
+        session()->set( 'title', 'Routes' );
         session()->set( 'active_tab', 'routes' );
 
         // Load routes view if user is admin
@@ -102,6 +106,7 @@ class Admin extends BaseController
             return $redirect;
         }
 
+        session()->set( 'title', 'Buses' );
         session()->set( 'active_tab', 'buses' );
 
         // Load buses view if user is admin
@@ -118,6 +123,7 @@ class Admin extends BaseController
             return $redirect;
         }
 
+        session()->set( 'title', 'Schedules' );
         session()->set( 'active_tab', 'schedules' );
 
         // Load schedules view if user is admin
@@ -139,6 +145,7 @@ class Admin extends BaseController
             return $redirect;
         }
 
+        session()->set( 'title', 'Settings' );
         session()->set( 'active_tab', 'settings' );
 
         // Load settings view if user is admin

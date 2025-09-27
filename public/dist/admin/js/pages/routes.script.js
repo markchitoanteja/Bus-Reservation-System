@@ -120,14 +120,14 @@ $(document).ready(function () {
     const id = $(this).data("id");
     const origin = $(this).data("origin");
     const destination = $(this).data("destination");
-    const ordinary = $(this).data("ordinary");
-    const aircon = $(this).data("aircon");
+    const with_cr = $(this).data("with_cr");
+    const without_cr = $(this).data("without_cr");
 
     $("#editRouteId").val(id);
     $("#editRouteOrigin").val(origin);
     $("#editRouteDestination").val(destination);
-    $("#editRouteOrdinary").val(ordinary);
-    $("#editRouteAircon").val(aircon);
+    $("#editRouteWithCR").val(with_cr);
+    $("#editRouteWithoutCR").val(without_cr);
 
     $("#editRouteModal").modal("show");
   });

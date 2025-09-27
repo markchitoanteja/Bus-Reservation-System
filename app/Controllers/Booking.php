@@ -17,7 +17,9 @@ class Booking extends BaseController
         $busRoutesModel = new BusRoutes_Model();
 
         $availableBuses = $busRoutesModel
-            ->select( 'bus_routes_tb.*,
+            ->select( 'bus_routes_tb.*, 
+            routes_tb.with_cr_fare, 
+            routes_tb.without_cr_fare,
             bus_trav_sched_tb.bus_trav_sched_tb_id, 
             buses_tb.buses_tb_id, 
             buses_tb.bus_name, 
