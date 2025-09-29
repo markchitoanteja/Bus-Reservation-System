@@ -4,28 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Bookings_Model extends Model
+class Conductor_Model extends Model
 {
-    protected $table = "bookings_tb";
-    protected $primaryKey = "bookings_tb_id";
+    protected $table = "conductor_tb";
+    protected $primaryKey = "conductor_tb_id";
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
     protected $allowedFields = [
-        'bookings_tb_id',
-        'booking_ref',
-        'status',
-        'no_of_passenger',
-        'seats',
-        'amount',
-        'amount_paid',
-        'payment_method',
-        'payment_status',
+        'conductor_tb_id',
         'created_at',
         'updated_at',
-        'bus_routes_tb_id',
+        'buses_tb_id',
         'users_id',
     ];
-
+    // enable CI timestamps
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';

@@ -113,7 +113,7 @@
                 <div class="col-md-12">
                     <p class="mx-auto" style="max-width: 750px;">
                         We don’t just move people — we connect communities. Whether you’re off on a business trip,
-                        a family gathering, or a personal journey, Eastern Goldtrans is here to make every trip count.
+                        a family gathering, or a personal journey, Mega Bus Lines is here to make every trip count.
                     </p>
                     <p class="small">
                         Visit our <a href="https://web.facebook.com/megabuslinescorp329" target="_blank"
@@ -550,6 +550,7 @@
                                 <select id="loginRole" class="form-select" required>
                                     <option value="user" selected>Passenger</option>
                                     <option value="admin">Administrator</option>
+                                    <option value="conductor">Conductor</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -725,9 +726,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="public/dist/home/js/script.js?v=4.4.4"></script>
+    <script src="public/dist/home/js/script.js?v=4.4.5"></script>
     <script src="public/dist/home/js/editProfile.script.js?v4.3.4"></script>
-    <script src="public/dist/home/js/booking.script.js?v=5.5.7"></script>
+    <script src="public/dist/home/js/booking.script.js?v=5.5.8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
 </body>

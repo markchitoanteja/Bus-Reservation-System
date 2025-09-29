@@ -107,7 +107,7 @@ $(document).ready(function () {
       $("#loginRole").on("change", function () {
         const selectedRole = $(this).val();
 
-        if (selectedRole === "admin") {
+        if (selectedRole === "admin" || selectedRole === "conductor") {
           $("#passengerSignupPrompt").addClass("d-none");
         } else {
           $("#passengerSignupPrompt").removeClass("d-none");
@@ -211,6 +211,8 @@ $(document).ready(function () {
             // Redirect based on user type
             if (user_type === "admin") {
               window.location.href = "admin/dashboard";
+            } else if (user_type === "conductor") {
+              window.location.href = "conductor/dashboard";
             } else {
               location.reload(); // Regular users
             }

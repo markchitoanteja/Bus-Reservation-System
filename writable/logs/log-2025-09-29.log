@@ -1,0 +1,1442 @@
+ERROR - 2025-09-29 19:47:28 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:47:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:47:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:47:28 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 19:48:02 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:48:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:48:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:48:02 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 19:50:40 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:50:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:50:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:50:40 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 19:52:45 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:52:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:52:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:52:45 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 19:52:49 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:52:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:52:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:52:49 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 19:56:29 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:56:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:56:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:56:29 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 19:56:32 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:56:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:56:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:56:32 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 19:58:02 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 19:58:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:58:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 19:58:02 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 20:05:04 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 20:05:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC', [], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 20:05:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC', [], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 20:05:04 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bookings_tb`.`created_at` AS `date_created`, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+ORDER BY `bookings_tb`.`created_at` DESC', [], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 20:08:45 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 20:08:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 20:08:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 20:08:45 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = \'2025-09-13\'
+AND `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bookings_tb`.`created_at` DESC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `bus_trav_sched_tb`.`date` = :bus_trav_sched_tb.date:
+AND `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bookings_tb`.`created_at` DESC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(201): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-09-29 20:11:49 --> mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb' in C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `booking...', 0)
+#1 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `booking...')
+#2 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `booking...')
+#3 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `booking...', Array, false)
+#4 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\Bus-Reservation-System\app\Controllers\Conductor.php(200): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+#8 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+#9 C:\xampp\htdocs\Bus-Reservation-System\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Bus-Reservation-System\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\Bus-Reservation-System\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-09-29 20:11:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+[Method: POST, Route: conductor/bookings/fetch]
+in FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php on line 692.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bus_trav_sched_tb`.`date` ASC', [...], false)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Conductor.php(200): CodeIgniter\BaseModel->findAll()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 20:11:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 332.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bus_trav_sched_tb`.`date` ASC')
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bus_trav_sched_tb`.`date` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bus_trav_sched_tb`.`date` ASC', [...], false)
+ 4 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Conductor.php(200): CodeIgniter\BaseModel->findAll()
+ 7 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 20:11:49 --> [Caused by] mysqli_sql_exception: Unknown table 'u474266573_db_brs.bookings_tb'
+in FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php on line 327.
+ 1 FCPATH\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bus_trav_sched_tb`.`date` ASC', 0)
+ 2 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bus_trav_sched_tb`.`date` ASC')
+ 3 FCPATH\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = \'1\'
+ORDER BY `bus_trav_sched_tb`.`date` ASC')
+ 4 FCPATH\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `bookings_tb`.*, `bus_routes_tb`.*, `bus_trav_sched_tb`.*, `routes_tb`.*, `buses_tb`.*, `users`.*
+FROM `passengers_tb`
+JOIN `bus_routes_tb` ON `bus_routes_tb`.`bus_routes_tb_id` = `bookings_tb`.`bus_routes_tb_id`
+JOIN `bus_trav_sched_tb` ON `bus_trav_sched_tb`.`bus_trav_sched_tb_id` = `bus_routes_tb`.`bus_trav_sched_tb_id`
+JOIN `routes_tb` ON `routes_tb`.`routes_tb_id` = `bus_routes_tb`.`routes_tb_id`
+JOIN `buses_tb` ON `buses_tb`.`buses_tb_id` = `bus_trav_sched_tb`.`buses_tb_id`
+JOIN `users` ON `users`.`users_id` = `bookings_tb`.`users_id`
+WHERE `buses_tb`.`buses_tb_id` = :buses_tb.buses_tb_id:
+ORDER BY `bus_trav_sched_tb`.`date` ASC', [...], false)
+ 5 FCPATH\vendor\codeigniter4\framework\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Conductor.php(200): CodeIgniter\BaseModel->findAll()
+ 8 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->fetchBookings()
+ 9 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+10 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 23:02:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: conductor/markFullyPaid]
+in FCPATH\vendor\codeigniter4\framework\system\Model.php on line 456.
+ 1 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(1027): CodeIgniter\Model->doUpdate(null, [...])
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Conductor.php(226): CodeIgniter\Model->update(null, [...])
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->markFullyPaid()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 23:07:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: conductor/markFullyPaid]
+in FCPATH\vendor\codeigniter4\framework\system\Model.php on line 456.
+ 1 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(1027): CodeIgniter\Model->doUpdate(null, [...])
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Conductor.php(226): CodeIgniter\Model->update(null, [...])
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->markFullyPaid()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-29 23:15:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: conductor/markFullyPaid]
+in FCPATH\vendor\codeigniter4\framework\system\Model.php on line 456.
+ 1 FCPATH\vendor\codeigniter4\framework\system\BaseModel.php(1027): CodeIgniter\Model->doUpdate(null, [...])
+ 2 FCPATH\vendor\codeigniter4\framework\system\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Conductor.php(226): CodeIgniter\Model->update(null, [...])
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->markFullyPaid()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

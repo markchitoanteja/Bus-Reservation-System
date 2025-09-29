@@ -1,0 +1,24 @@
+CRITICAL - 2025-09-28 13:15:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "conductor/main/header.php"
+[Method: GET, Route: conductor/dashboard]
+in FCPATH\vendor\codeigniter4\framework\system\Exceptions\FrameworkException.php on line 39.
+ 1 FCPATH\vendor\codeigniter4\framework\system\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('conductor/main/header.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('conductor/main/header', [], true)
+ 3 APPPATH\Controllers\Conductor.php(24): view('conductor/main/header')
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->index()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-28 13:16:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "conductor/main/header.php"
+[Method: GET, Route: conductor/dashboard]
+in FCPATH\vendor\codeigniter4\framework\system\Exceptions\FrameworkException.php on line 39.
+ 1 FCPATH\vendor\codeigniter4\framework\system\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('conductor/main/header.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('conductor/main/header', [], true)
+ 3 APPPATH\Controllers\Conductor.php(24): view('conductor/main/header')
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Conductor->index()
+ 5 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Conductor))
+ 6 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

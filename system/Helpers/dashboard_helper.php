@@ -42,7 +42,7 @@ function getMostBookedRoutes() : array
     $overall = array_sum( array_column( $routes, 'total_bookings' ) );
 
     // Filter only those equal to max and calculate %
-    return array_map( function ($r) use ($overall) {
+    return array_map( function ( $r ) use ( $overall ) {
         $r[ 'percentage' ] = $overall > 0 ? round( ( $r[ 'total_bookings' ] / $overall ) * 100, 1 ) : 0;
         return $r;
     }, array_filter( $routes, fn( $r ) => $r[ 'total_bookings' ] == $max ) );
@@ -71,6 +71,23 @@ function getAllRecentBookings()
         ->join( 'routes_tb', 'routes_tb.routes_tb_id = bus_routes_tb.routes_tb_id' )
         ->join( 'buses_tb', 'buses_tb.buses_tb_id = bus_trav_sched_tb.buses_tb_id' )
         ->join( 'users', 'users.users_id = bookings_tb.users_id' )
+        ->limit( 10 )
+        ->findAll();
+}
+
+
+
+function getAllRecentBookingsByBus()
+{
+    $model = new Bookings_Model();
+    $busId = session()->get( 'conductor' )[ 'bus_id' ];
+    return $model->select( 'bookings_tb.*, bus_routes_tb.*,bus_trav_sched_tb.*,routes_tb.*,buses_tb.*,users.*' )
+        ->join( 'bus_routes_tb', 'bus_routes_tb.bus_routes_tb_id = bookings_tb.bus_routes_tb_id' )
+        ->join( 'bus_trav_sched_tb', 'bus_trav_sched_tb.bus_trav_sched_tb_id = bus_routes_tb.bus_trav_sched_tb_id' )
+        ->join( 'routes_tb', 'routes_tb.routes_tb_id = bus_routes_tb.routes_tb_id' )
+        ->join( 'buses_tb', 'buses_tb.buses_tb_id = bus_trav_sched_tb.buses_tb_id' )
+        ->join( 'users', 'users.users_id = bookings_tb.users_id' )
+        ->where( 'buses_tb.buses_tb_id', $busId )
         ->limit( 10 )
         ->findAll();
 }

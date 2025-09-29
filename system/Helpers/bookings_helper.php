@@ -14,6 +14,22 @@ function getAllBookings()
         ->findAll();
 }
 
+function getAllBookingsByBus()
+{
+    $model = new Bookings_Model();
+    $busId = session()->get( 'conductor' )[ 'bus_id' ];
+
+    return $model->select( 'bookings_tb.*, bus_routes_tb.*,bus_trav_sched_tb.*,routes_tb.*,buses_tb.*,users.*' )
+        ->join( 'bus_routes_tb', 'bus_routes_tb.bus_routes_tb_id = bookings_tb.bus_routes_tb_id' )
+        ->join( 'bus_trav_sched_tb', 'bus_trav_sched_tb.bus_trav_sched_tb_id = bus_routes_tb.bus_trav_sched_tb_id' )
+        ->join( 'routes_tb', 'routes_tb.routes_tb_id = bus_routes_tb.routes_tb_id' )
+        ->join( 'buses_tb', 'buses_tb.buses_tb_id = bus_trav_sched_tb.buses_tb_id' )
+        ->join( 'users', 'users.users_id = bookings_tb.users_id' )
+        ->where( 'buses_tb.buses_tb_id', $busId ) // ✅ only bookings for this bus
+        ->orderBy( 'bus_trav_sched_tb.date', 'ASC' )
+        ->findAll();
+}
+
 if ( !function_exists( 'generateBookingRef' ) ) {
     function generateBookingRef( $length = 6 )
     {

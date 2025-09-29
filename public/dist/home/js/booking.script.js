@@ -388,74 +388,60 @@ $(document).ready(function () {
     container.innerHTML = "";
 
     for (let i = 1; i <= count; i++) {
+      // === Passenger Header (bold only once per passenger) ===
+      const passengerHeader = document.createElement("div");
+      passengerHeader.classList.add("col-12", "p-2");
+      passengerHeader.innerHTML = `<label class="fw-bold">Passenger ${i}</label>`;
+      container.appendChild(passengerHeader);
+
       // ===== Name =====
       const colName = document.createElement("div");
       colName.classList.add("col-md-4", "p-2");
-
-      const labelName = document.createElement("label");
-      labelName.classList.add("form-label");
-      labelName.textContent = `Passenger ${i} Name`;
 
       const inputName = document.createElement("input");
       inputName.type = "text";
       inputName.name = "passenger_names[]";
       inputName.classList.add("form-control");
-      inputName.placeholder = `Enter Passenger ${i} Name`;
+      inputName.placeholder = `Enter Name`;
       inputName.required = true;
       inputName.value = existingNames[i - 1] || "";
       inputName.addEventListener("blur", function () {
         this.value = this.value.trim();
       });
 
-      colName.appendChild(labelName);
       colName.appendChild(inputName);
 
       // ===== Age =====
       const colAge = document.createElement("div");
       colAge.classList.add("col-md-4", "p-2");
 
-      const labelAge = document.createElement("label");
-      labelAge.classList.add("form-label");
-      labelAge.textContent = `Passenger ${i} Age`;
-
       const inputAge = document.createElement("input");
       inputAge.type = "number";
       inputAge.name = "passenger_ages[]";
       inputAge.classList.add("form-control");
-      inputAge.placeholder = `Enter Passenger ${i} Age`;
+      inputAge.placeholder = `Enter Age`;
       inputAge.min = 0;
       inputAge.required = true;
       inputAge.value = existingAges[i - 1] || "";
 
-      colAge.appendChild(labelAge);
       colAge.appendChild(inputAge);
 
       // ===== Gender =====
       const colGender = document.createElement("div");
       colGender.classList.add("col-md-4", "p-2");
 
-      const labelGender = document.createElement("label");
-      labelGender.classList.add("form-label");
-      labelGender.textContent = `Passenger ${i} Gender`;
-
       const selectGender = document.createElement("select");
       selectGender.name = "passenger_genders[]";
       selectGender.classList.add("form-select");
       selectGender.required = true;
 
-      const optionDefault = new Option(
-        `Select Passenger ${i} Gender`,
-        "",
-        true,
-        true
-      );
+      const optionDefault = new Option("Select Gender", "", true, true);
       optionDefault.disabled = true;
       selectGender.add(optionDefault);
       selectGender.add(new Option("Male", "Male"));
       selectGender.add(new Option("Female", "Female"));
       selectGender.value = existingGenders[i - 1] || "";
 
-      colGender.appendChild(labelGender);
       colGender.appendChild(selectGender);
 
       // Append to container

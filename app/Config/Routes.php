@@ -18,6 +18,20 @@ $routes->get( '/admin/buses', 'Admin::viewBuses' );
 $routes->get( '/admin/schedules', 'Admin::viewSchedules' );
 $routes->get( '/admin/settings', 'Admin::viewSettings' );
 
+// Conductor routes
+$routes->get( '/conductor/dashboard', 'Conductor::index' );
+$routes->get( '/conductor/bookings', 'Conductor::viewBookings' );
+$routes->get( '/conductor/passengers', 'Conductor::viewPassengers' );
+$routes->get( '/conductor/routes', 'Conductor::viewRoutes' );
+$routes->get( '/conductor/schedules', 'Conductor::viewSchedules' );
+$routes->get( '/conductor/ticketing_payment', 'Conductor::viewTicketingPayment' );
+
+$routes->post( '/conductor/passengers/fetch', 'Conductor::fetch' );
+$routes->post( '/conductor/bookings/fetch', 'Conductor::fetchBookings' );
+$routes->post( '/conductor/getPassengers', 'Conductor::getPassengers' );
+$routes->post( '/conductor/markFullyPaid', 'Conductor::markFullyPaid' );
+$routes->post( '/conductor/markNotPaid', 'Conductor::markNotPaid' );
+
 // Server side routes
 $routes->post( '/login', 'Auth::login' );
 $routes->post( '/signup', 'Auth::signup' );

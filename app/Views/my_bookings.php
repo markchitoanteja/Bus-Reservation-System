@@ -105,7 +105,7 @@
                         <?php if ( !empty( $myBookings ) ) : ?>
                             <?php foreach ( $myBookings as $myBooking ) : ?>
                                 <?php
-                                $fare = ( $myBooking[ 'bus_type' ] === 'Ordinary' )
+                                $fare = ( $myBooking[ 'bus_type' ] === '2x2 Aircon with CR, 45-seater' )
                                     ? $myBooking[ 'with_cr_fare' ]
                                     : $myBooking[ 'without_cr_fare' ];
 
@@ -170,7 +170,6 @@
         </div>
     </footer>
 
-    <!-- View Info Modal -->
     <!-- View Info Modal -->
     <div class="modal fade" id="bookingInfoModal" tabindex="-1" aria-labelledby="bookingInfoModalLabel"
         aria-hidden="true">
