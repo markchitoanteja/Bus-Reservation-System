@@ -728,7 +728,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="public/dist/home/js/script.js?v=4.4.5"></script>
     <script src="public/dist/home/js/editProfile.script.js?v4.3.4"></script>
-    <script src="public/dist/home/js/booking.script.js?v=5.5.8"></script>
+    <script src="public/dist/home/js/booking.script.js?v=7"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
 
 </body>

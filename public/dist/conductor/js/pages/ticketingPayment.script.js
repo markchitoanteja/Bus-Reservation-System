@@ -199,13 +199,8 @@ $(document).ready(function () {
     const bookingAmount = $(this).data("amount");
 
     // Fill booking info from data attributes
-    $("#btnFullyPaid").data("id", bookingId);
-    $("#btnFullyPaid").data("amount", bookingAmount);
-    $("#btnFullyPaid").prop("disabled", $(this).data("btnfullypaid"));
-
-    $("#btnNotPaid").data("id", bookingId);
-    $("#btnNotPaid").prop("disabled", $(this).data("btnnotpaid"));
-
+    $("#cancel-booking").data("id", bookingId);
+    $("#cancel-booking").prop("disabled", $(this).data("btn"));
     $("#infoBookingRef").text($(this).data("ref"));
     $("#infoDateCreated").text($(this).data("date"));
     $("#infoOrigin").text($(this).data("origin"));
@@ -214,15 +209,63 @@ $(document).ready(function () {
       $(this).data("depdate") + " — " + $(this).data("deptime")
     );
     $("#infoBus").text($(this).data("bus"));
-    $("#infoStatus").text($(this).data("status"));
+    // Status with Bootstrap badge
+    let status = $(this).data("status");
+    let badgeClass = "bg-secondary"; // default
+
+    if (status === "Scheduled" || status === "Ongoing") {
+      badgeClass = "bg-primary";
+    } else if (status === "Cancelled") {
+      badgeClass = "bg-danger";
+    } else if (status === "Confirmed") {
+      badgeClass = "bg-success";
+    }
+
+    $("#infoStatus").html(`<span class="badge ${badgeClass}">${status}</span>`);
+    // Payment Method Badge
+    let paymentMethod = $(this).data("paymentmethod");
+    let paymentMethodBadge = "";
+
+    switch (paymentMethod) {
+      case "COB":
+        paymentMethodBadge = `<span class="badge bg-secondary">${paymentMethod}</span>`;
+        break;
+      case "GCash":
+        paymentMethodBadge = `<span class="badge bg-primary">${paymentMethod}</span>`;
+        break;
+      default:
+        paymentMethodBadge = `<span class="badge bg-dark">${paymentMethod}</span>`;
+    }
+
+    // Payment Status Badge
+    let paymentStatus = $(this).data("paymentstatus");
+    let paymentStatusBadge = "";
+
+    switch (paymentStatus) {
+      case "Partial":
+        paymentStatusBadge = `<span class="badge bg-primary">${paymentStatus}</span>`;
+        break;
+      case "Cash on Board":
+        paymentStatusBadge = `<span class="badge bg-secondary">${paymentStatus}</span>`;
+        break;
+      case "Fully Paid":
+        paymentStatusBadge = `<span class="badge bg-success">${paymentStatus}</span>`;
+        break;
+      default:
+        paymentStatusBadge = `<span class="badge bg-dark">${paymentStatus}</span>`;
+    }
+
+    // Inject into modal
+    $("#infoPaymentMethod").html(paymentMethodBadge);
+    $("#infoPaymentStatus").html(paymentStatusBadge);
 
     $("#infoBusType").text($(this).data("bustype"));
     $("#infoSeats").text($(this).data("seats"));
-    $("#infoPaymentStatus").text($(this).data("paymentstatus"));
+
     $("#infoAmountPaid").html(
       '<i class="fa fa-peso-sign"></i>&nbsp;' + $(this).data("amountpaid")
     );
-    $("#infoPaymentMethod").text($(this).data("paymentmethod"));
+
     $("#infoPassengerCount").text($(this).data("noofpassengers"));
     $("#infoFare").html(
       '<i class="fa fa-peso-sign"></i>&nbsp;' + $(this).data("fare")

@@ -86,7 +86,21 @@
                                                 </td>
                                                 <td class="text-center"><?= esc( $route[ 'payment_method' ] ) ?></td>
                                                 <td><?= esc( $route[ 'payment_status' ] ) ?></td>
-                                                <td><?= esc( $route[ 'status' ] ) ?></td>
+                                                <td>
+                                                    <?php
+                                                    // Map status to badge classes
+                                                    $badgeClasses = [
+                                                        'Scheduled' => 'badge-primary',
+                                                        'Ongoing'   => 'badge-primary',
+                                                        'Cancelled' => 'badge-danger',
+                                                        'Confirmed' => 'badge-success'
+                                                    ];
+
+                                                    $status     = $route[ 'status' ];
+                                                    $badgeClass = $badgeClasses[ $status ] ?? 'badge-secondary'; // fallback for unknown status
+                                                    ?>
+                                                    <span class="badge <?= $badgeClass ?>"><?= esc( $status ) ?></span>
+                                                </td>
 
                                             </tr>
                                         <?php endforeach; ?>

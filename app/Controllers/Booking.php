@@ -101,7 +101,7 @@ class Booking extends BaseController
 
         // Get route fare
         $builder = $routeModel
-            ->select( 'bus_routes_tb.*, routes_tb.ordinary_fare, routes_tb.aircon_fare, buses_tb.bus_type' )
+            ->select( 'bus_routes_tb.*, routes_tb.*, buses_tb.bus_type' )
             ->join( 'routes_tb', 'routes_tb.routes_tb_id = bus_routes_tb.routes_tb_id' )
             ->join( 'bus_trav_sched_tb', 'bus_trav_sched_tb.bus_trav_sched_tb_id = bus_routes_tb.bus_trav_sched_tb_id' )
             ->join( 'buses_tb', 'buses_tb.buses_tb_id = bus_trav_sched_tb.buses_tb_id' )
@@ -109,16 +109,16 @@ class Booking extends BaseController
             ->first(); // get a single row
 
         if ( $builder ) {
-            $fare = $builder[ 'bus_type' ] === 'Ordinary'
-                ? $builder[ 'ordinary_fare' ]
-                : $builder[ 'aircon_fare' ];
+            $fare = $builder[ 'bus_type' ] === '2x2 Aircon with CR, 45-seater'
+                ? $builder[ 'with_cr_fare' ]
+                : $builder[ 'without_cr_fare' ];
 
             $amount = $fare * $passengerCount;
         }
 
         $bookingRef = generateBookingRef();
         // Data to insert
-        $data = [ 
+        $data = [
             'booking_ref'      => $bookingRef,
             'status'           => $status,
             'no_of_passenger'  => $passengerCount,
@@ -128,7 +128,7 @@ class Booking extends BaseController
             'payment_status'   => 'Cash on Board',
             'created_at'       => date( 'Y-m-d H:i:s' ),
             'bus_routes_tb_id' => $bus_routes_tb_id,
-            'users_id'         => session()->get( "user" )[ "id" ],
+            'users_id'         => session()->get( "user" )[ "users_id" ],
         ];
 
         // Insert booking
@@ -137,7 +137,7 @@ class Booking extends BaseController
         $bookingTbId = $bookingModel->getInsertID();
         foreach ( $passengerNames as $index => $name ) {
             $bookingId = generate_booking_id();
-            $passengerModel->insert( [ 
+            $passengerModel->insert( [
                 'booking_id'      => $bookingId,
                 'passengers_name' => trim( $name ),
                 'age'             => $passengerAges[ $index ],
@@ -149,7 +149,7 @@ class Booking extends BaseController
 
         if ( $inserted ) {
 
-            $notificationModel->insert( [ 
+            $notificationModel->insert( [
                 'notify_for' => 'New Booking',
                 'which_tb'   => 'bookings_tb',
                 'tb_id'      => $bookingTbId,
@@ -161,14 +161,14 @@ class Booking extends BaseController
                 ->update();
 
             if ( $update ) {
-                session()->setFlashdata( [ 
+                session()->setFlashdata( [
                     "type"    => "success",
                     'message' => 'Booking completed successfully.'
                 ] );
             }
 
         } else {
-            session()->setFlashdata( [ 
+            session()->setFlashdata( [
                 "type"    => "error",
                 'title'   => 'Error!',
                 'message' => 'Booking failed. Please try again.'

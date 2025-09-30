@@ -1,0 +1,60 @@
+CRITICAL - 2025-09-30 12:40:00 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: booking/submitBooking]
+in APPPATH\Controllers\Booking.php on line 131.
+ 1 APPPATH\Controllers\Booking.php(131): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Controllers\\Booking.php', 131)
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Booking->submitBooking()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-30 12:49:49 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: booking/submitBooking]
+in APPPATH\Controllers\Booking.php on line 135.
+ 1 APPPATH\Controllers\Booking.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Controllers\\Booking.php', 135)
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Booking->submitBooking()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-30 12:49:52 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: booking/submitBooking]
+in APPPATH\Controllers\Booking.php on line 135.
+ 1 APPPATH\Controllers\Booking.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Controllers\\Booking.php', 135)
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Booking->submitBooking()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-30 12:50:23 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: booking/submitBooking]
+in APPPATH\Controllers\Booking.php on line 135.
+ 1 APPPATH\Controllers\Booking.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Controllers\\Booking.php', 135)
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Booking->submitBooking()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-30 19:13:24 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: booking/submitBooking]
+in APPPATH\Controllers\Booking.php on line 135.
+ 1 APPPATH\Controllers\Booking.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Controllers\\Booking.php', 135)
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Booking->submitBooking()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-09-30 19:16:08 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: booking/submitBooking]
+in APPPATH\Controllers\Booking.php on line 135.
+ 1 APPPATH\Controllers\Booking.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\Bus-Reservation-System\\app\\Controllers\\Booking.php', 135)
+ 2 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Booking->submitBooking()
+ 3 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Booking))
+ 4 FCPATH\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

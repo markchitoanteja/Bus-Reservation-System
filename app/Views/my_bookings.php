@@ -29,7 +29,44 @@
             color: #fff;
         }
     </style>
+    <style>
+        .button-row {
+            display: flex;
+            flex-wrap: nowrap;
+            /* Prevent wrapping */
+            overflow-x: auto;
+            /* Enable horizontal scroll on small screens */
+            gap: 8px;
+            /* Space between buttons */
+            margin-bottom: 10px;
+        }
 
+        .button-row .btn-wrapper-with-cr {
+            flex: 0 0 calc((100% - 40px) / 5);
+            /* 6 items with 8px gap between each */
+            text-align: center;
+        }
+
+        .button-row .btn-wrapper-without-cr {
+            flex: 0 0 calc((100% - 40px) / 6);
+            /* 6 items with 8px gap between each */
+            text-align: center;
+        }
+
+        .button-row .btn {
+            width: 100%;
+        }
+
+        .button-row .btn-wrapper-with-cr.two-col {
+            flex: 0 0 calc((100% - 40px) / 5 * 2 + 8px);
+            /* Span two normal columns (+1 gap) */
+        }
+
+        .button-row .btn-wrapper-without-cr.three-col {
+            flex: 0 0 calc((100% - 40px) / 6 * 3 + 16px);
+            /* Span 3 columns + 2 gaps of 8px each */
+        }
+    </style>
 </head>
 
 <body>
@@ -95,7 +132,7 @@
                         <tr>
                             <th>Booking Reference</th>
                             <th>Booking Date</th>
-                            <th>Status</th>
+                            <th class="text-center">Status</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -115,7 +152,21 @@
                                 <tr class="text-nowrap">
                                     <td><?= esc( $myBooking[ 'booking_ref' ] ) ?></td>
                                     <td><?= date( 'F j, Y', strtotime( $myBooking[ 'date_created' ] ) ) ?></td>
-                                    <td><?= esc( $myBooking[ 'status' ] ) ?></td>
+                                    <td class="text-center">
+                                        <?php
+                                        // Map status to badge classes
+                                        $badgeClasses = [
+                                            'Scheduled' => 'bg-primary',
+                                            'Ongoing'   => 'bg-primary',
+                                            'Cancelled' => 'bg-danger',
+                                            'Confirmed' => 'bg-success'
+                                        ];
+
+                                        $status     = $myBooking[ 'status' ];
+                                        $badgeClass = $badgeClasses[ $status ] ?? 'bg-secondary'; // fallback for unknown status
+                                        ?>
+                                        <span class="badge <?= $badgeClass ?>"><?= esc( $status ) ?></span>
+                                    </td>
                                     <td class="text-center">
                                         <a href="javascript:void(0)" class="btn btn-primary btn-sm view-booking"
                                             style="margin-right: 3px;" data-id="<?= $myBooking[ 'bookings_tb_id' ] ?>"
@@ -219,7 +270,15 @@
                         </li>
 
                         <li class="list-group-item d-flex justify-content-between">
-                            <strong>Seats:</strong>
+                            <div class="d-flex justify-content-between align-items-center p-1">
+                                <strong>Seats:</strong>
+                                <button class="btn btn-pink btn-sm p-1 ms-3" id="viewSeatsBtn" data-bs-toggle="modal"
+                                    data-bs-target="#seatMapModal" title="View Seat Map">
+                                    <i class="fas fa-eye"></i>
+                                    View Seat Map
+                                </button>
+                            </div>
+
                             <span id="infoSeats"></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
@@ -267,6 +326,20 @@
         </div>
     </div>
 
+    <!-- Seat Map Modal -->
+    <div class="modal fade" id="seatMapModal" tabindex="-1" aria-labelledby="seatMapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seatMapModalLabel">Seat Map</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-3" id="seatModalContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php if ( session()->get( "user" ) ) : ?>
         <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel"
@@ -361,7 +434,7 @@
     <script>
         const BASE_URL = "<?= base_url() ?>";
     </script>
-    <script src="<?= base_url( 'public/dist/home/js/my_bookings.script.js?v6.6.6' ) ?>"></script>
+    <script src="<?= base_url( 'public/dist/home/js/my_bookings.script.js?v7' ) ?>"></script>
 
 </body>
 

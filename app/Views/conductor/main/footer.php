@@ -41,7 +41,7 @@
 <?php endif; ?>
 
 <?php if ( session()->get( 'active_tab' ) === 'ticketing_payment' ) : ?>
-    <script src="<?= base_url() ?>public/dist/conductor/js/pages/ticketingPayment.script.js?v=2.2.2"></script>
+    <script src="<?= base_url() ?>public/dist/conductor/js/pages/ticketingPayment.script.js?v=3"></script>
 <?php endif; ?>
 
 <?php if ( session()->has( 'swalAlert' ) ) : ?>
